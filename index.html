@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
+    <base target="_top">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="referrer" content="no-referrer">
@@ -14,11 +15,11 @@
     <style>
         :root {
             /* Black, White & Gold Palette */
-            --bg-main: #000000;       
+            --bg-main: #000000;
             --bg-secondary: #0a0a0a;  
             --accent: #D4AF37;        /* สีทอง Metallic Gold */
             --highlight: #ff4d4d;     /* สีแดง Highlight สำหรับ HOT */
-            --text-main: #ffffff;     
+            --text-main: #ffffff;
             --text-sub: #b0b0b0;      
             --border-color: #333333;  
         }
@@ -96,7 +97,7 @@
             justify-content: center;
             text-align: center;
             position: relative;
-            background-color: #000; 
+            background-color: #000;
             background-image: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.9)), 
                               url('https://images.unsplash.com/photo-1617788138017-80ad40651399?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
@@ -152,6 +153,57 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
+        }
+
+        /* Brands Section Style */
+        .brands-section {
+            background-color: #080808;
+            padding: 40px 0;
+            border-bottom: 1px solid #222;
+        }
+        .brands-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1rem;
+            color: #666;
+            text-align: center;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+        }
+        .brands-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            align-items: center;
+        }
+        .brand-item {
+            text-align: center;
+            padding: 10px 20px;
+            border: 1px solid #222;
+            background: #000;
+            min-width: 140px;
+            transition: 0.3s;
+        }
+        .brand-item:hover {
+            border-color: var(--accent);
+            transform: translateY(-3px);
+        }
+        .brand-name {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 1px;
+            display: block;
+        }
+        .brand-origin {
+            font-size: 0.7rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: block;
+            margin-top: 2px;
         }
 
         /* Section Styling */
@@ -323,7 +375,7 @@
                 <img id="mainLogo" 
                      src="images/logo.png" 
                      alt="YO-RU Detailing" 
-                     style="max-height: 70px; width: auto;"
+                     style="max-height: 70px; width: auto;" 
                      onerror="this.style.display='none'; document.getElementById('backupLogo').style.display='flex';">
                 
                 <div id="backupLogo" style="display:none; flex-direction: column; line-height: 1;">
@@ -362,6 +414,34 @@
     <div class="valet-banner">
         <div class="container">
             <i class="fas fa-car me-2"></i> <strong class="text-bright">ฟรี!</strong> บริการรถรับ-ส่ง ในพื้นที่ใกล้เคียง (Premium Valet)
+        </div>
+    </div>
+
+    <div class="brands-section">
+        <div class="container">
+            <div class="brands-title">WE USE SELECTED PREMIUM PRODUCTS</div>
+            <div class="brands-grid">
+                <div class="brand-item">
+                    <span class="brand-name">GYEON</span>
+                    <span class="brand-origin">KOREA</span>
+                </div>
+                <div class="brand-item">
+                    <span class="brand-name">LUMINUS</span>
+                    <span class="brand-origin">KOREA</span>
+                </div>
+                <div class="brand-item">
+                    <span class="brand-name">3D CAR CARE</span>
+                    <span class="brand-origin">USA</span>
+                </div>
+                <div class="brand-item">
+                    <span class="brand-name">SONAX</span>
+                    <span class="brand-origin">GERMANY</span>
+                </div>
+                <div class="brand-item">
+                    <span class="brand-name">DLABS</span>
+                    <span class="brand-origin">THAILAND</span>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -412,9 +492,9 @@
                             <div><i class="fas fa-check"></i> Basic Wash ทั้งหมด</div>
                             <div><i class="fas fa-check"></i> ล้างภายนอก Mini Detailing</div>
                             <div><i class="fas fa-check"></i> ล้างล้อลึก</div>
-                            <div><i class="fas fa-check"></i> ดูดฝุ่น + เช็ดภายใน</div>
+                            <div><i class="fas fa-check"></i> ดูดฝุ่นละเอียด + เช็ดภายใน + เคลือบปกป้อง</div>
                             <div><i class="fas fa-check"></i> เคลือบกระจก + เคลือบภายใน</div>
-                            <div class="text-white"><i class="fas fa-star"></i> เคลือบติดทนนานถึง 1 เดือน</div>
+                            <div class="text-white"><i class="fas fa-star"></i> เคลือบสีแบบสเปรย์</div>
                         </div>
                         <div class="coating-note">
                             *เป็นการเคลือบอ่อน (Soft Coating) ไม่ใช่การเคลือบแก้วแข็ง (Hard Coating)
@@ -438,7 +518,7 @@
                             <div><i class="fas fa-check"></i> ทำความสะอาดซอกประตู/ห้องเครื่อง</div>
                             <div><i class="fas fa-check"></i> Iron Remover</div>
                             <div><i class="fas fa-check"></i> ขัดซอกภายในละเอียด</div>
-                            <div class="text-white"><i class="fas fa-star"></i> เคลือบสี Premium ปกป้องทนนานสูงสุด 6 เดือน</div>
+                            <div class="text-white"><i class="fas fa-star"></i> เคลือบสี Premium เกรดนำเข้า</div>
                         </div>
                         <div class="coating-note">
                             *เป็นการเคลือบอ่อนคุณภาพสูง (Premium Soft Coating) เราเลือกใช้คุณภาพสูงตามราคาที่เหมาะสม ไม่ใช่การเคลือบแก้วแข็ง (Hard Coating)
@@ -462,7 +542,7 @@
                             <div><i class="fas fa-check"></i> ซักพรม / ซักเบาะ</div>
                             <div><i class="fas fa-check"></i> อบโอโซนฆ่าเชื้อ</div>
                             <div><i class="fas fa-check"></i> ทำความสะอาดทุกซอกมุม</div>
-                            <div class="text-white"><i class="fas fa-star"></i> เคลือบสี Premium ปกป้องทนนานสูงสุด 6 เดือน</div>
+                            <div class="text-white"><i class="fas fa-star"></i> เคลือบสี Premium เกรดนำเข้า</div>
                         </div>
                          <div class="coating-note">
                             *เป็นการเคลือบอ่อนคุณภาพสูง (Premium Soft Coating) เราเลือกใช้คุณภาพสูงตามราคาที่เหมาะสม ไม่ใช่การเคลือบแก้วแข็ง (Hard Coating)
@@ -569,7 +649,7 @@
                             <span class="text-gold" style="font-size: 0.8rem;">ปกป้องนานสูงสุด 3-7 ปี</span>
                         </div>
                         <div class="desc-text">
-                            ที่สุดแห่งความสมบูรณ์แบบ เงาระดับ 4K สำหรับอยากดูดีแบบ Super Car
+                            ที่สุดแห่งความสมบูรณ์แบบ เงาระดับ 4K สำหรับ Super Car
                         </div>
                         <div class="price-list mb-4">
                             <div class="price-row"><span>S</span> <span>21,900-35,000+</span></div>
@@ -581,7 +661,7 @@
                             <div><i class="fas fa-check"></i> ล้างภายนอกแบบ Detailing</div>
                             <div><i class="fas fa-check"></i> ลูบดินน้ำมัน (Clay Bar)</div>
                             <div><i class="fas fa-check"></i> ฟื้นฟูผิวส้ม (Orange Peel)/ขัดลบรอย PCS (Paint Care System)</div>
-                            <div class="text-white"><i class="fas fa-star"></i> เทคโนโลยี Self-healing </div>
+                            <div class="text-white"><i class="fas fa-star"></i> เทคโนโลยีฟิล์มหนาพิเศษ Ultimate High-Gloss </div>
                             <div><i class="fas fa-check"></i> เคลือบล้อ / กระจกรอบคัน</div>
                             <div><i class="fas fa-check"></i> อบโอโซนฆ่าเชื้อ</div>
                             <div><i class="fas fa-check"></i> โปรแกรมบำรุงรักษาฟรี (Maintenance)</div>
@@ -786,5 +866,3 @@
     </script>
 </body>
 </html>
-
-
