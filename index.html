@@ -363,6 +363,88 @@
             /* ปรับขนาดโลโก้ในมือถือให้พอดี */
             .navbar-brand img { max-height: 50px !important; } 
         }
+        /* จัดระยะห่าง Section */
+.brands-section {
+    background-color: #050505; /* ดำเกือบสนิท */
+    padding: 60px 0;
+    border-top: 1px solid #1a1a1a;
+}
+
+.brands-title {
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    color: #D4AF37; /* สีทอง */
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+/* Grid Layout */
+.brands-grid {
+    display: grid;
+    /* มือถือ 2 คอลัมน์, จอใหญ่ 6 คอลัมน์ */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px;
+    margin-top: 30px;
+}
+
+@media (min-width: 768px) {
+    .brands-grid {
+        grid-template-columns: repeat(6, 1fr); /* แถวเดียวเรียงกัน */
+    }
+}
+
+/* กล่องของแต่ละแบรนด์ */
+.brand-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.02); /* พื้นหลังจางๆ */
+    border: 1px solid #222;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.brand-item:hover {
+    border-color: #D4AF37; /* Hover แล้วขอบทอง */
+    transform: translateY(-5px);
+}
+
+/* การจัดการรูปโลโก้ (หัวใจสำคัญของการไม่รก) */
+.logo-wrapper {
+    height: 60px; /* บังคับความสูงให้เท่ากัน */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.brand-img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    /* ทำให้เป็นสีขาว-ดำ และจางลง */
+    filter: grayscale(100%) brightness(1.5); 
+    opacity: 0.5;
+    transition: 0.4s;
+}
+
+/* Hover แล้วคืนสีจริง */
+.brand-item:hover .brand-img {
+    filter: grayscale(0%) brightness(1);
+    opacity: 1;
+}
+
+/* ตัวหนังสือประเทศ */
+.brand-origin {
+    font-size: 0.7rem;
+    color: #666;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
     </style>
 </head>
 <body>
@@ -416,36 +498,50 @@
     </div>
 
     <div class="brands-section">
-        <div class="container">
-            <div class="brands-title">WE USE SELECTED PREMIUM PRODUCTS</div>
-            <div class="brands-grid">
-                <div class="brand-item">
-                    <span class="brand-name">CAR PRO</span>
-                    <span class="brand-origin">KOREA</span>
+    <div class="container">
+        <div class="brands-title">WE USE SELECTED PREMIUM PRODUCTS</div>
+        <p class="text-muted text-center mb-4 small">คัดสรรผลิตภัณฑ์คุณภาพสูงจากทั่วโลก</p>
+        
+        <div class="brands-grid">
+            <div class="brand-item">
+                <div class="logo-wrapper">
+                    <img src="images/logo-carpro.png" alt="Car Pro" class="brand-img">
                 </div>
-                <div class="brand-item">
-                    <span class="brand-name">GYEON</span>
-                    <span class="brand-origin">KOREA</span>
-                </div>
-                <div class="brand-item">
-                    <span class="brand-name">LUMINUS</span>
-                    <span class="brand-origin">KOREA</span>
-                </div>
-                <div class="brand-item">
-                    <span class="brand-name">GLOSSBRO</span>
-                    <span class="brand-origin">KOREA</span>
-                </div>
-                <div class="brand-item">
-                    <span class="brand-name">3D CAR CARE</span>
-                    <span class="brand-origin">USA</span>
-                </div>
-                <div class="brand-item">
-                    <span class="brand-name">DLABS</span>
-                    <span class="brand-origin">THAILAND</span>
-                </div>
+                <span class="brand-origin">KOREA</span>
             </div>
+
+            <div class="brand-item">
+                <div class="logo-wrapper">
+                    <img src="images/logo-gyeon.png" alt="Gyeon" class="brand-img">
+                </div>
+                <span class="brand-origin">KOREA</span>
+            </div>
+
+            <div class="brand-item">
+                <div class="logo-wrapper">
+                    <img src="images/logo-luminus.png" alt="Luminus" class="brand-img">
+                </div>
+                <span class="brand-origin">KOREA</span>
+            </div>
+
+            <div class="brand-item">
+                <div class="logo-wrapper">
+                    <img src="images/logo-glossbro.png" alt="Glossbro" class="brand-img">
+                </div>
+                <span class="brand-origin">KOREA</span>
+            </div>
+
+            <div class="brand-item">
+                <div class="logo-wrapper">
+                    <img src="images/logo-3d.png" alt="3D Car Care" class="brand-img">
+                </div>
+                <span class="brand-origin">USA</span>
+            </div>
+
+
         </div>
     </div>
+</div>
 
     <section id="packages" class="section-padding">
         <div class="container">
@@ -940,5 +1036,6 @@
     </script>
 </body>
 </html>
+
 
 
