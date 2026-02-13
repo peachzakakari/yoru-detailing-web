@@ -15,11 +15,11 @@
     <style>
         :root {
             /* Black, White & Gold Palette */
-            --bg-main: #000000;
+            --bg-main: #000000;       
             --bg-secondary: #0a0a0a;  
             --accent: #D4AF37;        /* สีทอง Metallic Gold */
             --highlight: #ff4d4d;     /* สีแดง Highlight สำหรับ HOT */
-            --text-main: #ffffff;
+            --text-main: #ffffff;     
             --text-sub: #b0b0b0;      
             --border-color: #333333;  
         }
@@ -97,7 +97,7 @@
             justify-content: center;
             text-align: center;
             position: relative;
-            background-color: #000;
+            background-color: #000; 
             background-image: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.9)), 
                               url('https://images.unsplash.com/photo-1617788138017-80ad40651399?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
@@ -203,6 +203,31 @@
             letter-spacing: 2px;
             display: block;
         }
+        
+        /* ⚠️ เพิ่ม CSS ส่วน Logo Wrapper และ Brand Img ที่ขาดหายไป */
+        .logo-wrapper {
+            height: 80px; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+
+        .brand-img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+            filter: grayscale(100%) brightness(1.5);
+            opacity: 0.5;
+            transition: 0.4s;
+        }
+
+        .brand-item:hover .brand-img {
+            filter: grayscale(0%) brightness(1);
+            opacity: 1;
+        }
+        /* จบส่วนที่เพิ่มใหม่ */
 
         /* Section Styling */
         .section-padding { padding: 80px 0; }
@@ -363,6 +388,36 @@
             /* ปรับขนาดโลโก้ในมือถือให้พอดี */
             .navbar-brand img { max-height: 50px !important; } 
         }
+     
+        /* =========================================
+           MOBILE HORIZONTAL SCROLL (ปัดข้างในมือถือ)
+           ========================================= */
+        @media (max-width: 768px) {
+            .mobile-scroll-row {
+                display: flex !important;
+                flex-wrap: nowrap !important; /* ห้ามขึ้นบรรทัดใหม่ */
+                overflow-x: auto;             /* ให้เลื่อนแนวนอนได้ */
+                gap: 15px;                    /* ระยะห่างระหว่างการ์ด */
+                padding-bottom: 20px;         /* เผื่อที่ให้เงาด้านล่าง */
+                scroll-snap-type: x mandatory; /* ให้เด้งเข้าล็อคทีละใบ */
+                -webkit-overflow-scrolling: touch; /* เลื่อนลื่นๆ บน iPhone */
+                
+                /* ซ่อน Scrollbar ไม่ให้รกตา */
+                scrollbar-width: none; 
+                -ms-overflow-style: none;
+            }
+            
+            .mobile-scroll-row::-webkit-scrollbar { 
+                display: none; 
+            }
+
+            /* ปรับขนาดการ์ดในมือถือ */
+            .mobile-scroll-row > div {
+                flex: 0 0 85%;    /* ให้กว้าง 85% ของจอ (จะได้เห็นขอบการ์ดถัดไปนิดนึง) */
+                max-width: 85%;
+                scroll-snap-align: center; /* เวลาเลื่อนให้หยุดตรงกลาง */
+            }
+        }
     </style>
 </head>
 <body>
@@ -392,7 +447,8 @@
                     <li class="nav-item"><a class="nav-link scroll-link" href="#packages">WASH SERVICES</a></li>
                     <li class="nav-item"><a class="nav-link scroll-link" href="#coating">CERAMIC COATING</a></li>
                     <li class="nav-item"><a class="nav-link scroll-link" href="#addons">ADD-ONS</a></li>
-                    <li class="nav-item"><a class="nav-link scroll-link" href="#brands">BRANDS</a></li> <li class="nav-item"><a class="nav-link scroll-link" href="#info">TERMS & INFO</a></li>
+                    <li class="nav-item"><a class="nav-link scroll-link" href="#brands">BRANDS</a></li> 
+                    <li class="nav-item"><a class="nav-link scroll-link" href="#info">TERMS & INFO</a></li>
                     <li class="nav-item"><a class="nav-link scroll-link" href="#contact">CONTACT</a></li>
                 </ul>
             </div>
@@ -417,58 +473,50 @@
         </div>
     </div>
 
-    <div class="brands-section">
-    <div class="container">
-        <div class="brands-title">WE USE SELECTED PREMIUM PRODUCTS</div>
-        <p class="text-muted text-center mb-4 small">คัดสรรผลิตภัณฑ์คุณภาพสูงจากทั่วโลก</p>
-        
-        <div class="brands-grid">
-            <div class="brand-item">
-                <div class="logo-wrapper">
-                    <img src="images/logo-carpro.png" alt="Car Pro" class="brand-img">
+    <div class="brands-section" id="brands">
+        <div class="container">
+            <div class="brands-title">WE USE SELECTED PREMIUM PRODUCTS</div>
+            <p class="text-muted text-center mb-4 small">คัดสรรผลิตภัณฑ์คุณภาพสูงจากทั่วโลก</p>
+            
+            <div class="brands-grid">
+                <div class="brand-item">
+                    <div class="logo-wrapper">
+                        <img src="images/logo-carpro.png" alt="Car Pro" class="brand-img">
+                    </div>
                 </div>
-                
-            </div>
 
-            <div class="brand-item">
-                <div class="logo-wrapper">
-                    <img src="images/logo-gyeon.png" alt="Gyeon" class="brand-img">
+                <div class="brand-item">
+                    <div class="logo-wrapper">
+                        <img src="images/logo-gyeon.png" alt="Gyeon" class="brand-img">
+                    </div>
                 </div>
-                
-            </div>
 
-            <div class="brand-item">
-                <div class="logo-wrapper">
-                    <img src="images/logo-luminus.png" alt="Luminus" class="brand-img">
+                <div class="brand-item">
+                    <div class="logo-wrapper">
+                        <img src="images/logo-luminus.png" alt="Luminus" class="brand-img">
+                    </div>
                 </div>
-                
-            </div>
 
-            <div class="brand-item">
-                <div class="logo-wrapper">
-                    <img src="images/logo-glossbro.png" alt="Glossbro" class="brand-img">
+                <div class="brand-item">
+                    <div class="logo-wrapper">
+                        <img src="images/logo-glossbro.png" alt="Glossbro" class="brand-img">
+                    </div>
                 </div>
-                
-            </div>
 
-            <div class="brand-item">
-                <div class="logo-wrapper">
-                    <img src="images/logo-3d.png" alt="3D Car Care" class="brand-img">
+                <div class="brand-item">
+                    <div class="logo-wrapper">
+                        <img src="images/logo-3d.png" alt="3D Car Care" class="brand-img">
+                    </div>
                 </div>
-                
-            </div>
 
-            <div class="brand-item">
-                <div class="logo-wrapper">
-                    <img src="images/max-shine-logo.png" alt="Max Shine" class="brand-img">
+                <div class="brand-item">
+                    <div class="logo-wrapper">
+                        <img src="images/max-shine-logo.png" alt="Max Shine" class="brand-img">
+                    </div>
                 </div>
-                
             </div>
-
-
         </div>
     </div>
-</div>
 
     <section id="packages" class="section-padding">
         <div class="container">
@@ -589,9 +637,9 @@
                         <div class="package-meta">45 - 60 MINS</div>
                         <p class="text-muted mb-4 small">ล้างทำความสะอาด ขจัดคราบโคลน/น้ำมันโซ่</p>
                         <div class="price-list mb-4">
-                            <div class="price-row"><span>S (<300cc)</span> <span>200-300</span></div>
+                            <div class="price-row"><span>S (&lt;300cc)</span> <span>200-300</span></div>
                             <div class="price-row"><span>M (300-600cc)</span> <span>300-400</span></div>
-                            <div class="price-row"><span>L (>600cc)</span> <span>400-600</span></div>
+                            <div class="price-row"><span>L (&gt;600cc)</span> <span>400-600</span></div>
                         </div>
                         <div class="feature-box">
                             <div><i class="fas fa-check"></i> ล้างสี + ล้างช่วงล่าง</div>
@@ -607,9 +655,9 @@
                         <div class="package-meta">2 - 3 HOURS <span class="badge-hot ms-1">HOT</span></div>
                         <p class="text-muted mb-4 small">ฟื้นฟูสภาพ ขัดสี ลอกคราบฝังลึก</p>
                         <div class="price-list mb-4">
-                            <div class="price-row"><span>S (<300cc)</span> <span>800-1,200</span></div>
+                            <div class="price-row"><span>S (&lt;300cc)</span> <span>800-1,200</span></div>
                             <div class="price-row"><span>M (300-600cc)</span> <span>1,200-1,800</span></div>
-                            <div class="price-row"><span>L (>600cc)</span> <span>1,800-2,500</span></div>
+                            <div class="price-row"><span>L (&gt;600cc)</span> <span>1,800-2,500</span></div>
                         </div>
                         <div class="feature-box">
                             <div><i class="fas fa-check"></i> Bike Wash ทั้งหมด</div>
@@ -739,7 +787,6 @@
             </div>
 
             <div class="row g-3">
-                <div class="row g-3">
                 <div class="col-md-4">
                     <div class="addon-card">
                         <div class="addon-header">
@@ -920,7 +967,7 @@
     <footer id="contact">
         <div class="container">
             <div class="mb-4">
-                <img src="https://drive.google.com/thumbnail?id=1VBLZ4DvX_1n6v44zjsrPB1cHlQ6nIlJ-&sz=w1000" 
+                <img src="images/logo.png" 
                      alt="YO-RU Detailing" 
                      style="max-height: 80px; width: auto;" 
                      onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
@@ -963,11 +1010,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
