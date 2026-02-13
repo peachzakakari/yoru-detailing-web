@@ -426,15 +426,7 @@
         }
         .contact-info i { color: var(--accent); margin-right: 10px; }
 
-        @media (max-width: 768px) {
-            .hero-title { font-size: 3rem; }
-            .hero-section { height: 60vh; }
-            .pricing-col { margin-bottom: 20px; }
-            /* ปรับขนาดโลโก้ในมือถือให้พอดี */
-            .navbar-brand img { max-height: 50px !important; } 
-        }
-     
-        /* =========================================
+       /* =========================================
            MOBILE HORIZONTAL SCROLL (ปัดข้างในมือถือ)
            ========================================= */
         @media (max-width: 768px) {
@@ -447,8 +439,8 @@
                 scroll-snap-type: x mandatory; /* ให้เด้งเข้าล็อคทีละใบ */
                 -webkit-overflow-scrolling: touch; /* เลื่อนลื่นๆ บน iPhone */
                 
-                /* [FIXED] Force start for Motorbike section */
-                justify-content: flex-start !important;
+                /* [FIXED] บังคับชิดซ้ายเฉพาะในมือถือเพื่อให้ปัดข้างได้ */
+                justify-content: flex-start !important; 
                 
                 /* ซ่อน Scrollbar ไม่ให้รกตา */
                 scrollbar-width: none; 
@@ -461,9 +453,18 @@
 
             /* ปรับขนาดการ์ดในมือถือ */
             .mobile-scroll-row > div {
-                flex: 0 0 85%;    /* ให้กว้าง 85% ของจอ (จะได้เห็นขอบการ์ดถัดไปนิดนึง) */
+                flex: 0 0 85%;    /* ให้กว้าง 85% ของจอ */
                 max-width: 85%;
                 scroll-snap-align: center; /* เวลาเลื่อนให้หยุดตรงกลาง */
+            }
+        }
+
+        /* เพิ่มส่วนนี้เพื่อคืนค่าให้กลับมาอยู่ตรงกลางเมื่อดูบน PC */
+        @media (min-width: 769px) {
+            .mobile-scroll-row {
+                justify-content: center !important;
+                display: flex !important;
+                flex-wrap: wrap !important;
             }
         }
     </style>
@@ -678,7 +679,7 @@
                 </div>
             </div>
 
-            <div class="row mobile-scroll-row">
+            <div class="row mobile-scroll-row justify-content-center">
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="pricing-col">
                         <div class="package-title">BIKE WASH</div>
@@ -1058,6 +1059,7 @@
     </script>
 </body>
 </html>
+
 
 
 
