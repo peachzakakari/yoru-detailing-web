@@ -546,9 +546,31 @@
         @media(max-width: 768px) {
             .floating-group { bottom: 20px; right: 20px; gap: 10px; }
             .float-btn { width: 50px; height: 50px; font-size: 1.3rem; }
-        }
+            /* 1. ย่อรูปโลโก้ลงเหลือ 40px (จากเดิม 70px) */
+    #mainLogo {
+        max-height: 40px !important; 
+        width: auto;
+    }
 
-    </style>
+    /* 2. ลดความหนาของแถบเมนู (Navbar) ให้เพรียวขึ้น */
+    .navbar {
+        padding-top: 5px !important;
+        padding-bottom: 5px !important;
+    }
+
+    /* 3. ปรับตำแหน่งปุ่ม Hamburger (3 ขีด) ให้พอดีกับโลโก้ใหม่ */
+    .navbar-toggler {
+        padding: 4px 8px; /* ลดขนาดปุ่มกด */
+        font-size: 1.1rem; /* ลดขนาดไอคอน 3 ขีด */
+        margin-top: 0;
+    }
+    
+    /* (แถม) ปรับชื่อร้านสำรอง (Backup Logo) ให้เล็กลงด้วยเผื่อรูปไม่ขึ้น */
+    #backupLogo span:first-child { font-size: 1.4rem !important; }
+    #backupLogo span:last-child { font-size: 0.6rem !important; letter-spacing: 2px !important; }
+}
+            
+            </style>
     <meta name="description" content="YO-RU Detailing บริการล้างรถและเคลือบแก้วพรีเมียมในชลบุรี ดูแลรถคุณด้วยผลิตภัณฑ์ชั้นนำ CarPro, Gyeon, 3D">
     <meta name="keywords" content="ล้างรถชลบุรี, เคลือบแก้วชลบุรี, Detailing ชลบุรี, ล้างมอเตอร์ไซค์">
     <link rel="icon" type="image/png" href="images/favicon.png">
@@ -1160,5 +1182,6 @@
     </script>
 </body>
 </html>
+
 
 
