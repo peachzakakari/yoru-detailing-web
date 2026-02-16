@@ -101,6 +101,25 @@
             width: auto;
             transition: all 0.3s ease;
         }
+
+        .start-price {
+    display: inline-block;
+    background: rgba(212, 175, 55, 0.1);
+    color: var(--accent);
+    padding: 6px 15px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    font-size: 0.85rem;
+    margin-top: 15px;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.start-price:hover {
+    background: var(--accent);
+    color: #000 !important;
+    border-color: var(--accent);
+    transform: translateY(-2px);
+}
         /* Mobile Logo Fix */
         @media (max-width: 991px) {
             .navbar-brand img {
@@ -549,34 +568,34 @@
             </p>
 
             <div class="row g-4 mobile-scroll-row justify-content-center mb-5">
-                <div class="col-md-4">
-                    <div class="service-card">
-                        <div>
-                            <h4 class="text-white mb-3">PREMIUM WASH</h4>
-                            <p class="text-muted small">บริการล้างสี ดูดฝุ่น และ Detailing ภายนอก/ภายใน ด้วยระบบ Touchless และเคมีภัณฑ์เกรดพรีเมียม เพื่อลดการเกิดรอย</p>
-                        </div>
-                        <div><span class="start-price">Start 300 THB</span></div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="service-card">
-                        <div>
-                            <h4 class="text-white mb-3">CERAMIC COATING</h4>
-                            <p class="text-muted small">บริการขัดฟื้นฟูสภาพสีเต็มระบบ (Full Correction) และเคลือบเซรามิกแท้ เพื่อการปกป้องที่ยาวนาน 1-5 ปี</p>
-                        </div>
-                        <div><span class="start-price">Start 2,500 THB</span></div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="service-card">
-                        <div>
-                            <h4 class="text-white mb-3">RESTORATION</h4>
-                            <p class="text-muted small">บริการฟื้นฟูสภาพภายใน ซักเบาะ ซักพรม อบโอโซนฆ่าเชื้อ และขัดไฟหน้าเหลืองให้กลับมาใส</p>
-                        </div>
-                        <div><span class="start-price">Start 1,500 THB</span></div>
-                    </div>
-                </div>
+    <div class="col-md-4">
+        <div class="service-card">
+            <div>
+                <h4 class="text-white mb-3">PREMIUM WASH</h4>
+                <p class="text-muted small">บริการล้างสี ดูดฝุ่น และ Detailing ภายนอก/ภายใน ด้วยระบบ Touchless และเคมีภัณฑ์เกรดพรีเมียม เพื่อลดการเกิดรอย</p>
             </div>
+            <div><a href="price-list.html" class="start-price text-decoration-none">Start 300 THB <i class="fas fa-chevron-right ms-1" style="font-size: 0.6rem;"></i></a></div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="service-card">
+            <div>
+                <h4 class="text-white mb-3">CERAMIC COATING</h4>
+                <p class="text-muted small">บริการขัดฟื้นฟูสภาพสีเต็มระบบ (Full Correction) และเคลือบเซรามิกแท้ เพื่อการปกป้องที่ยาวนาน 1-5 ปี</p>
+            </div>
+            <div><a href="price-list.html" class="start-price text-decoration-none">Start 2,500 THB <i class="fas fa-chevron-right ms-1" style="font-size: 0.6rem;"></i></a></div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="service-card">
+            <div>
+                <h4 class="text-white mb-3">RESTORATION</h4>
+                <p class="text-muted small">บริการฟื้นฟูสภาพภายใน ซักเบาะ ซักพรม อบโอโซนฆ่าเชื้อ และขัดไฟหน้าเหลืองให้กลับมาใส</p>
+            </div>
+            <div><a href="price-list.html" class="start-price text-decoration-none">Start 1,500 THB <i class="fas fa-chevron-right ms-1" style="font-size: 0.6rem;"></i></a></div>
+        </div>
+    </div>
+</div>
 
             <a href="price-list.html" target="_blank" class="btn-gold">
                 <i class="fas fa-list-alt me-2"></i> VIEW FULL PRICE LIST
@@ -810,6 +829,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
 
 
 
