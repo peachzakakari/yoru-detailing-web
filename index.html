@@ -41,6 +41,7 @@
 
         .text-gold { color: var(--accent) !important; }
         .text-muted { color: var(--text-muted) !important; }
+        .text-bright { color: #fff; font-weight: 600; }
 
         /* Navbar */
         .navbar {
@@ -73,14 +74,13 @@
         }
         .hero-overlay {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.4), #050505); /* ลดความมืด Overlay ลงนิดนึง */
+            background: linear-gradient(to bottom, rgba(0,0,0,0.4), #050505);
         }
         .hero-title {
             font-size: 4rem; 
             text-shadow: 0 10px 30px rgba(0,0,0,0.8);
             margin-bottom: 10px;
             letter-spacing: 5px;
-            /* PC: ไล่เฉดสี */
             background: -webkit-linear-gradient(#fff, #ccc);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -102,7 +102,7 @@
             box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
         }
 
-        /* --- [FIXED] Mobile Horizontal Scroll --- */
+        /* Mobile Horizontal Scroll */
         @media (max-width: 991px) {
             .mobile-scroll-row {
                 display: flex !important;
@@ -114,12 +114,9 @@
                 -webkit-overflow-scrolling: touch;
                 margin-left: -10px; margin-right: -10px;
                 padding-left: 20px; padding-right: 20px;
-                
-                /* [สำคัญ] บังคับชิดซ้าย เพื่อแก้ปัญหาเลื่อนไม่ได้ */
                 justify-content: flex-start !important; 
             }
             .mobile-scroll-row::-webkit-scrollbar { display: none; }
-            
             .mobile-scroll-row > div {
                 flex: 0 0 85%;
                 max-width: 85%;
@@ -130,40 +127,40 @@
         /* Feature Card (Why Us) */
         .feature-card {
             background: #0f0f0f;
-            padding: 25px;
+            padding: 30px 25px;
             height: 100%;
             border: 1px solid #222;
             display: flex;
             align-items: flex-start;
-            gap: 15px;
+            gap: 20px;
             border-radius: 8px;
         }
         .feature-icon { 
-            font-size: 1.8rem;
+            font-size: 2rem;
             color: var(--accent); 
-            min-width: 40px; 
+            min-width: 50px; 
             text-align: center;
-            margin-top: 3px;
+            margin-top: 5px;
         }
 
         /* Process Step (Standard) */
         .process-step {
             position: relative;
-            padding: 25px;
+            padding: 30px 25px;
             background: linear-gradient(145deg, #111, #080808);
             border: 1px solid #222;
             height: 100%;
             border-radius: 8px;
             display: flex;
             align-items: flex-start;
-            gap: 15px;
+            gap: 20px;
         }
         .process-icon {
-            font-size: 1.6rem; 
+            font-size: 1.8rem; 
             color: var(--accent);
-            min-width: 35px;
+            min-width: 40px;
             text-align: center;
-            margin-top: 2px;
+            margin-top: 5px;
         }
         .step-number-bg {
             position: absolute; top: -5px; right: 10px;
@@ -172,7 +169,7 @@
             pointer-events: none;
         }
 
-        /* Service Card (Our Services) */
+        /* Service Card */
         .service-card {
             border: 1px solid var(--accent); 
             padding: 30px 25px;
@@ -195,30 +192,54 @@
             letter-spacing: 1px;
         }
 
+        /* Terms Box */
+        .term-box {
+            border: 1px solid #2a2a2a;
+            background: #0a0a0a;
+            padding: 25px;
+            height: 100%;
+            border-left: 3px solid var(--accent);
+        }
+        .term-title {
+            color: var(--accent);
+            font-family: 'Oswald', sans-serif;
+            font-weight: 500;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #222;
+            padding-bottom: 10px;
+        }
+        .term-list li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 15px;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        .term-list li::before {
+            content: "-";
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+        }
+
         /* Other Utils */
         .section-padding { padding: 80px 0; }
         .section-line { width: 50px; height: 2px; background: var(--accent); margin: 20px auto 40px auto; }
         .valet-bar { background: var(--accent); color: #000; padding: 10px; text-align: center; font-weight: 600; font-size: 0.9rem; }
         
-        /* Accordion */
-        .accordion-item { background: transparent; border: 1px solid #222; margin-bottom: 10px; }
-        .accordion-button { background: #0a0a0a; color: #fff; box-shadow: none !important; }
-        .accordion-button:not(.collapsed) { color: var(--accent); background: #111; }
-        .accordion-body { background: #050505; color: #aaa; border-top: 1px solid #222; font-size: 0.9rem; }
-        .accordion-button::after { filter: invert(1); }
-
         /* Floating Button */
         .floating-group { position: fixed; bottom: 30px; right: 30px; z-index: 999; display: flex; flex-direction: column; gap: 15px; }
         .float-btn { width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; color: #fff; box-shadow: 0 5px 15px rgba(0,0,0,0.5); text-decoration: none; }
 
         @media (max-width: 768px) {
-            /* [FIXED] Hero Text Brightness on Mobile */
             .hero-title { 
                 font-size: 2.8rem;
-                background: none !important; /* ยกเลิกไล่สี */
-                -webkit-text-fill-color: #ffffff !important; /* บังคับขาวล้วน */
+                background: none !important;
+                -webkit-text-fill-color: #ffffff !important;
                 color: #ffffff !important;
-                text-shadow: 0 0 15px rgba(255,255,255,0.6), 0 5px 10px rgba(0,0,0,0.8); /* เพิ่มเงาขาวเรืองแสง */
+                text-shadow: 0 0 15px rgba(255,255,255,0.6), 0 5px 10px rgba(0,0,0,0.8);
             }
             .section-padding { padding: 60px 0; }
             #mainLogo { max-height: 40px !important; }
@@ -266,7 +287,7 @@
         <div class="container hero-content">
             <p class="text-gold mb-2" style="letter-spacing: 3px; font-weight: 500;">PREMIUM CAR CARE CHONBURI</p>
             <h1 class="hero-title">YO-RU DETAILING</h1>
-            <p class="mb-5 text-white font-serif" style="font-size: 1.1rem; opacity: 0.9;">
+            <p class="mb-5 text-white font-serif" style="font-size: 1.1rem; opacity: 0.8;">
                 "Crafted with care, designed for perfection."<br>
                 บริการดูแลรถยนต์แบบ Private Studio ที่ใส่ใจในทุกรายละเอียด
             </p>
@@ -285,7 +306,7 @@
             <div class="text-center mb-5">
                 <h2 class="section-title">WHY CHOOSE US?</h2>
                 <div class="section-line"></div>
-                <p class="text-muted">3 สิ่งที่ทำให้ YO-RU แตกต่าง</p>
+                <p class="text-muted">3 สิ่งที่ทำให้ YO-RU แตกต่างจากคาร์แคร์ทั่วไป</p>
             </div>
             
             <div class="row g-4 mobile-scroll-row">
@@ -294,7 +315,7 @@
                         <div class="feature-icon"><i class="fas fa-moon"></i></div>
                         <div>
                             <h4 class="mb-2" style="font-size: 1.1rem;">NIGHT SERVICE</h4>
-                            <p class="text-muted small mb-0">ตอบโจทย์คนทำงาน เลิกงานดึกแค่ไหนก็ดูแลรถได้ (ถึง 21.00 น.+)</p>
+                            <p class="text-muted small mb-0">ตอบโจทย์คนทำงาน เลิกงานแล้วก็ดูแลรถได้ ร้านเปิดถึง 21.00 น. (และดึกกว่านั้นตามนัดหมาย) เพื่อให้คุณจัดสรรเวลาได้ง่ายที่สุด</p>
                         </div>
                     </div>
                 </div>
@@ -303,7 +324,7 @@
                         <div class="feature-icon"><i class="fas fa-user-shield"></i></div>
                         <div>
                             <h4 class="mb-2" style="font-size: 1.1rem;">PRIVATE STUDIO</h4>
-                            <p class="text-muted small mb-0">รับรถจำกัดจำนวนต่อวัน เพื่อโฟกัสรถของคุณคันเดียวให้ดีที่สุด</p>
+                            <p class="text-muted small mb-0">เราจำกัดจำนวนรถต่อวัน (By Appointment Only) เพื่อให้ทีมงานโฟกัสกับรถของคุณได้เต็มที่ทุกตารางนิ้ว เหมือนรถของเราเอง</p>
                         </div>
                     </div>
                 </div>
@@ -312,7 +333,7 @@
                         <div class="feature-icon"><i class="fas fa-flask"></i></div>
                         <div>
                             <h4 class="mb-2" style="font-size: 1.1rem;">SELECTED PRODUCTS</h4>
-                            <p class="text-muted small mb-0">ใช้น้ำยาแบรนด์ระดับโลก (CarPro, Gyeon) ทุกขั้นตอน</p>
+                            <p class="text-muted small mb-0">คัดสรรเฉพาะเคมีภัณฑ์เกรดพรีเมียมระดับโลก (CarPro, Gyeon, 3D) และอุปกรณ์มาตรฐาน Detailing เพื่อผลลัพธ์ที่คุ้มค่าและปลอดภัยสูงสุด</p>
                         </div>
                     </div>
                 </div>
@@ -326,7 +347,7 @@
             <div class="text-center mb-5">
                 <h2 class="section-title">THE YO-RU STANDARD</h2>
                 <div class="section-line"></div>
-                <p class="text-muted">มาตรฐานการดูแล 4 ขั้นตอน</p>
+                <p class="text-muted">มาตรฐานการดูแลที่ใส่ใจในทุกขั้นตอน (Our Detailing Journey)</p>
             </div>
 
             <div class="row g-4 mobile-scroll-row">
@@ -336,7 +357,7 @@
                         <div class="process-icon"><i class="fas fa-search"></i></div>
                         <div>
                             <h5 class="mb-2 text-white">INSPECTION</h5>
-                            <p class="text-muted small mb-0">ตรวจสภาพผิวสีละเอียดร่วมกับลูกค้า</p>
+                            <p class="text-muted small mb-0">เริ่มต้นด้วยการตรวจสภาพผิวสีและภายในอย่างละเอียด ร่วมกับลูกค้า เพื่อประเมินปัญหาและเลือกโปรแกรมที่เหมาะสมที่สุดก่อนเริ่มงาน</p>
                         </div>
                     </div>
                 </div>
@@ -346,7 +367,7 @@
                         <div class="process-icon"><i class="fas fa-soap"></i></div>
                         <div>
                             <h5 class="mb-2 text-white">DECONTAMINATION</h5>
-                            <p class="text-muted small mb-0">ล้างลึก ขจัดคราบฝังแน่น ดินน้ำมัน</p>
+                            <p class="text-muted small mb-0">ล้างทำความสะอาดลึกด้วยระบบ Touchless และขจัดคราบฝังแน่น (Iron/Tar) ด้วยเคมีเฉพาะทาง เตรียมผิวให้บริสุทธิ์ที่สุดก่อนการฟื้นฟู</p>
                         </div>
                     </div>
                 </div>
@@ -356,7 +377,7 @@
                         <div class="process-icon"><i class="fas fa-magic"></i></div>
                         <div>
                             <h5 class="mb-2 text-white">CORRECTION</h5>
-                            <p class="text-muted small mb-0">ขัดฟื้นฟูผิว ลบรอยขนแมวให้เงาฉ่ำ</p>
+                            <p class="text-muted small mb-0">ขั้นตอนสำคัญในการขัดลบรอยขนแมวและฟื้นฟูความเงางาม (Gloss) ให้กลับมาเหมือนรถป้ายแดง ด้วยเครื่องมือและเทคนิคชั้นสูง</p>
                         </div>
                     </div>
                 </div>
@@ -366,7 +387,7 @@
                         <div class="process-icon"><i class="fas fa-shield-alt"></i></div>
                         <div>
                             <h5 class="mb-2 text-white">PROTECTION</h5>
-                            <p class="text-muted small mb-0">ล็อคความเงาด้วย Wax หรือ Coating</p>
+                            <p class="text-muted small mb-0">ปกป้องผิวสีด้วย Wax หรือ Coating ระดับพรีเมียม (Gyeon/CarPro) เพื่อล็อคความเงาให้อยู่กับรถคุณไปอีกยาวนาน</p>
                         </div>
                     </div>
                 </div>
@@ -394,7 +415,8 @@
             <h2 class="section-title">OUR SERVICES</h2>
             <div class="section-line"></div>
             <p class="text-muted mb-5" style="max-width: 700px; margin-left: auto; margin-right: auto;">
-                บริการดูแลรถยนต์ครบวงจร ด้วยมาตรฐานสูงสุด
+                บริการดูแลรถยนต์ครบวงจร ตั้งแต่การล้างทำความสะอาดพื้นฐาน (Premium Wash) การฟื้นฟูสภาพสี (Correction) 
+                ไปจนถึงการเคลือบแก้วเซรามิก (Ceramic Coating) ด้วยมาตรฐานสูงสุด
             </p>
 
             <div class="row g-4 mobile-scroll-row justify-content-center mb-5">
@@ -402,7 +424,7 @@
                     <div class="service-card">
                         <div>
                             <h4 class="text-white mb-3">PREMIUM WASH</h4>
-                            <p class="text-muted small">ล้างสี ดูดฝุ่น Detailing ภายนอก/ภายใน ด้วยระบบ Touchless</p>
+                            <p class="text-muted small">บริการล้างสี ดูดฝุ่น และ Detailing ภายนอก/ภายใน ด้วยระบบ Touchless และเคมีภัณฑ์เกรดพรีเมียม เพื่อลดการเกิดรอย</p>
                         </div>
                         <div><span class="start-price">Start 300 THB</span></div>
                     </div>
@@ -411,7 +433,7 @@
                     <div class="service-card">
                         <div>
                             <h4 class="text-white mb-3">CERAMIC COATING</h4>
-                            <p class="text-muted small">ขัดฟื้นฟูสภาพสีเต็มระบบ และเคลือบเซรามิกปกป้องยาวนาน</p>
+                            <p class="text-muted small">บริการขัดฟื้นฟูสภาพสีเต็มระบบ (Full Correction) และเคลือบเซรามิกแท้ เพื่อการปกป้องที่ยาวนาน 1-5 ปี</p>
                         </div>
                         <div><span class="start-price">Start 2,500 THB</span></div>
                     </div>
@@ -420,7 +442,7 @@
                     <div class="service-card">
                         <div>
                             <h4 class="text-white mb-3">RESTORATION</h4>
-                            <p class="text-muted small">ฟื้นฟูภายใน ซักเบาะ ซักพรม อบโอโซน และขัดไฟหน้า</p>
+                            <p class="text-muted small">บริการฟื้นฟูสภาพภายใน ซักเบาะ ซักพรม อบโอโซนฆ่าเชื้อ และขัดไฟหน้าเหลืองให้กลับมาใส</p>
                         </div>
                         <div><span class="start-price">Start 1,500 THB</span></div>
                     </div>
@@ -430,34 +452,59 @@
             <a href="price-list.html" target="_blank" class="btn-gold">
                 <i class="fas fa-list-alt me-2"></i> VIEW FULL PRICE LIST
             </a>
-            <p class="text-muted small mt-3">คลิกเพื่อดูราคาแบบละเอียด</p>
+            <p class="text-muted small mt-3">คลิกเพื่อดูรายการราคาแบบละเอียด</p>
         </div>
     </section>
 
-    <section class="section-padding" style="background: #050505;">
-        <div class="container" style="max-width: 800px;">
+    <section id="info" class="section-padding" style="background: #050505;">
+        <div class="container">
             <div class="text-center mb-5">
-                <h2 class="section-title" style="font-size: 1.5rem;">FAQ & TERMS</h2>
+                <h2 class="section-title">TERMS & CONDITIONS</h2>
+                <div class="section-line"></div>
+                <p class="text-muted">เงื่อนไขการให้บริการ</p>
             </div>
-            
-            <div class="accordion" id="faqAccordion">
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">Q: ต้องจองคิวล่วงหน้าหรือไม่?</button>
-                    </h2>
-                    <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">แนะนำให้จองล่วงหน้าครับ เนื่องจากเรารับรถจำนวนจำกัดต่อวัน</div></div>
+
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="term-box">
+                        <h5 class="term-title">VALET SERVICE</h5>
+                        <ul class="term-list">
+                            <li><strong class="text-bright">ฟรี!</strong> ค่าบริการในพื้นที่ใกล้เคียง (ตามตกลง)</li>
+                            <li>รับ-ส่งรถตามจุดนัดหมายและเวลาที่ตกลงกันล่วงหน้าเท่านั้น</li>
+                            <li>พนักงานผ่านการอบรม ขับขี่ปลอดภัย และปฏิบัติตามกฎจราจร</li>
+                            <li>ไม่มีการทดลองสมรรถนะรถ หรือนำรถไปใช้งานอื่นนอกเส้นทาง</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#term1">เงื่อนไข: บริการรับ-ส่งรถ (Valet)</button>
-                    </h2>
-                    <div id="term1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            <ul>
-                                <li>ฟรีค่าบริการในพื้นที่ใกล้เคียง (ตามตกลง)</li>
-                                <li>รับ-ส่งตามจุดนัดหมายเท่านั้น พนักงานขับขี่ปลอดภัย</li>
-                            </ul>
-                        </div>
+                <div class="col-md-6">
+                    <div class="term-box">
+                        <h5 class="term-title">INSPECTION</h5>
+                        <ul class="term-list">
+                            <li>ตรวจสอบสภาพรถร่วมกัน <strong>"ก่อน"</strong> และ <strong>"หลัง"</strong> ให้บริการ</li>
+                            <li>ครอบคลุมรอยถลอกภายนอก, สภาพภายใน, ระดับน้ำมัน/แบตเตอรี่</li>
+                            <li>เพื่อความโปร่งใสและสบายใจของทั้งสองฝ่าย</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="term-box">
+                        <h5 class="term-title">LIABILITY</h5>
+                        <ul class="term-list">
+                            <li>กรณีเกิดอุบัติเหตุ: ยึดตามความคุ้มครองของ <strong>ประกันภัยรถยนต์ลูกค้า</strong> เป็นหลัก</li>
+                            <li>ทางร้านไม่รับผิดชอบส่วนเกิน หรือความเสียหายที่อยู่นอกเหนือความคุ้มครอง</li>
+                            <li><strong>ทรัพย์สินมีค่า:</strong> ทางร้านไม่รับผิดชอบทรัพย์สินภายในรถ โปรดนำออกก่อนรับบริการ</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="term-box">
+                        <h5 class="term-title">EXCLUSIONS</h5>
+                        <ul class="term-list">
+                            <li><strong>แบตเตอรี่/สตาร์ทไม่ติด:</strong> ไม่รับผิดชอบค่าใช้จ่าย แต่ยินดีช่วยประสานงาน</li>
+                            <li><strong>ระบบไฟฟ้า/เซนเซอร์:</strong> ไม่รับผิดชอบความเสียหายจากความเสื่อมสภาพเดิม</li>
+                             <li><strong>เครื่องยนต์/เกียร์:</strong> ไม่รับผิดชอบความเสียหายจากการใช้งานหรือปัญหาเทคนิคเดิม</li>
+                            <li>การใช้บริการถือว่าลูกค้ารับทราบและยอมรับเงื่อนไขทั้งหมด</li>
+                        </ul>
                     </div>
                 </div>
             </div>
