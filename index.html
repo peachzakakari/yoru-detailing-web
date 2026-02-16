@@ -569,7 +569,62 @@
     #backupLogo span:first-child { font-size: 1.4rem !important; }
     #backupLogo span:last-child { font-size: 0.6rem !important; letter-spacing: 2px !important; }
 }
-            
+            /* CSS Code */
+.why-choose-us {
+    background-color: #111; /* พื้นหลังสีดำเข้มเกือบสนิท */
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.section-title {
+    color: #fff;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.features-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    background: #1a1a1a;
+    padding: 30px;
+    border-radius: 10px;
+    flex: 1 1 300px; /* ยืดหดได้ ขั้นต่ำ 300px */
+    max-width: 350px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    border-top: 3px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    border-top: 3px solid #FFD700; /* เส้นสีทองเมื่อเอาเมาส์ชี้ */
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.feature-card h3 {
+    color: #FFD700;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.feature-card p {
+    color: #ccc;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
             </style>
     <meta name="description" content="YO-RU Detailing บริการล้างรถและเคลือบแก้วพรีเมียมในชลบุรี ดูแลรถคุณด้วยผลิตภัณฑ์ชั้นนำ CarPro, Gyeon, 3D">
     <meta name="keywords" content="ล้างรถชลบุรี, เคลือบแก้วชลบุรี, Detailing ชลบุรี, ล้างมอเตอร์ไซค์">
@@ -613,8 +668,9 @@
     <header id="home" class="hero-section">
         <div class="container">
             <h1 class="hero-title">YO-RU DETAILING</h1>
+            <p class="mb-5 text-white fw-light" style="font-size: 1.1rem; opacity: 0.8;">"เลิกงานปุ๊บ ส่งรถปั๊บ... ตื่นเช้ามาพบความเงาที่เหนือระดับ"</p>
             <p class="hero-subtitle">CRAFTED WITH CARE, ONE CAR AT A TIME.</p>
-            <p class="mb-5 text-white fw-light" style="font-size: 1.1rem; opacity: 0.8;">"หลังเลิกงาน... ให้เราดูแลรถของคุณ"</p>
+            <p class="mb-5 text-white fw-light" style="font-size: 1.1rem; opacity: 0.8;">"เพราะรถคุณต้องการการดูแล แม้ในเวลาที่คุณพักผ่อน"</p>
             
             <a href="tel:0872178899" class="btn-fierce">
                 BOOK NOW
@@ -681,7 +737,31 @@
             </div>
         </div>
     </div>
+    <section class="why-choose-us">
+    <div class="container">
+        <h2 class="section-title">WHY YO-RU?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🌙</div>
+                <h3>Night Service</h3>
+                <p>ตอบโจทย์คนทำงาน เลิกงานแล้วก็ดูแลรถได้ ร้านเปิดถึง 21.00 น. (และดึกกว่านั้นตามนัดหมาย)</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🚗</div>
+                <h3>Free Valet Pickup</h3>
+                <p>ไม่ต้องเสียเวลาขับมาเอง เรามีบริการรับ-ส่งรถฟรี! ในเขตพื้นที่ใกล้เคียง</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">✨</div>
+                <h3>Private Detailing</h3>
+                <p>จำกัดจำนวนรถต่อวัน เพื่อให้เราโฟกัสกับรถของคุณได้เต็มที่ เหมือนรถของเราเอง</p>
+            </div>
+        </div>
+    </div>
+</section>
 
+
+    
     <section id="packages" class="section-padding reveal">
         <div class="container">
             <div class="text-center mb-5">
@@ -1162,6 +1242,7 @@
     </script>
 </body>
 </html>
+
 
 
 
