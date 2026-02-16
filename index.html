@@ -14,11 +14,9 @@
     
     <style>
         :root {
-            /* Luxury Palette */
             --bg-main: #050505;       
             --bg-secondary: #0a0a0a;  
-            --accent: #D4AF37;        /* Metallic Gold */
-            --accent-glow: rgba(212, 175, 55, 0.3);
+            --accent: #D4AF37;        
             --text-main: #ffffff;     
             --text-muted: #a0a0a0;      
             --border-color: #222222;  
@@ -33,7 +31,6 @@
             overflow-x: hidden;
         }
 
-        /* Typography */
         h1, h2, h3, h4, h5 {
             font-family: 'Oswald', sans-serif;
             color: var(--text-main);
@@ -42,55 +39,28 @@
             letter-spacing: 2px;
         }
 
-        .font-serif { font-family: 'Playfair Display', serif; font-style: italic; }
         .text-gold { color: var(--accent) !important; }
         .text-muted { color: var(--text-muted) !important; }
-        .text-bright { color: #fff; font-weight: 600; text-shadow: 0 0 5px rgba(255,255,255,0.5); }
 
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 8px; height: 8px; }
-        ::-webkit-scrollbar-track { background: #000; }
-        ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
-
-        /* Navbar Styling */
+        /* Navbar */
         .navbar {
-            background: rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
+            background: rgba(0, 0, 0, 0.90);
+            backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(255,255,255,0.05);
             padding: 15px 0;
             transition: all 0.4s ease;
         }
-        
         .nav-link {
             color: #ccc !important;
             font-family: 'Oswald', sans-serif;
             font-size: 0.9rem; 
             text-transform: uppercase;
-            font-weight: 500; 
             letter-spacing: 2px;
             padding: 8px 15px !important; 
-            transition: all 0.3s ease;
-            position: relative;
         }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 1px;
-            bottom: 5px;
-            left: 50%;
-            background-color: var(--accent);
-            transition: all 0.3s;
-            transform: translateX(-50%);
-        }
-
-        .nav-link:hover::after, .nav-link.active::after { width: 80%; }
         .nav-link:hover, .nav-link.active { color: var(--accent) !important; }
 
-        /* Hero Section */
+        /* Hero */
         .hero-section {
             height: 100vh;
             display: flex;
@@ -99,26 +69,14 @@
             text-align: center;
             position: relative;
             overflow: hidden;
-        }
-
-        .hero-bg-img {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
             background: url('images/bg.png') center/cover no-repeat;
-            z-index: -3;
         }
-
         .hero-overlay {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
             background: linear-gradient(to bottom, rgba(0,0,0,0.5), #050505);
-            z-index: -1;
         }
-        
-        .hero-content { z-index: 1; padding: 20px; }
-        
         .hero-title {
-            font-size: 4.5rem; 
+            font-size: 4rem; 
             text-shadow: 0 10px 30px rgba(0,0,0,0.8);
             margin-bottom: 10px;
             letter-spacing: 5px;
@@ -126,192 +84,136 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-
-        /* Gold Button */
         .btn-gold {
             background: transparent;
             color: var(--accent);
             border: 1px solid var(--accent);
-            padding: 15px 40px;
+            padding: 12px 35px;
             font-family: 'Oswald', sans-serif;
-            font-weight: 500;
-            letter-spacing: 3px;
-            text-transform: uppercase;
+            letter-spacing: 2px;
             text-decoration: none;
-            transition: all 0.4s;
-            position: relative;
-            overflow: hidden;
+            transition: 0.4s;
             display: inline-block;
         }
-        
         .btn-gold:hover {
             background: var(--accent);
             color: #000;
-            box-shadow: 0 0 20px var(--accent-glow);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
         }
 
-        /* Feature Cards */
+        /* --- [UPDATED] Horizontal Scroll Logic --- */
+        /* บังคับให้แถวที่มี class นี้ เลื่อนแนวนอนในมือถือ */
+        @media (max-width: 991px) {
+            .mobile-scroll-row {
+                display: flex !important;
+                flex-wrap: nowrap !important;
+                overflow-x: auto;
+                gap: 15px;
+                padding-bottom: 25px; /* เผื่อที่ให้เงา */
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+                margin-left: -10px; margin-right: -10px; /* ขยายให้เต็มจอ */
+                padding-left: 20px; padding-right: 20px; /* เว้นขอบซ้ายขวา */
+            }
+            /* ซ่อน Scrollbar */
+            .mobile-scroll-row::-webkit-scrollbar { display: none; }
+            
+            .mobile-scroll-row > div {
+                flex: 0 0 85%; /* กว้าง 85% ของจอ เพื่อให้เห็นการ์ดถัดไป */
+                max-width: 85%;
+                scroll-snap-align: center;
+            }
+        }
+
+        /* Feature Card (Why Us) */
         .feature-card {
-            background: var(--bg-card);
-            padding: 40px 30px;
+            background: #0f0f0f;
+            padding: 25px;
             height: 100%;
-            border: 1px solid var(--border-color);
-            transition: 0.4s;
+            border: 1px solid #222;
+            display: flex;
+            align-items: flex-start; /* จัดชิดบน */
+            gap: 15px;
+            border-radius: 8px;
+        }
+        .feature-icon { 
+            font-size: 1.8rem; /* ลดขนาดลงนิดนึง */
+            color: var(--accent); 
+            min-width: 40px; 
             text-align: center;
+            margin-top: 3px;
         }
-        .feature-card:hover {
-            border-color: var(--accent);
-            transform: translateY(-10px);
-        }
-        .feature-icon { font-size: 2.5rem; color: var(--accent); margin-bottom: 25px; }
 
-        /* Process Section */
+        /* Process Step (Standard) */
         .process-step {
             position: relative;
-            padding: 50px 30px;
+            padding: 25px;
             background: linear-gradient(145deg, #111, #080808);
             border: 1px solid #222;
             height: 100%;
-            transition: all 0.4s ease;
-            overflow: hidden;
-        }
-        .process-step::after {
-            content: ''; position: absolute; bottom: 0; left: 0; width: 0%; height: 2px;
-            background-color: var(--accent); transition: width 0.5s ease;
-        }
-        .process-step:hover { transform: translateY(-5px); border-color: #444; }
-        .process-step:hover::after { width: 100%; }
-        
-        .step-number-bg {
-            position: absolute; top: -15px; right: 10px;
-            font-family: 'Oswald', sans-serif; font-size: 6rem;
-            color: rgba(255, 255, 255, 0.02);
-            line-height: 1; pointer-events: none; transition: 0.4s;
-        }
-        .process-step:hover .step-number-bg { color: rgba(212, 175, 55, 0.08); transform: scale(1.1); }
-
-        /* [NEW] Service Card Style */
-        .service-card {
-            border: 1px solid var(--accent); /* กรอบสีทองเหมือนกันทุกอัน */
-            padding: 40px 30px;
-            height: 100%;
-            background-color: rgba(10, 10, 10, 0.6);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-            overflow: hidden;
-        }
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at center, rgba(212, 175, 55, 0.1), transparent 70%);
-            opacity: 0;
-            transition: 0.4s;
-        }
-        .service-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 0 25px rgba(212, 175, 55, 0.2);
-            background-color: rgba(20, 20, 20, 0.9);
-            border-color: #fff; /* เปลี่ยนสีกรอบให้สว่างขึ้นเมื่อ Hover */
-        }
-        .service-card:hover::before { opacity: 1; }
-        .service-card:active { transform: scale(0.98); }
-
-        /* [NEW] Client Stories Horizontal Scroll */
-        .testimonial-scroll-container {
+            border-radius: 8px;
             display: flex;
-            overflow-x: auto;
-            gap: 20px;
-            padding: 20px 5px;
-            scroll-snap-type: x mandatory;
-            -webkit-overflow-scrolling: touch;
+            align-items: flex-start;
+            gap: 15px;
         }
-        .testimonial-card {
-            min-width: 300px;
-            flex: 0 0 300px; /* Fix Width for slider */
-            background: #111;
-            padding: 30px;
-            border-left: 3px solid var(--accent);
-            scroll-snap-align: center;
-            font-style: italic;
-            transition: 0.3s;
-        }
-        @media (min-width: 768px) {
-            .testimonial-card { min-width: 400px; flex: 0 0 400px; }
-            .testimonial-scroll-container { justify-content: center; } /* Center on Desktop if few items */
-        }
-        .testimonial-card:hover { background: #1a1a1a; }
-        .quote-icon { font-size: 1.5rem; color: #333; margin-bottom: 15px; }
-
-        /* [NEW] FAQ & Terms Accordion */
-        .accordion-item {
-            background-color: transparent;
-            border: 1px solid #222;
-            margin-bottom: 10px;
-            border-radius: 4px;
-        }
-        .accordion-button {
-            background-color: #0a0a0a;
-            color: #fff;
-            font-family: 'Kanit', sans-serif;
-            font-size: 1rem;
-            padding: 15px 20px;
-            box-shadow: none !important;
-        }
-        .accordion-button:not(.collapsed) {
+        .process-icon {
+            font-size: 1.6rem; 
             color: var(--accent);
-            background-color: #111;
-            box-shadow: inset 0 -1px 0 rgba(0,0,0,0.5);
+            min-width: 35px;
+            text-align: center;
+            margin-top: 2px;
         }
-        .accordion-button::after { 
-            filter: invert(1); 
-            background-size: 0.8rem;
-        }
-        .accordion-body { 
-            background-color: #050505;
-            color: #aaa; 
-            font-weight: 300; 
-            font-size: 0.9rem;
-            padding: 20px;
-            border-top: 1px solid #222;
+        .step-number-bg {
+            position: absolute; top: -5px; right: 10px;
+            font-family: 'Oswald', sans-serif; font-size: 3rem;
+            color: rgba(255, 255, 255, 0.03);
+            pointer-events: none;
         }
 
-        /* Section Utils */
-        .section-padding { padding: 100px 0; }
-        .section-line {
-            width: 50px; height: 2px; background: var(--accent);
-            margin: 20px auto 40px auto;
+        /* Service Card (Our Services) */
+        .service-card {
+            border: 1px solid var(--accent); 
+            padding: 30px 25px;
+            height: 100%;
+            background-color: rgba(15, 15, 15, 0.6);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-radius: 0; /* มุมคมดูแพง */
+            min-height: 220px;
         }
-        .valet-bar {
-            background: var(--accent); color: #000;
-            padding: 10px; text-align: center;
-            font-weight: 600; font-size: 0.9rem; letter-spacing: 1px;
-            text-transform: uppercase;
+        .start-price {
+            display: inline-block;
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--accent);
+            padding: 4px 12px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            font-size: 0.8rem;
+            margin-top: 15px;
+            letter-spacing: 1px;
         }
 
-        /* Animations */
-        .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s; }
-        .reveal.active { opacity: 1; transform: translateY(0); }
-
-        /* Floating Buttons */
-        .floating-group {
-            position: fixed; bottom: 30px; right: 30px; z-index: 999;
-            display: flex; flex-direction: column; gap: 15px;
-        }
-        .float-btn {
-            width: 50px; height: 50px; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1.4rem; color: white; transition: 0.3s;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.5); text-decoration: none;
-        }
-        .float-btn:hover { transform: scale(1.1); }
+        /* Other Utils */
+        .section-padding { padding: 80px 0; }
+        .section-line { width: 50px; height: 2px; background: var(--accent); margin: 20px auto 40px auto; }
+        .valet-bar { background: var(--accent); color: #000; padding: 10px; text-align: center; font-weight: 600; font-size: 0.9rem; }
         
+        /* Accordion */
+        .accordion-item { background: transparent; border: 1px solid #222; margin-bottom: 10px; }
+        .accordion-button { background: #0a0a0a; color: #fff; box-shadow: none !important; }
+        .accordion-button:not(.collapsed) { color: var(--accent); background: #111; }
+        .accordion-body { background: #050505; color: #aaa; border-top: 1px solid #222; font-size: 0.9rem; }
+        .accordion-button::after { filter: invert(1); }
+
+        /* Floating Button */
+        .floating-group { position: fixed; bottom: 30px; right: 30px; z-index: 999; display: flex; flex-direction: column; gap: 15px; }
+        .float-btn { width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; color: #fff; box-shadow: 0 5px 15px rgba(0,0,0,0.5); text-decoration: none; }
+
         @media (max-width: 768px) {
-            .hero-title { font-size: 2.5rem; }
+            .hero-title { font-size: 2.8rem; }
             .section-padding { padding: 60px 0; }
             #mainLogo { max-height: 40px !important; }
             .navbar { padding: 10px 0; }
-            .testimonial-scroll-container { justify-content: flex-start; } /* Left align for scroll on mobile */
         }
     </style>
 </head>
@@ -334,6 +236,7 @@
 
             <div class="collapse navbar-collapse justify-content-end mt-3 mt-lg-0" id="navbarNav">
                 <ul class="navbar-nav align-items-center">
+                    <li class="nav-item"><a class="nav-link scroll-link" href="#whyus">Why Us</a></li>
                     <li class="nav-item"><a class="nav-link scroll-link" href="#process">Process</a></li>
                     <li class="nav-item"><a class="nav-link scroll-link" href="#packages">Services</a></li>
                     <li class="nav-item"><a class="nav-link scroll-link" href="#contact">Contact</a></li>
@@ -350,101 +253,116 @@
     </nav>
 
     <header id="home" class="hero-section">
-        <div class="hero-bg-img"></div>
         <div class="hero-overlay"></div>
         <div class="container hero-content">
             <p class="text-gold mb-2" style="letter-spacing: 3px; font-weight: 500;">PREMIUM CAR CARE CHONBURI</p>
             <h1 class="hero-title">YO-RU DETAILING</h1>
-            <p class="mb-5 text-white font-serif" style="font-size: 1.25rem; opacity: 0.9;">
+            <p class="mb-5 text-white font-serif" style="font-size: 1.1rem; opacity: 0.8;">
                 "Crafted with care, designed for perfection."<br>
-                <span style="font-size: 0.9rem; font-family: 'Kanit'; opacity: 0.7;">บริการดูแลรถยนต์แบบ Private Studio ที่ใส่ใจในทุกรายละเอียด</span>
+                บริการดูแลรถยนต์แบบ Private Studio ที่ใส่ใจในทุกรายละเอียด
             </p>
-            <a href="price-list.html" target="_blank" class="btn-gold">VIEW FULL MENU & PRICES</a>
+            <a href="price-list.html" target="_blank" class="btn-gold">VIEW FULL MENU</a>
         </div>
     </header>
     
     <div class="valet-bar">
         <div class="container">
-            <i class="fas fa-car-side me-2"></i> EXCLUSIVE: ฟรีบริการรับ-ส่งรถ (Valet Service) ในเขตพื้นที่ใกล้เคียง
+            <i class="fas fa-car-side me-2"></i> EXCLUSIVE: ฟรีบริการรับ-ส่งรถ (Valet Service)
         </div>
     </div>
 
-    <section class="section-padding" style="background-color: #080808;">
+    <section id="whyus" class="section-padding" style="background-color: #080808;">
         <div class="container">
             <div class="text-center mb-5">
                 <h2 class="section-title">WHY CHOOSE US?</h2>
                 <div class="section-line"></div>
-                <p class="text-muted">3 สิ่งที่ทำให้ YO-RU แตกต่างจากคาร์แคร์ทั่วไป</p>
+                <p class="text-muted">3 สิ่งที่ทำให้ YO-RU แตกต่าง</p>
             </div>
             
-            <div class="row g-4 justify-content-center">
-                <div class="col-md-4">
+            <div class="row g-4 mobile-scroll-row justify-content-center">
+                <div class="col-lg-4">
                     <div class="feature-card">
-                        <i class="fas fa-moon feature-icon"></i>
-                        <h4>NIGHT SERVICE</h4>
-                        <p class="text-muted small">ตอบโจทย์ไลฟ์สไตล์คนทำงาน เปิดบริการถึง 21.00 น. หรือดึกกว่าตามนัดหมาย</p>
+                        <div class="feature-icon"><i class="fas fa-moon"></i></div>
+                        <div>
+                            <h4 class="mb-2" style="font-size: 1.1rem;">NIGHT SERVICE</h4>
+                            <p class="text-muted small mb-0">ตอบโจทย์คนทำงาน เลิกงานดึกแค่ไหนก็ดูแลรถได้ (ถึง 21.00 น.+)</p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-lg-4">
                     <div class="feature-card">
-                        <i class="fas fa-user-shield feature-icon"></i>
-                        <h4>PRIVATE STUDIO</h4>
-                        <p class="text-muted small">จำกัดจำนวนรถต่อวัน (By Appointment Only) เพื่อโฟกัสกับรถของคุณให้ดีที่สุด</p>
+                        <div class="feature-icon"><i class="fas fa-user-shield"></i></div>
+                        <div>
+                            <h4 class="mb-2" style="font-size: 1.1rem;">PRIVATE STUDIO</h4>
+                            <p class="text-muted small mb-0">รับรถจำกัดต่อวัน เพื่อโฟกัสรถของคุณคันเดียวให้ดีที่สุด</p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-lg-4">
                     <div class="feature-card">
-                        <i class="fas fa-flask feature-icon"></i>
-                        <h4>SELECTED PRODUCTS</h4>
-                        <p class="text-muted small">คัดสรรเฉพาะเคมีภัณฑ์เกรดพรีเมียมระดับโลก (CarPro, Gyeon, 3D) เพื่อผลลัพธ์ที่เหนือกว่า</p>
+                        <div class="feature-icon"><i class="fas fa-flask"></i></div>
+                        <div>
+                            <h4 class="mb-2" style="font-size: 1.1rem;">SELECTED PRODUCTS</h4>
+                            <p class="text-muted small mb-0">ใช้น้ำยาแบรนด์ระดับโลก (CarPro, Gyeon) ทุกขั้นตอน</p>
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="text-center text-muted small mt-2 d-lg-none"><i class="fas fa-arrows-alt-h me-2"></i>เลื่อนเพื่อดูเพิ่มเติม</div>
         </div>
     </section>
 
-    <section id="process" class="section-padding reveal" style="background-color: #020202;">
+    <section id="process" class="section-padding" style="background-color: #020202;">
         <div class="container">
             <div class="text-center mb-5">
                 <h2 class="section-title">THE YO-RU STANDARD</h2>
                 <div class="section-line"></div>
-                <p class="text-muted">มาตรฐานการดูแลที่ใส่ใจในทุกขั้นตอน (Our Detailing Journey)</p>
+                <p class="text-muted">มาตรฐานการดูแล 4 ขั้นตอน</p>
             </div>
 
-            <div class="row g-4">
-                <div class="col-lg-3 col-md-6">
+            <div class="row g-4 mobile-scroll-row">
+                <div class="col-lg-6">
                     <div class="process-step">
                         <div class="step-number-bg">01</div>
-                        <div class="text-gold fs-2 mb-3"><i class="fas fa-search"></i></div>
-                        <h5 class="mb-3">INSPECTION</h5>
-                        <p class="text-muted small">ตรวจสภาพผิวสีอย่างละเอียดร่วมกับลูกค้า เพื่อประเมินปัญหาและเลือกโปรแกรมที่ใช่</p>
+                        <div class="process-icon"><i class="fas fa-search"></i></div>
+                        <div>
+                            <h5 class="mb-2 text-white">INSPECTION</h5>
+                            <p class="text-muted small mb-0">ตรวจสภาพผิวสีละเอียดร่วมกับลูกค้า</p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-6">
                     <div class="process-step">
                         <div class="step-number-bg">02</div>
-                        <div class="text-gold fs-2 mb-3"><i class="fas fa-soap"></i></div>
-                        <h5 class="mb-3">DECONTAMINATION</h5>
-                        <p class="text-muted small">ล้างทำความสะอาดลึก (Deep Clean) ขจัดคราบฝังแน่น ดินน้ำมัน ยางมะตอย</p>
+                        <div class="process-icon"><i class="fas fa-soap"></i></div>
+                        <div>
+                            <h5 class="mb-2 text-white">DECONTAMINATION</h5>
+                            <p class="text-muted small mb-0">ล้างลึก ขจัดคราบฝังแน่น ดินน้ำมัน</p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-6">
                     <div class="process-step">
                         <div class="step-number-bg">03</div>
-                        <div class="text-gold fs-2 mb-3"><i class="fas fa-magic"></i></div>
-                        <h5 class="mb-3">CORRECTION</h5>
-                        <p class="text-muted small">ขัดฟื้นฟูสภาพสี ลบรอยขนแมว (Polishing) ให้รถกลับมาเงาฉ่ำเหมือนใหม่</p>
+                        <div class="process-icon"><i class="fas fa-magic"></i></div>
+                        <div>
+                            <h5 class="mb-2 text-white">CORRECTION</h5>
+                            <p class="text-muted small mb-0">ขัดฟื้นฟูผิว ลบรอยขนแมวให้เงาฉ่ำ</p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-6">
                     <div class="process-step">
                         <div class="step-number-bg">04</div>
-                        <div class="text-gold fs-2 mb-3"><i class="fas fa-shield-alt"></i></div>
-                        <h5 class="mb-3">PROTECTION</h5>
-                        <p class="text-muted small">ปกป้องด้วย Wax หรือ Ceramic Coating เกรดพรีเมียม เพื่อล็อคความเงาให้ยาวนาน</p>
+                        <div class="process-icon"><i class="fas fa-shield-alt"></i></div>
+                        <div>
+                            <h5 class="mb-2 text-white">PROTECTION</h5>
+                            <p class="text-muted small mb-0">ล็อคความเงาด้วย Wax หรือ Coating</p>
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="text-center text-muted small mt-2 d-lg-none"><i class="fas fa-arrows-alt-h me-2"></i>เลื่อนเพื่อดูเพิ่มเติม</div>
         </div>
     </section>
 
@@ -452,42 +370,50 @@
         <div class="container text-center">
             <p class="text-muted small letter-spacing-2 mb-4">TRUSTED GLOBAL BRANDS WE USE</p>
             <div class="row justify-content-center align-items-center g-4">
-                <div class="col-4 col-md-2"><img src="images/logo-carpro.png" class="img-fluid" alt="CarPro" style="max-height: 50px; transition: 0.3s;"></div>
-                <div class="col-4 col-md-2"><img src="images/logo-gyeon.png" class="img-fluid" alt="Gyeon" style="max-height: 50px; transition: 0.3s;"></div>
-                <div class="col-4 col-md-2"><img src="images/logo-3d.png" class="img-fluid" alt="3D" style="max-height: 50px; transition: 0.3s;"></div>
-                <div class="col-4 col-md-2"><img src="images/logo-luminus.png" class="img-fluid" alt="Luminus" style="max-height: 50px; transition: 0.3s;"></div>
-                <div class="col-4 col-md-2"><img src="images/logo-glossbro.png" class="img-fluid" alt="Glossbro" style="max-height: 50px; transition: 0.3s;"></div>
-                <div class="col-4 col-md-2"><img src="images/max-shine-logo.png" class="img-fluid" alt="MaxShine" style="max-height: 50px; transition: 0.3s;"></div>
+                <div class="col-4 col-md-2"><img src="images/logo-carpro.png" class="img-fluid" alt="CarPro" style="max-height: 45px;"></div>
+                <div class="col-4 col-md-2"><img src="images/logo-gyeon.png" class="img-fluid" alt="Gyeon" style="max-height: 45px;"></div>
+                <div class="col-4 col-md-2"><img src="images/logo-3d.png" class="img-fluid" alt="3D" style="max-height: 45px;"></div>
+                <div class="col-4 col-md-2"><img src="images/logo-luminus.png" class="img-fluid" alt="Luminus" style="max-height: 45px;"></div>
+                <div class="col-4 col-md-2"><img src="images/logo-glossbro.png" class="img-fluid" alt="Glossbro" style="max-height: 45px;"></div>
+                <div class="col-4 col-md-2"><img src="images/max-shine-logo.png" class="img-fluid" alt="MaxShine" style="max-height: 45px;"></div>
             </div>
         </div>
     </div>
 
-    <section id="packages" class="section-padding reveal">
+    <section id="packages" class="section-padding">
         <div class="container text-center">
             <h2 class="section-title">OUR SERVICES</h2>
             <div class="section-line"></div>
             <p class="text-muted mb-5" style="max-width: 700px; margin-left: auto; margin-right: auto;">
-                เราให้บริการดูแลรถยนต์ครบวงจร ตั้งแต่การล้างทำความสะอาดพื้นฐาน (Premium Wash) การฟื้นฟูสภาพสี (Correction) 
-                ไปจนถึงการเคลือบแก้วเซรามิก (Ceramic Coating) ด้วยมาตรฐานสูงสุด
+                บริการดูแลรถยนต์ครบวงจร ด้วยมาตรฐานสูงสุด
             </p>
 
-            <div class="row g-4 justify-content-center mb-5">
+            <div class="row g-4 mobile-scroll-row justify-content-center mb-5">
                 <div class="col-md-4">
                     <div class="service-card">
-                        <h4 class="text-white mb-3">PREMIUM WASH</h4>
-                        <p class="text-muted small">บริการล้างสี ดูดฝุ่น และ Detailing ภายนอก/ภายใน ด้วยระบบ Touchless และเคมีภัณฑ์เกรดพรีเมียม</p>
+                        <div>
+                            <h4 class="text-white mb-3">PREMIUM WASH</h4>
+                            <p class="text-muted small">ล้างสี ดูดฝุ่น Detailing ภายนอก/ภายใน ด้วยระบบ Touchless</p>
+                        </div>
+                        <div><span class="start-price">Start 300 THB</span></div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="service-card">
-                        <h4 class="text-white mb-3">CERAMIC COATING</h4>
-                        <p class="text-muted small">บริการขัดฟื้นฟูสภาพสีเต็มระบบ และเคลือบเซรามิกเพื่อการปกป้องที่ยาวนาน 1-5 ปี</p>
+                        <div>
+                            <h4 class="text-white mb-3">CERAMIC COATING</h4>
+                            <p class="text-muted small">ขัดฟื้นฟูสภาพสีเต็มระบบ และเคลือบเซรามิกปกป้องยาวนาน</p>
+                        </div>
+                        <div><span class="start-price">Start 2,500 THB</span></div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="service-card">
-                        <h4 class="text-white mb-3">RESTORATION</h4>
-                        <p class="text-muted small">บริการฟื้นฟูสภาพภายใน ซักเบาะ ซักพรม อบโอโซน และขัดไฟหน้า</p>
+                        <div>
+                            <h4 class="text-white mb-3">RESTORATION</h4>
+                            <p class="text-muted small">ฟื้นฟูภายใน ซักเบาะ ซักพรม อบโอโซน และขัดไฟหน้า</p>
+                        </div>
+                        <div><span class="start-price">Start 1,500 THB</span></div>
                     </div>
                 </div>
             </div>
@@ -495,35 +421,7 @@
             <a href="price-list.html" target="_blank" class="btn-gold">
                 <i class="fas fa-list-alt me-2"></i> VIEW FULL PRICE LIST
             </a>
-            <p class="text-muted small mt-3">คลิกเพื่อดูรายการราคาแบบละเอียด (PDF/Print Friendly)</p>
-        </div>
-    </section>
-
-    <section class="section-padding" style="background: #080808;">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="section-title" style="font-size: 1.5rem;">CLIENT STORIES</h2>
-                <div class="section-line"></div>
-            </div>
-            
-            <div class="testimonial-scroll-container">
-                <div class="testimonial-card">
-                    <i class="fas fa-quote-left quote-icon"></i>
-                    <p class="text-muted small">"งานละเอียดมากครับ ใส่ใจทุกจุดจริงๆ รถผมเงากว่าตอนออกมาจากศูนย์อีก ประทับใจบริการรับส่งรถด้วยครับ สะดวกมาก"</p>
-                    <div class="mt-3 text-white font-serif">- K. Ake (Mercedes Benz C-Class)</div>
-                </div>
-                <div class="testimonial-card">
-                    <i class="fas fa-quote-left quote-icon"></i>
-                    <p class="text-muted small">"ชอบที่ร้านเป็น Private ครับ รู้สึกว่าเขาดูแลรถเราคันเดียวเต็มที่ ไม่ต้องรีบทำเหมือนคาร์แคร์ทั่วไป แนะนำเลยครับ"</p>
-                    <div class="mt-3 text-white font-serif">- K. Pond (Honda Civic)</div>
-                </div>
-                <div class="testimonial-card">
-                    <i class="fas fa-quote-left quote-icon"></i>
-                    <p class="text-muted small">"เอามอเตอร์ไซค์มาล้าง เก็บงานเนี๊ยบมาก ล้างโซ่สะอาดกริ๊บ น้ำยาที่ใช้คือของดีจริง คุ้มราคาครับ"</p>
-                    <div class="mt-3 text-white font-serif">- K. James (Ducati Panigale)</div>
-                </div>
-                </div>
-            <div class="text-center text-muted small mt-2 d-md-none"><i class="fas fa-arrows-alt-h me-2"></i>เลื่อนเพื่อดูเพิ่มเติม</div>
+            <p class="text-muted small mt-3">คลิกเพื่อดูราคาแบบละเอียด</p>
         </div>
     </section>
 
@@ -531,149 +429,58 @@
         <div class="container" style="max-width: 800px;">
             <div class="text-center mb-5">
                 <h2 class="section-title" style="font-size: 1.5rem;">FAQ & TERMS</h2>
-                <p class="text-muted small">คำถามที่พบบ่อย และเงื่อนไขการให้บริการ</p>
             </div>
             
             <div class="accordion" id="faqAccordion">
                 <div class="accordion-item">
                     <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
-                            Q: ต้องจองคิวล่วงหน้าหรือไม่?
-                        </button>
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">Q: ต้องจองคิวล่วงหน้าหรือไม่?</button>
                     </h2>
-                    <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            แนะนำให้จองล่วงหน้าครับ เนื่องจากเราเป็น Private Studio รับรถจำนวนจำกัดต่อวัน เพื่อให้งานออกมาดีที่สุดครับ
-                        </div>
-                    </div>
+                    <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">แนะนำให้จองล่วงหน้าครับ เนื่องจากเรารับรถจำนวนจำกัดต่อวัน</div></div>
                 </div>
                 <div class="accordion-item">
                     <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
-                            Q: บริการรับ-ส่งรถ คิดค่าใช้จ่ายไหม?
-                        </button>
-                    </h2>
-                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            ฟรีค่าบริการในเขตพื้นที่ใกล้เคียง (คลองตำหรุ/อมตะ/ตัวเมืองชลบุรีบางส่วน) สามารถสอบถามพิกัดก่อนได้ครับ
-                        </div>
-                    </div>
-                </div>
-
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#term1">
-                            เงื่อนไข: บริการรับ-ส่งรถ (Valet Service)
-                        </button>
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#term1">เงื่อนไข: บริการรับ-ส่งรถ (Valet)</button>
                     </h2>
                     <div id="term1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                         <div class="accordion-body">
                             <ul>
-                                <li>รับ-ส่งรถตามจุดนัดหมายและเวลาที่ตกลงกันล่วงหน้าเท่านั้น</li>
-                                <li>พนักงานผ่านการอบรม ขับขี่ปลอดภัย และปฏิบัติตามกฎจราจร</li>
-                                <li>ไม่มีการทดลองสมรรถนะรถ หรือนำรถไปใช้งานอื่นนอกเส้นทาง</li>
+                                <li>ฟรีค่าบริการในพื้นที่ใกล้เคียง (ตามตกลง)</li>
+                                <li>รับ-ส่งตามจุดนัดหมายเท่านั้น พนักงานขับขี่ปลอดภัย</li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#term2">
-                            เงื่อนไข: ความรับผิดชอบ (Liability)
-                        </button>
-                    </h2>
-                    <div id="term2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            <ul>
-                                <li>กรณีเกิดอุบัติเหตุ: ยึดตามความคุ้มครองของ <strong>ประกันภัยรถยนต์ลูกค้า</strong> เป็นหลัก</li>
-                                <li>ทางร้านไม่รับผิดชอบทรัพย์สินมีค่าภายในรถ โปรดนำออกก่อนรับบริการ</li>
-                                <li>ไม่รับผิดชอบความเสียหายจากความเสื่อมสภาพเดิมของรถ (เช่น สีหลุดร่อนอยู่แล้ว, ระบบไฟรวน)</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </section>
 
-    <footer id="contact" style="background-color: #000; padding: 80px 0; border-top: 1px solid #111;">
+    <footer id="contact" style="background-color: #000; padding: 60px 0; border-top: 1px solid #111;">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 mb-5 mb-lg-0 text-center text-lg-start">
-                    <h2 class="text-white mb-4" style="font-family: 'Oswald'; letter-spacing: 3px;">YO-RU</h2>
-                    <p class="text-muted mb-4">
-                        <i class="fas fa-map-marker-alt text-gold me-2"></i> ซอยเทศบาลคลองตำหรุ 10, เมืองชลบุรี<br>
-                        <i class="fas fa-phone text-gold me-2"></i> 087-217-8899 (คุณพีช)<br>
-                        <i class="fas fa-clock text-gold me-2"></i> จันทร์-อาทิตย์ (จองคิวเท่านั้น)
+                <div class="col-lg-4 text-center text-lg-start mb-4">
+                    <h2 class="text-white mb-3" style="font-family: 'Oswald';">YO-RU</h2>
+                    <p class="text-muted small">
+                        <i class="fas fa-phone text-gold me-2"></i> 087-217-8899<br>
+                        <i class="fas fa-map-marker-alt text-gold me-2"></i> คลองตำหรุ, ชลบุรี
                     </p>
-                    <a href="https://lin.ee/usdNGIA" class="btn btn-outline-light rounded-pill px-4">
-                        <i class="fab fa-line text-success me-2"></i> Add Line Booking
-                    </a>
+                    <a href="https://lin.ee/usdNGIA" class="btn btn-outline-light btn-sm rounded-pill px-4">Line Booking</a>
                 </div>
                 <div class="col-lg-8">
-                    <div style="border-radius: 12px; overflow: hidden; filter: grayscale(100%) invert(90%) contrast(90%);">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3879.805277464082!2d100.999999!3d13.XXXXXX!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDIyJzMzLjYiTiAxMDDCsDU5JzQ0LjYiRQ!5e0!3m2!1sth!2sth!4v1600000000000!5m2!1sth!2sth" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                     <div style="background: #222; height: 200px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #555;">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3879.805277464082!2d100.999999!3d13.XXXXXX!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDIyJzMzLjYiTiAxMDDCsDU5JzQ0LjYiRQ!5e0!3m2!1sth!2sth!4v1600000000000!5m2!1sth!2sth" width="100%" height="100%" style="border:0; filter: invert(90%) hue-rotate(180deg);" allowfullscreen="" loading="lazy"></iframe>
                     </div>
                 </div>
             </div>
-            <div class="row mt-5 pt-4 border-top border-dark">
-                <div class="col-12 text-center text-muted small">
-                    © 2026 YO-RU Detailing. All Rights Reserved. <span class="d-none d-md-inline">| Designed for Perfection.</span>
-                </div>
-            </div>
+            <div class="text-center text-muted small mt-4">© 2026 YO-RU Detailing.</div>
         </div>
     </footer>
 
     <div class="floating-group">
-        <a href="https://lin.ee/usdNGIA" target="_blank" class="float-btn" style="background-color: #06C755;">
-            <i class="fab fa-line"></i>
-        </a>
-        <a href="tel:0872178899" class="float-btn btn-phone" style="background-color: var(--accent); color: #000;">
-            <i class="fas fa-phone-alt"></i>
-        </a>
+        <a href="https://lin.ee/usdNGIA" target="_blank" class="float-btn" style="background-color: #06C755;"><i class="fab fa-line"></i></a>
+        <a href="tel:0872178899" class="float-btn" style="background-color: var(--accent); color: #000;"><i class="fas fa-phone-alt"></i></a>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Scroll Effect & Reveal
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.style.background = 'rgba(0, 0, 0, 0.95)';
-                navbar.style.padding = '10px 0';
-            } else {
-                navbar.style.background = 'rgba(0, 0, 0, 0.7)';
-                navbar.style.padding = '15px 0';
-            }
-            
-            // Reveal Elements
-            var reveals = document.querySelectorAll(".reveal");
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 100;
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add("active");
-                }
-            }
-        });
-
-        // Smooth Scroll for Navbar Links
-        document.querySelectorAll('.scroll-link').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                     targetElement.scrollIntoView({ behavior: 'smooth' });
-                     const navbarCollapse = document.getElementById('navbarNav');
-                     if (navbarCollapse.classList.contains('show')) {
-                         bootstrap.Collapse.getInstance(navbarCollapse).hide();
-                     }
-                }
-            });
-        });
-    </script>
 </body>
 </html>
