@@ -2,327 +2,553 @@
 <html lang="th">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YO-RU Detailing | Official Price List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>YO-RU Detailing | Full Menu</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        body { font-family: 'Kanit', sans-serif; background: #fff; color: #333; padding: 20px 0; }
-        .header { text-align: center; margin-bottom: 30px; border-bottom: 2px solid #D4AF37; padding-bottom: 20px; }
-        h1 { font-family: 'Oswald', sans-serif; font-size: 2.2rem; margin-bottom: 5px; color: #000; }
-        .sub-head { color: #D4AF37; font-size: 1rem; font-weight: 500; letter-spacing: 2px; }
+        :root {
+            --gold: #D4AF37;
+            --gold-dark: #aa8c2c;
+            --dark: #1a1a1a;
+            --bg-gray: #f8f9fb;
+            --card-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+
+        body { 
+            font-family: 'Kanit', sans-serif; 
+            background: var(--bg-gray); 
+            color: #333; 
+            padding-bottom: 110px; /* เว้นที่ให้ปุ่มด้านล่าง */
+            overflow-x: hidden;
+        }
+
+        /* --- Header Design --- */
+        .header-section {
+            background: linear-gradient(135deg, #111 0%, #2a2a2a 100%);
+            color: white;
+            padding: 25px 15px 40px 15px;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            position: relative;
+            text-align: center;
+            margin-bottom: -25px;
+            z-index: 10;
+        }
+
+        .home-btn {
+            position: absolute;
+            left: 20px;
+            top: 25px;
+            color: var(--gold);
+            font-size: 1.2rem;
+            text-decoration: none;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 12px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+            background: rgba(0,0,0,0.3);
+        }
+        .home-btn:active { background: var(--gold); color: var(--dark); }
+
+        .brand-title { font-family: 'Oswald', sans-serif; font-size: 2.2rem; letter-spacing: 1px; line-height: 1; }
+        .brand-sub { color: var(--gold); font-size: 0.85rem; letter-spacing: 3px; text-transform: uppercase; opacity: 0.95; margin-top: 5px; }
+
+        /* --- Price Disclaimer Warning --- */
+        .price-warning {
+            background: #fffcf0;
+            border: 1px solid #faeacc;
+            color: #8a6d3b;
+            font-size: 0.8rem;
+            padding: 10px 15px;
+            border-radius: 10px;
+            margin: 35px 15px 15px 15px;
+            text-align: center;
+            position: relative;
+            z-index: 15;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        /* --- Accordion Styling --- */
+        .accordion-item {
+            border: none;
+            border-radius: 12px !important;
+            margin-bottom: 12px;
+            box-shadow: var(--card-shadow);
+            overflow: hidden;
+            background: #fff;
+        }
         
-        /* --- Mobile Table Optimization --- */
-        .table-responsive {
-            margin-bottom: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            border-radius: 8px;
-            overflow: auto;
+        .accordion-button {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            padding: 18px 20px;
+            color: var(--dark);
+            background: #fff;
+            box-shadow: none !important;
+        }
+        
+        .accordion-button:not(.collapsed) {
+            background: var(--dark);
+            color: var(--gold);
+        }
+        .accordion-button:not(.collapsed)::after {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23D4AF37'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+        }
+
+        /* --- Service Card Internal --- */
+        .service-list { padding: 0; }
+        .service-item {
+            padding: 20px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .service-item:last-child { border-bottom: none; }
+
+        .item-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+        .item-name { font-family: 'Oswald'; font-size: 1.1rem; color: var(--dark); font-weight: 700; }
+        .item-badge { font-size: 0.7rem; padding: 4px 8px; border-radius: 4px; font-weight: 500; text-transform: uppercase; background: #eee; color: #555; }
+        
+        /* Highlight & Elite Style */
+        .item-highlight { background: linear-gradient(to right, #fffdf5, #fff); border-left: 4px solid var(--gold); }
+        .item-elite { background: linear-gradient(to right, #222, #333); color: #fff; border-left: 4px solid var(--gold); }
+        
+        .item-elite .item-name { color: var(--gold); }
+        .item-elite .item-desc ul { color: #ccc; }
+        .item-elite .item-desc li::before { content: "★"; color: var(--gold); }
+        .item-elite .p-box { background: #444; border-color: #555; }
+        .item-elite .p-val { color: #fff; }
+
+        .item-desc ul { margin: 0; padding-left: 0; list-style: none; font-size: 0.85rem; color: #666; }
+        .item-desc li { position: relative; padding-left: 14px; margin-bottom: 4px; line-height: 1.4; }
+        .item-desc li::before { content: "•"; color: var(--gold); position: absolute; left: 0; font-weight: bold; }
+
+        /* --- Modern Price Grid --- */
+        .price-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 6px;
+            margin-top: 15px;
+        }
+        .p-box {
+            background: #fff;
             border: 1px solid #eee;
+            border-radius: 6px;
+            text-align: center;
+            padding: 8px 2px;
+            transition: 0.2s;
         }
+        .p-size { display: block; font-size: 0.65rem; color: #aaa; font-weight: 700; margin-bottom: 2px; }
+        .p-val { display: block; font-family: 'Oswald'; font-weight: 600; color: var(--dark); font-size: 0.95rem; }
 
-        .price-table { width: 100%; border-collapse: separate; border-spacing: 0; min-width: 700px; /* ขยายให้กว้างขึ้นรองรับข้อความยาว */ }
-        
-        /* Sticky Header */
-        .price-table thead th { 
-            position: sticky; top: 0; z-index: 10;
-            background: #111; color: #D4AF37; padding: 12px; 
-            text-transform: uppercase; font-weight: 600; text-align: center; font-family: 'Oswald';
-            font-size: 0.9rem;
+        /* --- Terms Section --- */
+        .terms-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 20px;
+            box-shadow: var(--card-shadow);
         }
-        
-        /* Sticky First Column */
-        .price-table td:first-child, .price-table th:first-child {
-            position: sticky; 
-            left: 0; 
-            z-index: 5;
-            background-color: #fff; 
-            border-right: 2px solid #f0f0f0; 
-        }
-        .price-table th:first-child { background-color: #111; z-index: 15; }
-        
-        .price-table td { padding: 15px 10px; border-bottom: 1px solid #eee; vertical-align: top; }
-        
-        /* Service Column Styling */
-        .service-col { width: 300px; text-align: left; min-width: 280px; }
-        .service-title { font-weight: 700; font-size: 0.95rem; color: #000; display: block; margin-bottom: 5px; font-family: 'Oswald'; }
-        .service-desc { list-style: none; padding-left: 0; margin-bottom: 0; font-size: 0.8rem; color: #666; line-height: 1.4; }
-        .service-desc li { position: relative; padding-left: 10px; margin-bottom: 3px; }
-        .service-desc li::before { content: "•"; color: #D4AF37; position: absolute; left: 0; font-weight: bold; }
+        .term-box { margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px dashed #eee; }
+        .term-box:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        .term-head { font-family: 'Oswald'; color: var(--dark); font-size: 0.95rem; margin-bottom: 8px; font-weight: 600; }
+        .term-list { padding-left: 15px; font-size: 0.8rem; color: #555; margin: 0; }
+        .term-list li { margin-bottom: 4px; }
 
-        .price-col { text-align: center; font-weight: 500; font-size: 0.9rem; vertical-align: middle !important; }
-        
-        .category-header { 
-            background: #000; color: #fff; padding: 10px 15px; font-size: 1.1rem; 
-            font-family: 'Oswald'; display: flex; justify-content: space-between; align-items: center;
-            border-radius: 6px 6px 0 0;
+        /* --- Fixed Bottom Bar --- */
+        .bottom-action-bar {
+            position: fixed;
+            bottom: 0; left: 0; right: 0;
+            background: #fff;
+            padding: 12px 15px;
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
+            display: flex;
+            gap: 10px;
+            z-index: 1000;
+            padding-bottom: max(12px, env(safe-area-inset-bottom));
         }
-        
-        /* Terms */
-        .full-terms { margin-top: 40px; padding-top: 20px; border-top: 2px solid #eee; }
-        .term-head { font-weight: 700; font-family: 'Oswald'; font-size: 0.95rem; margin-top: 15px; text-transform: uppercase; color: #000; }
-        .term-list { font-size: 0.85rem; color: #555; padding-left: 20px; margin-bottom: 10px; }
-        .term-list li { margin-bottom: 5px; }
+        .btn-action {
+            flex: 1;
+            border: none;
+            border-radius: 50px;
+            padding: 12px;
+            font-family: 'Kanit', sans-serif;
+            font-weight: 500;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+        .btn-call { background-color: var(--dark); color: white; }
+        .btn-line { background-color: #06C755; color: white; }
+        .btn-action:active { transform: scale(0.96); opacity: 0.9; }
 
-        @media print {
-            .table-responsive { overflow: visible; }
-            .price-table { min-width: auto; }
-            .btn { display: none; }
+        /* --- Size Guide --- */
+        .size-guide {
+            background: #333;
+            color: #fff;
+            border-radius: 12px;
+            padding: 15px 20px;
+            margin-top: 25px;
         }
+        .size-row { display: flex; justify-content: space-between; font-size: 0.8rem; border-bottom: 1px solid #444; padding: 5px 0; }
+        .size-row:last-child { border: none; }
+
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <div class="header">
-            <h1>YO-RU DETAILING</h1>
-            <div class="sub-head">SERVICE MENU & PRICE LIST</div>
-        </div>
+    <div class="header-section">
+        <a href="index.html" class="home-btn" aria-label="Back to Home"><i class="fas fa-home"></i></a>
+        <div class="brand-title">YO-RU</div>
+        <div class="brand-sub">Detailing Menu</div>
+    </div>
 
-        <div class="category-header">
-            <span>PREMIUM WASH</span>
-            <small style="opacity: 0.7; font-family: 'Kanit'">1.5 - 4 Hrs.</small>
+    <div class="container" style="position: relative; z-index: 20;">
+        <div class="price-warning">
+            <i class="fas fa-info-circle"></i>
+            <span><strong>หมายเหตุ:</strong> ราคาที่แสดงเป็นราคาเริ่มต้น (Starting Price) ทางร้านจะประเมินและแจ้งราคาสุทธิก่อนเริ่มงานเสมอ</span>
         </div>
-        <div class="table-responsive">
-            <table class="price-table">
-                <thead>
-                    <tr>
-                        <th class="service-col">SERVICE</th>
-                        <th>S</th>
-                        <th>M</th>
-                        <th>L</th>
-                        <th>XL</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="service-col">
-                            <span class="service-title">BASIC WASH (Maintenance)</span>
-                            <ul class="service-desc">
-                                <li>ล้างสีด้วยโฟม pH Balance ไม่กัดสีรถ</li>
-                                <li>ระบบ Two-Bucket Method ลดรอยขนแมว</li>
-                                <li>เช็ดแห้งด้วยลมร้อนไล่น้ำตามซอก</li>
-                                <li>ดูดฝุ่น + เช็ดภายใน + เคลือบยางดำ</li>
-                            </ul>
-                        </td>
-                        <td class="price-col">300</td>
-                        <td class="price-col">350</td>
-                        <td class="price-col">400</td>
-                        <td class="price-col">450</td>
-                    </tr>
-                    <tr>
-                        <td class="service-col">
-                            <span class="service-title" style="color: #D4AF37;">SIGNATURE (Deep Clean) ★</span>
-                            <ul class="service-desc">
-                                <li><strong>รวมรายการ Basic Wash ทั้งหมด และเพิ่ม:</strong></li>
-                                <li>ล้างล้อแบบ Deep Clean (หน้าแม็ก+ในถัง)</li>
-                                <li>ทำความสะอาดซอกประตู (Door Jambs)</li>
-                                <li>เคลือบสี Spray Sealant (เพิ่มความเงา+ไล่น้ำ)</li>
-                                <li>เคลือบภายในกัน UV</li>
-                            </ul>
-                        </td>
-                        <td class="price-col">690</td>
-                        <td class="price-col">790</td>
-                        <td class="price-col">890</td>
-                        <td class="price-col">1,190</td>
-                    </tr>
-                    <tr>
-                        <td class="service-col">
-                            <span class="service-title">PREMIUM DETAILING</span>
-                            <ul class="service-desc">
-                                <li><strong>รวมรายการ Signature ทั้งหมด และเพิ่ม:</strong></li>
-                                <li>ลูบดินน้ำมัน (Clay Bar) ปรับผิวเรียบ</li>
-                                <li>ระเบิดขี้ไคล (Iron Removal) รอบคัน</li>
-                                <li>ลง Wax เกรดพรีเมียม (Carnauba/Ceramic)</li>
-                                <li>ล้างห้องเครื่อง + เคลือบเงา</li>
-                            </ul>
-                        </td>
-                        <td class="price-col">1,990</td>
-                        <td class="price-col">2,490</td>
-                        <td class="price-col">2,990</td>
-                        <td class="price-col">3,490</td>
-                    </tr>
-                    <tr>
-                        <td class="service-col">
-                            <span class="service-title">ELITE (Full Restoration)</span>
-                            <ul class="service-desc">
-                                <li>Big Cleaning เต็มระบบ</li>
-                                <li>ซักเบาะ / ซักพรม (ฟอกแห้ง)</li>
-                                <li>อบโอโซนฆ่าเชื้อโรค</li>
-                                <li>เหมาะสำหรับรถมือสอง หรือรถที่ต้องการฟื้นฟู</li>
-                            </ul>
-                        </td>
-                        <td class="price-col">5k+</td>
-                        <td class="price-col">6k+</td>
-                        <td class="price-col">7k+</td>
-                        <td class="price-col">8k+</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+        
+        <div class="accordion" id="menuAccordion">
 
-        <div class="category-header">
-            <span>COATING</span>
-            <small style="opacity: 0.7; font-family: 'Kanit'">1 - 3 Days</small>
-        </div>
-        <div class="table-responsive">
-            <table class="price-table">
-                <thead>
-                    <tr>
-                        <th class="service-col">PACKAGE</th>
-                        <th>S</th>
-                        <th>M</th>
-                        <th>L</th>
-                        <th>XL</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="service-col">
-                            <span class="service-title">QUICK COAT (Intro)</span>
-                            <ul class="service-desc">
-                                <li>ขัดลบรอยบางๆ (Light Polish)</li>
-                                <li>เคลือบ Ceramic Detailer</li>
-                                <li>ผิวเนียนลื่น เงาฉ่ำ ทนทาน 3-6 เดือน</li>
-                            </ul>
-                        </td>
-                        <td class="price-col">2,500</td>
-                        <td class="price-col">3,000</td>
-                        <td class="price-col">3,500</td>
-                        <td class="price-col">4,000</td>
-                    </tr>
-                    <tr>
-                        <td class="service-col">
-                            <span class="service-title">CERAMIC BASIC (Standard)</span>
-                            <ul class="service-desc">
-                                <li>ขัดเตรียมผิว 1-2 Step (ลบรอย 70%)</li>
-                                <li>เคลือบแก้ว 1 Layer (ความแข็ง 9H)</li>
-                                <li>ปกป้องสีจาก UV/มลภาวะ ทนทาน 1-2 ปี</li>
-                            </ul>
-                        </td>
-                        <td class="price-col">6,000</td>
-                        <td class="price-col">7,000</td>
-                        <td class="price-col">8,000</td>
-                        <td class="price-col">9,000</td>
-                    </tr>
-                    <tr>
-                        <td class="service-col">
-                            <span class="service-title" style="color: #D4AF37;">PREMIUM COAT (Advanced) ★</span>
-                            <ul class="service-desc">
-                                <li>ขัดฟื้นฟูเต็มระบบ (Mirror Finish) ลบรอย 90%</li>
-                                <li>เคลือบ 2 Layers + อบอินฟราเรด (IR)</li>
-                                <li>เคลือบพลาสติก + กระจก</li>
-                                <li>ความเงาระดับกระจก ทนทาน 3-5 ปี</li>
-                            </ul>
-                        </td>
-                        <td class="price-col">10k+</td>
-                        <td class="price-col">12k+</td>
-                        <td class="price-col">14k+</td>
-                        <td class="price-col">16k+</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c1">
+                        <i class="fas fa-soap me-2" style="color:#aaa"></i> PREMIUM WASH
+                    </button>
+                </h2>
+                <div id="c1" class="accordion-collapse collapse show" data-bs-parent="#menuAccordion">
+                    <div class="service-list">
+                        
+                        <div class="service-item">
+                            <div class="item-head">
+                                <span class="item-name">BASIC WASH</span>
+                                <span class="item-badge">Maint.</span>
+                            </div>
+                            <div class="item-desc">
+                                <ul>
+                                    <li>ล้างสีโฟม pH Balance + <strong>ระบบ Touchless</strong></li>
+                                    <li>เช็ดแห้งลมร้อน + ดูดฝุ่น + เคลือบยางดำ</li>
+                                </ul>
+                            </div>
+                            <div class="price-grid">
+                                <div class="p-box"><span class="p-size">S</span><span class="p-val">300</span></div>
+                                <div class="p-box"><span class="p-size">M</span><span class="p-val">350</span></div>
+                                <div class="p-box"><span class="p-size">L</span><span class="p-val">400</span></div>
+                                <div class="p-box"><span class="p-size">XL</span><span class="p-val">450</span></div>
+                            </div>
+                        </div>
 
-        <div class="category-header"><span>ADD-ONS & BIKE</span></div>
-        <div class="table-responsive">
-            <table class="price-table">
-                <tbody>
-                    <tr>
-                        <td class="service-col">
-                            <span class="service-title">Interior Spa</span>
-                            <ul class="service-desc"><li>ซักเบาะ/พรม ด้วยเครื่อง Extractor</li><li>ฆ่าเชื้อโรค/ไรฝุ่น + กำจัดกลิ่นอับ</li></ul>
-                        </td>
-                        <td class="price-col" colspan="4">1,500 - 3,500</td>
-                    </tr>
-                    <tr>
-                        <td class="service-col">
-                            <span class="service-title">Leather Restoration</span>
-                            <ul class="service-desc"><li>ทำความสะอาดคราบไคลฝังลึก</li><li>ลง Vitamin บำรุงหนังให้นุ่ม</li></ul>
-                        </td>
-                        <td class="price-col" colspan="4">800 - 1,500</td>
-                    </tr>
-                    <tr>
-                        <td class="service-col">
-                            <span class="service-title">Headlight Restore</span>
-                            <ul class="service-desc"><li>ขัดไฟหน้าเหลืองให้ใส + เคลือบปกป้อง</li></ul>
-                        </td>
-                        <td class="price-col" colspan="4">800 - 1,500</td>
-                    </tr>
-                    <tr style="background:#f9f9f9">
-                        <td class="service-col">
-                            <span class="service-title">BIKE WASH</span>
-                            <ul class="service-desc"><li>ล้างสี + เป่าแห้งตามซอก + เคลือบเงา</li></ul>
-                        </td>
-                        <td class="price-col" colspan="4">200 - 600</td>
-                    </tr>
-                    <tr style="background:#f9f9f9">
-                        <td class="service-col">
-                            <span class="service-title">BIKE DETAILING</span>
-                            <ul class="service-desc"><li>ล้างโซ่ + ขัดลบรอยขนแมว + เคลือบสี</li></ul>
-                        </td>
-                        <td class="price-col" colspan="4">800 - 2,500</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+                        <div class="service-item item-highlight">
+                            <div class="item-head">
+                                <span class="item-name">SIGNATURE <i class="fas fa-star text-warning small"></i></span>
+                                <span class="item-badge bg-warning text-dark">BEST</span>
+                            </div>
+                            <div class="item-desc">
+                                <ul>
+                                    <li><strong>รวม Basic Wash + เพิ่ม:</strong></li>
+                                    <li>ล้างล้อ Deep Clean + ซอกประตู</li>
+                                    <li>เคลือบสี Spray Sealant + เคลือบภายใน</li>
+                                </ul>
+                            </div>
+                            <div class="price-grid">
+                                <div class="p-box"><span class="p-size">S</span><span class="p-val">690</span></div>
+                                <div class="p-box"><span class="p-size">M</span><span class="p-val">790</span></div>
+                                <div class="p-box"><span class="p-size">L</span><span class="p-val">890</span></div>
+                                <div class="p-box"><span class="p-size">XL</span><span class="p-val">1,190</span></div>
+                            </div>
+                        </div>
 
-        <div class="size-guide">
-            <h6 style="font-family:'Oswald'">📌 CAR SIZE GUIDE</h6>
-            <div class="row g-1 small">
-                <div class="col-6"><strong>S:</strong> Yaris, Jazz, Mazda2</div>
-                <div class="col-6"><strong>M:</strong> Civic, Altis, HR-V</div>
-                <div class="col-6"><strong>L:</strong> Camry, CR-V, Fortuner</div>
-                <div class="col-6"><strong>XL:</strong> Alphard, H-1, Supercar</div>
+                        <div class="service-item">
+                            <div class="item-head"><span class="item-name">PREMIUM DETAILING</span></div>
+                            <div class="item-desc">
+                                <ul>
+                                    <li><strong>รวม Signature + เพิ่ม:</strong></li>
+                                    <li>ลูบดินน้ำมัน + ระเบิดขี้ไคล</li>
+                                    <li>ลง Wax เกรดพรีเมียม + ล้างห้องเครื่อง</li>
+                                </ul>
+                            </div>
+                            <div class="price-grid">
+                                <div class="p-box"><span class="p-size">S</span><span class="p-val">1,990</span></div>
+                                <div class="p-box"><span class="p-size">M</span><span class="p-val">2,490</span></div>
+                                <div class="p-box"><span class="p-size">L</span><span class="p-val">2,990</span></div>
+                                <div class="p-box"><span class="p-size">XL</span><span class="p-val">3,490</span></div>
+                            </div>
+                        </div>
+
+                         <div class="service-item">
+                            <div class="item-head"><span class="item-name">ELITE (Restoration)</span></div>
+                            <div class="item-desc">
+                                <ul>
+                                    <li>Big Clean เต็มระบบ + ซักเบาะ/พรม</li>
+                                    <li>อบโอโซนฆ่าเชื้อ (เหมาะสำหรับฟื้นฟูรถ)</li>
+                                </ul>
+                            </div>
+                            <div class="price-grid">
+                                <div class="p-box"><span class="p-size">S</span><span class="p-val">5k+</span></div>
+                                <div class="p-box"><span class="p-size">M</span><span class="p-val">6k+</span></div>
+                                <div class="p-box"><span class="p-size">L</span><span class="p-val">7k+</span></div>
+                                <div class="p-box"><span class="p-size">XL</span><span class="p-val">8k+</span></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c2">
+                        <i class="fas fa-gem me-2" style="color:#aaa"></i> GLASS COATING
+                    </button>
+                </h2>
+                <div id="c2" class="accordion-collapse collapse" data-bs-parent="#menuAccordion">
+                    <div class="service-list">
+                        
+                        <div class="service-item">
+                            <div class="item-head"><span class="item-name">QUICK COAT</span><span class="item-badge">3-6 Mo.</span></div>
+                            <div class="item-desc">
+                                <ul><li>ขัดลบรอยบางๆ + เคลือบ Ceramic Detailer</li></ul>
+                            </div>
+                            <div class="price-grid">
+                                <div class="p-box"><span class="p-size">S</span><span class="p-val">2,500</span></div>
+                                <div class="p-box"><span class="p-size">M</span><span class="p-val">3,000</span></div>
+                                <div class="p-box"><span class="p-size">L</span><span class="p-val">3,500</span></div>
+                                <div class="p-box"><span class="p-size">XL</span><span class="p-val">4,000</span></div>
+                            </div>
+                        </div>
+
+                        <div class="service-item">
+                            <div class="item-head"><span class="item-name">CERAMIC BASIC</span><span class="item-badge">1-2 Yr.</span></div>
+                            <div class="item-desc">
+                                <ul><li>ขัดเตรียมผิว 1-2 Step + เคลือบแก้ว 1 Layer</li></ul>
+                            </div>
+                            <div class="price-grid">
+                                <div class="p-box"><span class="p-size">S</span><span class="p-val">6k</span></div>
+                                <div class="p-box"><span class="p-size">M</span><span class="p-val">7k</span></div>
+                                <div class="p-box"><span class="p-size">L</span><span class="p-val">8k</span></div>
+                                <div class="p-box"><span class="p-size">XL</span><span class="p-val">9k</span></div>
+                            </div>
+                        </div>
+
+                        <div class="service-item item-highlight">
+                            <div class="item-head"><span class="item-name">PREMIUM COAT</span><span class="item-badge">3-5 Yr.</span></div>
+                            <div class="item-desc">
+                                <ul>
+                                    <li>ขัด Mirror Finish + เคลือบ 2 Layers</li>
+                                    <li>เคลือบพลาสติก/กระจก</li>
+                                </ul>
+                            </div>
+                            <div class="price-grid">
+                                <div class="p-box"><span class="p-size">S</span><span class="p-val">10k+</span></div>
+                                <div class="p-box"><span class="p-size">M</span><span class="p-val">12k+</span></div>
+                                <div class="p-box"><span class="p-size">L</span><span class="p-val">14k+</span></div>
+                                <div class="p-box"><span class="p-size">XL</span><span class="p-val">16k+</span></div>
+                            </div>
+                        </div>
+
+                        <div class="service-item item-elite">
+                            <div class="item-head"><span class="item-name">ELITE COAT</span><span class="item-badge bg-warning text-dark">ULTIMATE</span></div>
+                            <div class="item-desc">
+                                <ul>
+                                    <li><strong>The Masterpiece Protection</strong></li>
+                                    <li>ขัดฟื้นฟูขั้นสูงสุด (Jeweling Polish)</li>
+                                    <li>เคลือบหนาพิเศษ </li>
+                                    <li>ทนทานสูงสุด 5 ปี+ พร้อมดูแลหลังการขาย</li>
+                                </ul>
+                            </div>
+                            <div class="price-grid">
+                                <div class="p-box"><span class="p-size">S</span><span class="p-val">18k+</span></div>
+                                <div class="p-box"><span class="p-size">M</span><span class="p-val">22k+</span></div>
+                                <div class="p-box"><span class="p-size">L</span><span class="p-val">26k+</span></div>
+                                <div class="p-box"><span class="p-size">XL</span><span class="p-val">30k+</span></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c3">
+                        <i class="fas fa-plus-circle me-2" style="color:#aaa"></i> ADD-ONS & BIKE
+                    </button>
+                </h2>
+                <div id="c3" class="accordion-collapse collapse" data-bs-parent="#menuAccordion">
+                    <div class="service-list">
+                        
+                        <div class="service-item">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span class="item-name">Window Coating</span>
+                                <span class="fw-bold">200 - 2,500</span>
+                            </div>
+                            <div class="item-desc"><ul><li>เคลือบกระจกไล่น้ำ ฝนตกน้ำไม่เกาะ</li></ul></div>
+                        </div>
+                        <div class="service-item">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span class="item-name">Wheel Coating (Rim)</span>
+                                <span class="fw-bold">500 - 1,500</span>
+                            </div>
+                            <div class="item-desc">
+                                <ul>
+                                    <li>เคลือบแม็กซ์ป้องกันฝุ่นผ้าเบรกและคราบฝังแน่น</li>
+                                    <li>เพิ่มความเงา + ล้างทำความสะอาดง่ายขึ้น</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="service-item">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span class="item-name">Leather / Fabric Guard</span>
+                                <span class="fw-bold">1,500 - 4,000</span>
+                            </div>
+                            <div class="item-desc">
+                                <ul>
+                                    <li>เคลือบเบาะหนัง/ผ้า ป้องกันน้ำหกและคราบสกปรก</li>
+                                    <li>ป้องกันรังสี UV และลดการเกิดสีตกใส่เบาะ</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                         <div class="service-item">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span class="item-name">Stain Removal</span>
+                                <span class="fw-bold text-muted small">ประเมินราคาหน้างาน</span>
+                            </div>
+                            <div class="item-desc"><ul><li>ขจัดคราบยางมะตอย / ปูนซีเมนต์ / ละอองสี</li></ul></div>
+                        </div>
+
+                        <div class="service-item">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span class="item-name">Interior Spa</span>
+                                <span class="fw-bold">1,500 - 3,500</span>
+                            </div>
+                            <div class="item-desc"><ul><li>ซักเบาะ/พรม (Extractor) + ฆ่าเชื้อโรค</li></ul></div>
+                        </div>
+
+                        <div class="service-item">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span class="item-name">Leather Restoration</span>
+                                <span class="fw-bold">800 - 1,500</span>
+                            </div>
+                            <div class="item-desc"><ul><li>ขจัดคราบไคลฝังลึก + ลง Vitamin บำรุงหนัง</li></ul></div>
+                        </div>
+
+                        <div class="service-item">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span class="item-name">Headlight Restore</span>
+                                <span class="fw-bold">800 - 1,500</span>
+                            </div>
+                            <div class="item-desc"><ul><li>ขัดไฟหน้าเหลืองให้ใส + เคลือบปกป้อง</li></ul></div>
+                        </div>
+
+                        <div class="service-item bg-light">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span class="item-name"><i class="fas fa-motorcycle me-2"></i>BIKE WASH</span>
+                                <span class="fw-bold">200 - 600</span>
+                            </div>
+                            <div class="item-desc"><ul><li>ล้างสี + เป่าแห้งตามซอก + เคลือบเงา</li></ul></div>
+                        </div>
+
+                        <div class="service-item bg-light">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span class="item-name"><i class="fas fa-tools me-2"></i>BIKE DETAILING</span>
+                                <span class="fw-bold">800 - 2,500</span>
+                            </div>
+                            <div class="item-desc"><ul><li>ล้างโซ่ + ขัดลบรอยขนแมว + เคลือบสี</li></ul></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div> <div class="size-guide">
+            <h6 class="mb-3 text-warning" style="font-family:'Oswald';">📌 CAR SIZE GUIDE</h6>
+            <div class="size-row">
+                <span class="text-warning fw-bold">S:</span> <span>Yaris, Jazz, Mazda2, City</span>
+            </div>
+            <div class="size-row">
+                <span class="text-warning fw-bold">M:</span> <span>Civic, Altis, HR-V, Corolla Cross</span>
+            </div>
+            <div class="size-row">
+                <span class="text-warning fw-bold">L:</span> <span>Camry, CR-V, Fortuner, Accord</span>
+            </div>
+            <div class="size-row">
+                <span class="text-warning fw-bold">XL:</span> <span>Alphard, H-1, Supercar, SUV-L</span>
             </div>
         </div>
 
-        <div class="full-terms">
-            <h4 style="font-family: 'Oswald'; text-align: center; margin-bottom: 20px;">TERMS & CONDITIONS</h4>
+        <div class="terms-container">
+            <h5 class="text-center mb-3" style="font-family: 'Oswald'">TERMS & CONDITIONS</h5>
             
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="term-head">1. VALET SERVICE (บริการรับ-ส่งรถ)</div>
-                    <ul class="term-list">
-                        <li>ฟรีค่าบริการในเขตพื้นที่ใกล้เคียง (ตามระยะทางที่ตกลงกันล่วงหน้า)</li>
-                        <li>รับ-ส่งรถตามจุดนัดหมายและเวลาที่ระบุเท่านั้น</li>
-                        <li>พนักงานผ่านการอบรม ขับขี่ปลอดภัย และปฏิบัติตามกฎจราจรเคร่งครัด</li>
-                        <li>ไม่มีการทดลองสมรรถนะรถ หรือนำรถไปใช้งานอื่นนอกเส้นทาง</li>
-                    </ul>
-                </div>
-                <div class="col-md-6">
-                    <div class="term-head">2. LIABILITY (ความรับผิดชอบ)</div>
-                    <ul class="term-list">
-                        <li>กรณีเกิดอุบัติเหตุระหว่างการรับ-ส่ง หรือขณะให้บริการ ยึดตามความคุ้มครองของ <strong>ประกันภัยรถยนต์ลูกค้า</strong> เป็นหลัก</li>
-                        <li>ทางร้านไม่รับผิดชอบทรัพย์สินมีค่าที่สูญหาย โปรดนำออกจากรถก่อนส่งมอบบริการ</li>
-                        <li>ความเสียหายที่เกิดจากความเสื่อมสภาพเดิม (เช่น สีหลุดร่อน, สนิม, ระบบไฟรวน, เซนเซอร์เสื่อม) ทางร้านขอสงวนสิทธิ์ไม่รับผิดชอบ</li>
-                    </ul>
-                </div>
-                <div class="col-md-6">
-                    <div class="term-head">3. INSPECTION (การตรวจสอบสภาพรถ)</div>
-                    <ul class="term-list">
-                        <li>ทางร้านจะมีการตรวจสอบสภาพรถร่วมกัน (Check-in) ก่อนเริ่มงาน เพื่อบันทึกรอยและตำหนิเดิม</li>
-                        <li>หากพบความผิดปกติระหว่างการทำงาน ทางร้านจะแจ้งให้ลูกค้าทราบทันที</li>
-                        <li>โปรดตรวจสอบความเรียบร้อยของรถหลังรับบริการ ก่อนนำรถออกจากร้าน</li>
-                    </ul>
-                </div>
-                <div class="col-md-6">
-                    <div class="term-head">4. EXCLUSIONS & PAYMENT</div>
-                    <ul class="term-list">
-                        <li>กรณีแบตเตอรี่หมด/สตาร์ทไม่ติด ทางร้านยินดีประสานงานช่วยเหลือเต็มที่ แต่ไม่รับผิดชอบค่าใช้จ่ายที่เกิดขึ้น</li>
-                        <li>รับชำระเงินสด และโอนผ่านธนาคาร (QR Code)</li>
-                        <li>การตกลงใช้บริการถือว่าลูกค้ารับทราบและยอมรับเงื่อนไขทั้งหมดข้างต้น</li>
-                    </ul>
-                </div>
+            <div class="term-box">
+                <div class="term-head">1. VALET SERVICE (บริการรับ-ส่งรถ)</div>
+                <ul class="term-list">
+                    <li>ฟรีค่าบริการในพื้นที่ใกล้เคียง (ตามระยะที่ตกลงกัน)</li>
+                    <li>รับ-ส่งตามจุดนัดหมายและเวลาที่ระบุเท่านั้น</li>
+                    <li>พนักงานขับขี่ปลอดภัย ปฏิบัติตามกฎจราจร</li>
+                    <li>ไม่มีการนำรถไปใช้งานอื่นนอกเส้นทาง</li>
+                </ul>
+            </div>
+
+            <div class="term-box">
+                <div class="term-head">2. LIABILITY (ความรับผิดชอบ)</div>
+                <ul class="term-list">
+                    <li>อุบัติเหตุระหว่างรับ-ส่ง/ให้บริการ ยึดตามประกันภัยรถลูกค้า</li>
+                    <li>ร้านไม่รับผิดชอบทรัพย์สินมีค่าที่สูญหาย โปรดนำออกก่อน</li>
+                    <li>ไม่รับผิดชอบความเสื่อมสภาพเดิม (สีร่อน, สนิม, ระบบไฟรวน)</li>
+                </ul>
+            </div>
+
+            <div class="term-box">
+                <div class="term-head">3. INSPECTION (การตรวจสอบ)</div>
+                <ul class="term-list">
+                    <li>มีการ Check-in ตรวจสภาพรถร่วมกันก่อนเริ่มงาน</li>
+                    <li>หากพบความผิดปกติระหว่างทำ จะแจ้งลูกค้าทันที</li>
+                    <li>โปรดตรวจสอบความเรียบร้อยหลังรับบริการ ก่อนนำรถออก</li>
+                </ul>
+            </div>
+
+            <div class="term-box">
+                <div class="term-head">4. EXCLUSIONS & PAYMENT</div>
+                <ul class="term-list">
+                    <li>กรณีแบตหมด/สตาร์ทไม่ติด ยินดีช่วยประสานงานแต่ไม่รวมค่าใช้จ่าย</li>
+                    <li>รับชำระเงินสด และโอนผ่านธนาคาร (QR Code)</li>
+                    <li>การใช้บริการถือว่ายอมรับเงื่อนไขทั้งหมดข้างต้น</li>
+                </ul>
             </div>
         </div>
 
-        <div class="text-center mt-4 no-print mb-4">
-            <button onclick="window.print()" class="btn btn-dark w-100"><i class="fas fa-print me-2"></i> PRINT / SAVE PDF</button>
+        <div class="text-center mt-4 text-muted small" style="opacity: 0.6;">
+            © YO-RU DETAILING<br>All Rights Reserved.
         </div>
 
     </div>
 
+    <div class="bottom-action-bar">
+        <a href="tel:0872178899" class="btn-action btn-call">
+            <i class="fas fa-phone-alt"></i> โทรเลย
+        </a>
+        <a href="https://line.me/R/ti/p/@411pexpo?ts=02161113&oat_content=url" target="_blank" class="btn-action btn-line">
+            <i class="fab fa-line"></i> ทักไลน์
+        </a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
