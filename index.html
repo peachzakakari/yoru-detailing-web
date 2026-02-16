@@ -80,7 +80,6 @@
             padding: 10px 0;
         }
 
-        /* --- [EDITED] ลบกรอบออกตามคำขอ --- */
         .nav-link {
             color: var(--text-sub) !important;
             font-size: 0.85rem; 
@@ -89,17 +88,16 @@
             letter-spacing: 1.5px;
             cursor: pointer;
             transition: all 0.3s ease;
-            border: none !important; /* ลบกรอบ */
+            border: none !important;
             padding: 10px 20px !important; 
             border-radius: 6px;
             display: inline-block;
         }
 
-        /* เอฟเฟกต์สีทองเมื่อ Hover (ปรับให้ไม่มีกรอบ แต่เรืองแสง) */
         .nav-link:hover, .nav-link:focus { 
             color: var(--accent) !important;
-            background-color: rgba(212, 175, 55, 0.05); /* พื้นหลังจางๆ แทนกรอบ */
-            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5); /* ตัวหนังสือเรืองแสง */
+            background-color: rgba(212, 175, 55, 0.05);
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
             transform: translateY(-2px);
         }
 
@@ -109,7 +107,7 @@
                 padding: 25px 20px;
                 border-radius: 12px;
                 margin-top: 15px; 
-                border: none; /* ลบกรอบในมือถือด้วย */
+                border: none;
                 box-shadow: 0 10px 30px rgba(0,0,0,0.8);
             }
             .nav-link {
@@ -135,7 +133,6 @@
             background-repeat: no-repeat;
         }
         
-        /* --- [EDITED] ลบกรอบชื่อร้านออก --- */
         .hero-title {
             font-family: 'Oswald', sans-serif;
             font-size: 4rem; 
@@ -143,17 +140,14 @@
             color: var(--text-main);
             margin-bottom: 10px;
             letter-spacing: 3px;
-            
-            /* ลบกรอบและพื้นหลังแบบกล่องออก ให้เหลือแต่ตัวหนังสือลอยเด่นๆ */
             background: transparent; 
             backdrop-filter: none;
             -webkit-backdrop-filter: none;
             padding: 10px;
             border-radius: 0;
             border: none; 
-            
             display: inline-block;
-            text-shadow: 0 5px 25px rgba(0,0,0,0.8); /* เพิ่มเงาให้ตัวหนังสือลอยชัดขึ้น */
+            text-shadow: 0 5px 25px rgba(0,0,0,0.8);
         }
 
         @media (max-width: 768px) {
@@ -205,7 +199,7 @@
             letter-spacing: 1px;
         }
 
-        /* --- [NEW] Why Choose Us Section --- */
+        /* --- [UPDATED] Unified Why Choose Us Section --- */
         .why-us-box {
             text-align: center;
             padding: 30px 20px;
@@ -213,10 +207,14 @@
             border: 1px solid #222;
             background: linear-gradient(145deg, #0a0a0a, #050505);
             transition: 0.3s;
+            /* เพิ่มลูกเล่นขอบทองด้านบนจาก Feature Card เดิม */
+            border-top: 3px solid transparent; 
         }
         .why-us-box:hover {
-            border-color: var(--accent);
+            border-color: #333; /* ขอบข้าง */
+            border-top-color: var(--accent); /* ขอบบนสีทอง */
             transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
         }
         .why-icon {
             font-size: 2.5rem;
@@ -237,28 +235,22 @@
             border-bottom: 1px solid #222;
         }
         .brands-title {
-    font-family: 'Oswald', sans-serif;
-    font-size: 2.5rem; /* เพิ่มขนาด (เดิม 1rem) */
-    font-weight: 700;
-    
-    /* ไล่เฉดสีทองให้ดูมีมิติ (Metallic Gold Gradient) */
-    background: linear-gradient(45deg, #bf953f, #fcf6ba, #b38728, #fbf5b7);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: var(--accent); /* สำรองเผื่อ Browser ไม่รองรับ gradient */
-    
-    text-align: center;
-    letter-spacing: 4px; /* ขยายช่องไฟให้ดูแพง */
-    margin-bottom: 15px;
-    text-transform: uppercase;
-    
-    /* เพิ่มเงาแสงรอบตัวอักษร */
-    filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5));
-    
-    position: relative;
-    display: inline-block;
-    width: 100%;
-}
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #bf953f, #fcf6ba, #b38728, #fbf5b7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: var(--accent);
+            text-align: center;
+            letter-spacing: 4px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5));
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
         
         .brands-grid {
             display: grid;
@@ -283,8 +275,8 @@
         }
         .brand-item:hover {
             border-color: var(--accent);
-            transform: translateY(-3px); /* ยอมให้ขยับนิดนึงตรงแบรนด์ */
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.15); /* เพิ่มเงา */
+            transform: translateY(-3px);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.15);
         }
         
         .logo-wrapper {
@@ -335,12 +327,10 @@
             display: flex;
             flex-direction: column;
         }
-
-        /* --- [EDITED] Effect การลอย + กรอบทอง + เงา --- */
         .pricing-col:hover {
-            transform: translateY(-7px); /* ลอยขึ้น */
-            border-color: var(--accent) !important; /* บังคับกรอบทอง */
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5); /* เงาลึก */
+            transform: translateY(-7px);
+            border-color: var(--accent) !important;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
         }
         
         .package-title {
@@ -456,7 +446,7 @@
         footer {
             background-color: #000;
             border-top: 1px solid #222;
-            padding-top: 0; /* เปลี่ยนเป็น 0 เพราะเรามีแมพด้านบนแล้ว */
+            padding-top: 0; 
             padding-bottom: 60px;
             text-align: center;
         }
@@ -507,7 +497,7 @@
             transform: translateY(0);
         }
 
-        /* --- [NEW] Floating Buttons CSS --- */
+        /* Floating Buttons CSS */
         .floating-group {
             position: fixed;
             bottom: 30px;
@@ -534,7 +524,7 @@
             transform: scale(1.1);
         }
         .btn-line {
-            background-color: #06C755; /* LINE Green */
+            background-color: #06C755; 
             color: white !important;
         }
         .btn-phone {
@@ -546,86 +536,24 @@
         @media(max-width: 768px) {
             .floating-group { bottom: 20px; right: 20px; gap: 10px; }
             .float-btn { width: 50px; height: 50px; font-size: 1.3rem; }
-            /* 1. ย่อรูปโลโก้ลงเหลือ 40px (จากเดิม 70px) */
-    #mainLogo {
-        max-height: 40px !important; 
-        width: auto;
-    }
-
-    /* 2. ลดความหนาของแถบเมนู (Navbar) ให้เพรียวขึ้น */
-    .navbar {
-        padding-top: 5px !important;
-        padding-bottom: 5px !important;
-    }
-
-    /* 3. ปรับตำแหน่งปุ่ม Hamburger (3 ขีด) ให้พอดีกับโลโก้ใหม่ */
-    .navbar-toggler {
-        padding: 4px 8px; /* ลดขนาดปุ่มกด */
-        font-size: 1.1rem; /* ลดขนาดไอคอน 3 ขีด */
-        margin-top: 0;
-    }
-    
-    /* (แถม) ปรับชื่อร้านสำรอง (Backup Logo) ให้เล็กลงด้วยเผื่อรูปไม่ขึ้น */
-    #backupLogo span:first-child { font-size: 1.4rem !important; }
-    #backupLogo span:last-child { font-size: 0.6rem !important; letter-spacing: 2px !important; }
-}
-            /* CSS Code */
-.why-choose-us {
-    background-color: #111; /* พื้นหลังสีดำเข้มเกือบสนิท */
-    padding: 60px 20px;
-    text-align: center;
-}
-
-.section-title {
-    color: #fff;
-    font-size: 2rem;
-    margin-bottom: 40px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.features-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.feature-card {
-    background: #1a1a1a;
-    padding: 30px;
-    border-radius: 10px;
-    flex: 1 1 300px; /* ยืดหดได้ ขั้นต่ำ 300px */
-    max-width: 350px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-    border-top: 3px solid transparent;
-    transition: all 0.3s ease;
-}
-
-.feature-card:hover {
-    transform: translateY(-5px);
-    border-top: 3px solid #FFD700; /* เส้นสีทองเมื่อเอาเมาส์ชี้ */
-}
-
-.feature-icon {
-    font-size: 3rem;
-    margin-bottom: 15px;
-}
-
-.feature-card h3 {
-    color: #FFD700;
-    margin-bottom: 10px;
-    font-size: 1.2rem;
-}
-
-.feature-card p {
-    color: #ccc;
-    font-size: 0.95rem;
-    line-height: 1.6;
-}
-            </style>
+            
+            #mainLogo {
+                max-height: 40px !important; 
+                width: auto;
+            }
+            .navbar {
+                padding-top: 5px !important;
+                padding-bottom: 5px !important;
+            }
+            .navbar-toggler {
+                padding: 4px 8px; 
+                font-size: 1.1rem; 
+                margin-top: 0;
+            }
+            #backupLogo span:first-child { font-size: 1.4rem !important; }
+            #backupLogo span:last-child { font-size: 0.6rem !important; letter-spacing: 2px !important; }
+        }
+    </style>
     <meta name="description" content="YO-RU Detailing บริการล้างรถและเคลือบแก้วพรีเมียมในชลบุรี ดูแลรถคุณด้วยผลิตภัณฑ์ชั้นนำ CarPro, Gyeon, 3D">
     <meta name="keywords" content="ล้างรถชลบุรี, เคลือบแก้วชลบุรี, Detailing ชลบุรี, ล้างมอเตอร์ไซค์">
     <link rel="icon" type="image/png" href="images/favicon.png">
@@ -684,16 +612,21 @@
         </div>
     </div>
 
-    <section class="bg-black py-5 border-bottom border-dark">
+    <section class="py-5 border-bottom border-dark" style="background-color: #000;">
         <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">WHY YO-RU?</h2>
+                <div class="section-line"></div>
+                <p class="text-muted">ทำไมต้องเลือกใช้บริการของเรา</p>
+            </div>
+            
             <div class="row g-4">
-                
                 <div class="col-md-4">
                     <div class="why-us-box">
                         <i class="fas fa-flask why-icon"></i>
                         <h4 class="why-title">SELECTED QUALITY</h4>
                         <p class="text-muted small mb-0">
-                            เราคัดสรรเฉพาะผลิตภัณฑ์ที่ <strong>"ใช้แล้วดีจริง"</strong> ทั้งแบรนด์ไทยและนำเข้า เพื่อผลลัพธ์ที่คุ้มค่าและปลอดภัยต่อรถคุณ
+                            คัดสรรเฉพาะผลิตภัณฑ์ที่ <strong>"ใช้แล้วดีจริง"</strong> ทั้งแบรนด์ไทยและนำเข้า เพื่อผลลัพธ์ที่คุ้มค่าและปลอดภัยต่อรถคุณ
                         </p>
                     </div>
                 </div>
@@ -718,6 +651,33 @@
                     </div>
                 </div>
 
+                <div class="col-md-4">
+                    <div class="why-us-box">
+                        <i class="fas fa-moon why-icon"></i> <h4 class="why-title">NIGHT SERVICE</h4>
+                        <p class="text-muted small mb-0">
+                            ตอบโจทย์คนทำงาน เลิกงานแล้วก็ดูแลรถได้ ร้านเปิดถึง 21.00 น. (และดึกกว่านั้นตามนัดหมาย)
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="why-us-box">
+                        <i class="fas fa-car-side why-icon"></i> <h4 class="why-title">FREE VALET PICKUP</h4>
+                        <p class="text-muted small mb-0">
+                            ไม่ต้องเสียเวลาขับมาเอง เรามีบริการรับ-ส่งรถฟรี! ในเขตพื้นที่ใกล้เคียง สะดวกและปลอดภัย
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="why-us-box">
+                        <i class="fas fa-user-shield why-icon"></i> <h4 class="why-title">PRIVATE DETAILING</h4>
+                        <p class="text-muted small mb-0">
+                            จำกัดจำนวนรถต่อวัน เพื่อให้เราโฟกัสกับรถของคุณได้เต็มที่ เหมือนรถของเราเอง
+                        </p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -737,31 +697,7 @@
             </div>
         </div>
     </div>
-    <section class="why-choose-us">
-    <div class="container">
-        <h2 class="section-title">WHY YO-RU?</h2>
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">🌙</div>
-                <h3>Night Service</h3>
-                <p>ตอบโจทย์คนทำงาน เลิกงานแล้วก็ดูแลรถได้ ร้านเปิดถึง 21.00 น. (และดึกกว่านั้นตามนัดหมาย)</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🚗</div>
-                <h3>Free Valet Pickup</h3>
-                <p>ไม่ต้องเสียเวลาขับมาเอง เรามีบริการรับ-ส่งรถฟรี! ในเขตพื้นที่ใกล้เคียง</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">✨</div>
-                <h3>Private Detailing</h3>
-                <p>จำกัดจำนวนรถต่อวัน เพื่อให้เราโฟกัสกับรถของคุณได้เต็มที่ เหมือนรถของเราเอง</p>
-            </div>
-        </div>
-    </div>
-</section>
 
-
-    
     <section id="packages" class="section-padding reveal">
         <div class="container">
             <div class="text-center mb-5">
@@ -875,9 +811,9 @@
                         <div class="package-meta">45 - 60 MINS</div>
                         <p class="text-muted mb-4 small">ล้างทำความสะอาด ขจัดคราบโคลน/น้ำมันโซ่</p>
                         <div class="price-list mb-4">
-                            <div class="price-row"><span>S (&lt;300cc)</span> <span>200-300</span></div>
+                            <div class="price-row"><span>S (<300cc)</span> <span>200-300</span></div>
                             <div class="price-row"><span>M (300-600cc)</span> <span>300-400</span></div>
-                            <div class="price-row"><span>L (&gt;600cc)</span> <span>400-600</span></div>
+                            <div class="price-row"><span>L (>600cc)</span> <span>400-600</span></div>
                         </div>
                         <div class="feature-box">
                             <div><i class="fas fa-check"></i> ล้างสี + ล้างช่วงล่าง</div>
@@ -893,9 +829,9 @@
                         <div class="package-meta">2 - 3 HOURS <span class="badge-hot ms-1">HOT</span></div>
                         <p class="text-muted mb-4 small">ฟื้นฟูสภาพ ขัดสี ลอกคราบฝังลึก</p>
                         <div class="price-list mb-4">
-                            <div class="price-row"><span>S (&lt;300cc)</span> <span>800-1,200</span></div>
+                            <div class="price-row"><span>S (<300cc)</span> <span>800-1,200</span></div>
                             <div class="price-row"><span>M (300-600cc)</span> <span>1,200-1,800</span></div>
-                            <div class="price-row"><span>L (&gt;600cc)</span> <span>1,800-2,500</span></div>
+                            <div class="price-row"><span>L (>600cc)</span> <span>1,800-2,500</span></div>
                         </div>
                         <div class="feature-box">
                             <div><i class="fas fa-check"></i> Bike Wash ทั้งหมด</div>
@@ -1242,12 +1178,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
