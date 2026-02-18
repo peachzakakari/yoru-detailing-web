@@ -237,15 +237,32 @@
             padding-bottom: max(12px, env(safe-area-inset-bottom));
         }
         .btn-action {
-            font-family: 'Oswald', sans-serif !important; /* เปลี่ยนฟอนต์ให้ดูเท่ */
+            /* CHANGED: ใช้ Kanit เพื่อให้ภาษาไทยสวยงาม */
+            font-family: 'Kanit', sans-serif !important; 
             font-weight: 500;
-            letter-spacing: 1px; /* เพิ่มระยะห่างตัวอักษร */
-            text-transform: uppercase; /* บังคับตัวพิมพ์ใหญ่ */
-            font-size: 0.9rem;
+            font-size: 1rem;
+            
+            flex: 1;
+            border: none;
+            border-radius: 50px;
+            padding: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: 0.2s;
         }
         .btn-call { background-color: var(--dark); color: white; }
         .btn-line { background-color: #06C755; color: white; }
         .btn-action:active { transform: scale(0.96); opacity: 0.9; }
+
+        /* --- Animation สำหรับ Terms --- */
+        .terms-toggle .transition-icon {
+            transition: transform 0.3s ease;
+        }
+        .terms-toggle[aria-expanded="true"] .transition-icon {
+            transform: rotate(180deg);
+        }
 
         /* --- Size Guide --- */
         .size-guide {
@@ -307,7 +324,7 @@
 
                         <div class="service-item item-highlight">
                             <div class="item-head">
-                                <span class="item-name">SIGNATURE <i class="fas fa-star text-warning small ms-1"></i></span>
+                                <span class="item-name">YO-RU SIGNATURE <i class="fas fa-star text-warning small ms-1"></i></span>
                                 <span class="item-badge bg-warning text-dark">BEST</span>
                             </div>
                             <div class="item-desc">
@@ -331,7 +348,7 @@
                             <div class="item-desc">
                                 <ul>
                                     <li><strong>รวม Signature + เพิ่ม:</strong></li>
-                                    <li>ลูบดินน้ำมัน + ระเบิดขี้ไคล</li>
+                                    <li>Detailing ภายนอกและภายใน</li>
                                     <li>ลง Wax เกรดพรีเมียม (<span class="brand-tag">LUMINUS</span> / <span class="brand-tag">CARPRO</span>)</li>
                                     <li>ล้างห้องเครื่อง</li>
                                 </ul>
@@ -577,43 +594,59 @@
         </div>
 
         <div class="terms-container">
-            <h5 class="text-center mb-3" style="font-family: 'Oswald'">TERMS & CONDITIONS</h5>
+            <div class="d-flex justify-content-between align-items-center terms-toggle" 
+                 type="button" 
+                 data-bs-toggle="collapse" 
+                 data-bs-target="#termsCollapse" 
+                 aria-expanded="false" 
+                 aria-controls="termsCollapse"
+                 style="cursor: pointer;">
+                
+                <h5 class="mb-0" style="font-family: 'Oswald'">TERMS & CONDITIONS</h5>
+                <i class="fas fa-chevron-down transition-icon"></i>
+            </div>
             
-            <div class="term-box">
-                <div class="term-head">1. VALET SERVICE (บริการรับ-ส่งรถ)</div>
-                <ul class="term-list">
-                    <li>ฟรีค่าบริการในพื้นที่ใกล้เคียง (ตามระยะที่ตกลงกัน)</li>
-                    <li>รับ-ส่งตามจุดนัดหมายและเวลาที่ระบุเท่านั้น</li>
-                    <li>พนักงานขับขี่ปลอดภัย ปฏิบัติตามกฎจราจร</li>
-                    <li>ไม่มีการนำรถไปใช้งานอื่นนอกเส้นทาง</li>
-                </ul>
-            </div>
+            <div class="collapse" id="termsCollapse">
+                <div class="pt-3 mt-2 border-top">
+                    
+                    <div class="term-box">
+                        <div class="term-head">1. VALET SERVICE (บริการรับ-ส่งรถ)</div>
+                        <ul class="term-list">
+                            <li>ฟรีค่าบริการในพื้นที่ใกล้เคียง (ตามระยะที่ตกลงกัน)</li>
+                            <li>รับ-ส่งตามจุดนัดหมายและเวลาที่ระบุเท่านั้น</li>
+                            <li>พนักงานขับขี่ปลอดภัย ปฏิบัติตามกฎจราจร</li>
+                            <li>ไม่มีการนำรถไปใช้งานอื่นนอกเส้นทาง</li>
+                        </ul>
+                    </div>
 
-            <div class="term-box">
-                <div class="term-head">2. LIABILITY (ความรับผิดชอบ)</div>
-                <ul class="term-list">
-                    <li>อุบัติเหตุระหว่างรับ-ส่ง/ให้บริการ ยึดตามประกันภัยรถลูกค้า</li>
-                    <li>ร้านไม่รับผิดชอบทรัพย์สินมีค่าที่สูญหาย โปรดนำออกจากรถก่อนส่งมอบ</li>
-                    <li>ไม่รับผิดชอบความเสื่อมสภาพเดิม (สีร่อน, สนิม, ระบบไฟรวน)</li>
-                </ul>
-            </div>
+                    <div class="term-box">
+                        <div class="term-head">2. LIABILITY (ความรับผิดชอบ)</div>
+                        <ul class="term-list">
+                            <li>อุบัติเหตุระหว่างรับ-ส่ง/ให้บริการ ยึดตามประกันภัยรถลูกค้า</li>
+                            <li>ร้านไม่รับผิดชอบทรัพย์สินมีค่าที่สูญหาย โปรดนำออกจากรถก่อนส่งมอบ</li>
+                            <li>ไม่รับผิดชอบความเสื่อมสภาพเดิม (สีร่อน, สนิม, ระบบไฟรวน)</li>
+                        </ul>
+                    </div>
 
-            <div class="term-box">
-                <div class="term-head">3. INSPECTION (การตรวจสอบ)</div>
-                <ul class="term-list">
-                    <li>มีการ Check-in ตรวจสภาพรถร่วมกันก่อนเริ่มงาน</li>
-                    <li>หากพบความผิดปกติระหว่างทำ จะแจ้งลูกค้าทันที</li>
-                    <li>โปรดตรวจสอบความเรียบร้อยหลังรับบริการ ก่อนนำรถออก</li>
-                </ul>
-            </div>
+                    <div class="term-box">
+                        <div class="term-head">3. INSPECTION (การตรวจสอบ)</div>
+                        <ul class="term-list">
+                            <li>มีการ Check-in ตรวจสภาพรถร่วมกันก่อนเริ่มงาน</li>
+                            <li>หากพบความผิดปกติระหว่างทำ จะแจ้งลูกค้าทันที</li>
+                            <li>โปรดตรวจสอบความเรียบร้อยหลังรับบริการ ก่อนนำรถออก</li>
+                        </ul>
+                    </div>
 
-            <div class="term-box">
-                <div class="term-head">4. EXCLUSIONS & PAYMENT</div>
-                <ul class="term-list">
-                    <li>กรณีแบตหมด/สตาร์ทไม่ติด ยินดีช่วยประสานงานแต่ไม่รวมค่าใช้จ่าย</li>
-                    <li>รับชำระเงินสด และโอนผ่านธนาคาร (QR Code)</li>
-                    <li>การใช้บริการถือว่ายอมรับเงื่อนไขทั้งหมดข้างต้น</li>
-                </ul>
+                    <div class="term-box">
+                        <div class="term-head">4. EXCLUSIONS & PAYMENT</div>
+                        <ul class="term-list">
+                            <li>กรณีแบตหมด/สตาร์ทไม่ติด ยินดีช่วยประสานงานแต่ไม่รวมค่าใช้จ่าย</li>
+                            <li>รับชำระเงินสด และโอนผ่านธนาคาร (QR Code)</li>
+                            <li>การใช้บริการถือว่ายอมรับเงื่อนไขทั้งหมดข้างต้น</li>
+                        </ul>
+                    </div>
+
+                </div>
             </div>
         </div>
 
@@ -635,4 +668,3 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
