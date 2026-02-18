@@ -389,43 +389,46 @@
         .float-btn { width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; color: #fff; box-shadow: 0 5px 15px rgba(0,0,0,0.5); text-decoration: none; }
 
         /* --- Brand Slider Auto Scroll --- */
+/* --- Brand Slider Enhanced --- */
 .brand-slider {
     overflow: hidden;
-    padding: 20px 0;
+    padding: 40px 0; /* เพิ่มพื้นที่บน-ล่างให้ดูโปร่งและเด่นขึ้น */
     white-space: nowrap;
     position: relative;
+    background: linear-gradient(90deg, #000 0%, #050505 50%, #000 100%); /* เพิ่มมิติพื้นหลัง */
 }
 
 .brand-track {
     display: flex;
     width: max-content;
-    animation: scroll 30s linear infinite; /* ปรับ 30s ให้เร็วหรือช้าตามต้องการ */
+    animation: scroll 25s linear infinite; /* ปรับให้เร็วขึ้นนิดหน่อยเพื่อให้ดูไม่นิ่งเกินไป */
 }
 
 .brand-item {
     flex: 0 0 auto;
-    width: 180px; /* กำหนดความกว้างแต่ละโลโก้ */
-    margin: 0 30px;
+    width: 220px; /* ปรับขนาดความกว้างเพิ่มขึ้นจาก 180px */
+    margin: 0 40px; /* เพิ่มระยะห่างระหว่างแบรนด์ */
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .brand-item img {
-    max-height: 45px;
-    filter: grayscale(100%) brightness(1.5); /* ทำสีเทาเพื่อให้ดูหรูหราเข้ากับธีม */
-    opacity: 0.7;
-    transition: 0.3s;
+    max-height: 55px; /* เพิ่มความสูงโลโก้จาก 45px เป็น 55px */
+    filter: brightness(1.2); /* ปรับให้สว่างขึ้น */
+    opacity: 0.8;
+    transition: all 0.4s ease;
 }
 
 .brand-item img:hover {
-    filter: grayscale(0%) brightness(1);
+    filter: brightness(1.5) drop-shadow(0 0 10px rgba(212, 175, 55, 0.3)); /* เพิ่มแสงสีทองจางๆ เวลาเมาส์ชี้ */
     opacity: 1;
+    transform: scale(1.1); /* ขยายขนาดขึ้นเล็กน้อยเวลา Hover */
 }
 
 @keyframes scroll {
     0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); } /* เลื่อนไปครึ่งหนึ่งของความกว้างทั้งหมด */
+    100% { transform: translateX(-50%); }
 }
 
 /* หยุดเลื่อนเมื่อเอาเมาส์วาง */
@@ -601,10 +604,12 @@
         </div>
     </section>
 
-    <div class="py-5 border-top border-bottom border-secondary" style="background: #000;">
-    <div class="container text-center mb-4">
-        <p class="text-muted small letter-spacing-2 mb-0">TRUSTED GLOBAL BRANDS WE USE</p>
-    </div>
+    <div class="container text-center mb-2">
+    <p class="text-gold" style="font-family: 'Oswald', sans-serif; letter-spacing: 4px; font-weight: 500; font-size: 0.9rem; text-transform: uppercase;">
+        TRUSTED GLOBAL BRANDS WE USE
+    </p>
+    <div style="width: 30px; height: 1px; background: var(--accent); margin: 10px auto 30px;"></div>
+</div>
     
     <div class="brand-slider">
         <div class="brand-track">
@@ -907,6 +912,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
 
 
 
