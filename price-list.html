@@ -25,41 +25,23 @@
             overflow-x: hidden;
         }
 
-        /* --- Brand Tag Style (New) --- */
-        /* เปลี่ยนจากพื้นขาว เป็นป้ายดำสุดเท่ */
-.brand-tag {
-    display: inline-flex;
-    align-items: center;
-    
-    /* พื้นหลังดำ ตัดขอบทอง */
-    background: #1a1a1a; 
-    border: 1px solid var(--gold);
-    
-    /* ตัวหนังสือสีทอง */
-    color: var(--gold);
-    
-    border-radius: 4px;
-    padding: 2px 8px; /* เพิ่มพื้นที่นิดหน่อย */
-    margin-left: 5px;
-    font-size: 0.75rem;
-    font-weight: 500;
-    vertical-align: middle;
-    letter-spacing: 0.5px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* มีเงานิดๆ */
-}
-
-.brand-tag img { 
-    height: 14px; 
-    width: auto; 
-    margin-right: 6px; 
-    display: block;
-    
-    /* ถ้าโลโก้เดิมเป็นสีขาวอยู่แล้ว ไม่ต้องแก้ filter อะไรเลย มันจะชัดเป๊ะบนพื้นดำ */
-    opacity: 1; 
-}
-        /* ถ้าไม่มีรูป ให้ซ่อน img แล้วแสดง text */
-        .brand-tag img[src=""], .brand-tag img:not([src]) { display: none; }
-
+        /* --- Brand Tag Style (Premium Text Only) --- */
+        .brand-tag {
+            display: inline-block;
+            background: #1a1a1a;       /* พื้นหลังสีดำเข้ม */
+            color: #D4AF37;            /* ตัวหนังสือสีทอง */
+            font-family: 'Oswald', sans-serif; /* ใช้ฟอนต์เท่ๆ */
+            font-size: 0.7rem;         /* ขนาดกำลังดี */
+            font-weight: 500;
+            letter-spacing: 1px;       /* เพิ่มระยะห่างตัวอักษรให้ดูแพง */
+            padding: 2px 8px;          /* จัดระยะห่างขอบ */
+            border-radius: 4px;        /* มนมุมนิดหน่อย */
+            border: 1px solid #D4AF37; /* เส้นขอบสีทองบางๆ */
+            margin: 0 2px;             /* ระยะห่างระหว่างป้าย */
+            vertical-align: middle;
+            text-transform: uppercase; /* บังคับตัวพิมพ์ใหญ่ทั้งหมด */
+        }
+       
         /* --- Header Design --- */
         .header-section {
             background: linear-gradient(135deg, #111 0%, #2a2a2a 100%);
@@ -317,7 +299,7 @@
                             </div>
                             <div class="item-desc">
                                 <ul>
-                                    <li>ผลิตภัณฑ์หลัก: <span class="brand-tag"><img src="images/logo-glossbro.png" alt="Glossbro">Glossbro</span></li>
+                                    <li>ผลิตภัณฑ์หลัก: <span class="brand-tag">GLOSSBRO</span></li>
                                     <li>ล้างสีโฟม pH Balance + <strong>ระบบ Touchless</strong></li>
                                     <li>เช็ดแห้งลมร้อน + ดูดฝุ่น + เคลือบยางดำ</li>
                                 </ul>
@@ -337,7 +319,7 @@
                             </div>
                             <div class="item-desc">
                                 <ul>
-                                    <li>ผลิตภัณฑ์หลัก: <span class="brand-tag"><img src="images/logo-luminus.png" alt="Luminus">Luminus</span> (Premium)</li>
+                                    <li>ผลิตภัณฑ์หลัก: <span class="brand-tag">LUMINUS</span> (Premium)</li>
                                     <li><strong>รวม Basic Wash + เพิ่ม:</strong></li>
                                     <li>ล้างล้อ Deep Clean + ซอกประตู</li>
                                     <li>เคลือบสี Spray Sealant + เคลือบภายใน</li>
@@ -357,7 +339,7 @@
                                 <ul>
                                     <li><strong>รวม Signature + เพิ่ม:</strong></li>
                                     <li>ลูบดินน้ำมัน + ระเบิดขี้ไคล</li>
-                                    <li>ลง Wax เกรดพรีเมียม (Luminus/CarPro)</li>
+                                    <li>ลง Wax เกรดพรีเมียม (<span class="brand-tag">LUMINUS</span> / <span class="brand-tag">CARPRO</span>)</li>
                                     <li>ล้างห้องเครื่อง</li>
                                 </ul>
                             </div>
@@ -401,8 +383,8 @@
                         <div class="p-3 bg-light small text-muted border-bottom">
                             <i class="fas fa-tools me-1 text-gold"></i> <strong>Our Standards:</strong>
                             <ul class="mb-0 mt-1 ps-3">
-                                <li>Machine Polisher: <span class="text-dark fw-bold">Maxshine</span> (Dual Action)</li>
-                                <li>Polishing Compound: <span class="text-dark fw-bold">Gyeon, 3D, CarPro</span></li>
+                                <li>Machine Polisher: <span class="brand-tag">MAXSHINE</span> (Dual Action)</li>
+                                <li>Polishing Compound: <span class="brand-tag">GYEON</span>, <span class="brand-tag">3D</span>, <span class="brand-tag">CARPRO</span></li>
                             </ul>
                         </div>
 
@@ -410,7 +392,7 @@
                             <div class="item-head"><span class="item-name">QUICK COAT</span><span class="item-badge">3-6 Mo.</span></div>
                             <div class="item-desc">
                                 <ul>
-                                    <li>น้ำยาขัด: <strong>3D / Gyeon</strong> (Light Polish)</li>
+                                    <li>น้ำยาขัด: <span class="brand-tag">3D</span> / <span class="brand-tag">GYEON</span> (Light Polish)</li>
                                     <li>ขัดลบรอยบางๆ + เคลือบ Ceramic Detailer</li>
                                 </ul>
                             </div>
@@ -426,7 +408,7 @@
                             <div class="item-head"><span class="item-name">CERAMIC BASIC</span><span class="item-badge">1-2 Yr.</span></div>
                             <div class="item-desc">
                                 <ul>
-                                    <li>ผลิตภัณฑ์หลัก: <span class="brand-tag">Luminus / CarPro</span></li>
+                                    <li>ผลิตภัณฑ์หลัก: <span class="brand-tag">LUMINUS</span> / <span class="brand-tag">CARPRO</span></li>
                                     <li>ขัดเตรียมผิว 1-2 Step + เคลือบแก้ว 1 Layer</li>
                                 </ul>
                             </div>
@@ -442,7 +424,7 @@
                             <div class="item-head"><span class="item-name">PREMIUM COAT</span><span class="item-badge">3-5 Yr.</span></div>
                             <div class="item-desc">
                                 <ul>
-                                    <li>ผลิตภัณฑ์หลัก: <span class="brand-tag"><img src="images/logo-carpro.png" alt="CarPro">CarPro / Gyeon</span></li>
+                                    <li>ผลิตภัณฑ์หลัก: <span class="brand-tag">CARPRO</span> / <span class="brand-tag">GYEON</span> / <span class="brand-tag">LUMINUS</span></li>
                                     <li>ขัด Mirror Finish + เคลือบ 2 Layers</li>
                                     <li>เคลือบพลาสติก/กระจก</li>
                                 </ul>
@@ -461,7 +443,7 @@
                                 <ul>
                                     <li><strong>The Masterpiece Protection</strong></li>
                                     <li>ขัดฟื้นฟูขั้นสูงสุด (Jeweling Polish)</li>
-                                    <li>เคลือบหนาพิเศษ (CarPro / Luminus Top Grade)</li>
+                                    <li>เคลือบหนาพิเศษ (<span class="brand-tag">CARPRO</span> / <span class="brand-tag">GYEON</span> / <span class="brand-tag">LUMINUS</span> Top Grade)</li>
                                     <li>ทนทานสูงสุด 5 ปี+ พร้อมดูแลหลังการขาย</li>
                                 </ul>
                             </div>
@@ -660,4 +642,3 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
