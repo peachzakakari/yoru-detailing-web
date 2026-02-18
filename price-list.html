@@ -25,6 +25,29 @@
             overflow-x: hidden;
         }
 
+        /* --- Brand Tag Style (New) --- */
+        .brand-tag {
+            display: inline-flex;
+            align-items: center;
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            padding: 1px 6px;
+            margin-left: 5px;
+            font-size: 0.7rem;
+            color: #555;
+            font-weight: 600;
+            vertical-align: middle;
+        }
+        .brand-tag img { 
+            height: 14px; 
+            width: auto; 
+            margin-right: 4px; 
+            display: block;
+        }
+        /* ถ้าไม่มีรูป ให้ซ่อน img แล้วแสดง text */
+        .brand-tag img[src=""], .brand-tag img:not([src]) { display: none; }
+
         /* --- Header Design --- */
         .header-section {
             background: linear-gradient(135deg, #111 0%, #2a2a2a 100%);
@@ -98,6 +121,7 @@
             color: var(--dark);
             background: #fff;
             box-shadow: none !important;
+            transition: all 0.3s ease;
         }
         
         .accordion-button:not(.collapsed) {
@@ -108,6 +132,21 @@
             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23D4AF37'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
         }
 
+        /* Hover Effects */
+        .accordion-button.collapsed:hover {
+            background-color: #fffcf5;
+            color: var(--gold);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+            transform: translateY(-2px);
+            z-index: 10;
+        }
+        .accordion-button:not(.collapsed):hover {
+            background-color: #333;
+            color: #ffe88a;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.8);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+        }
+
         /* --- Service Card Internal --- */
         .service-list { padding: 0; }
         .service-item {
@@ -116,8 +155,8 @@
         }
         .service-item:last-child { border-bottom: none; }
 
-        .item-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
-        .item-name { font-family: 'Oswald'; font-size: 1.1rem; color: var(--dark); font-weight: 700; }
+        .item-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; flex-wrap: wrap; gap: 5px; }
+        .item-name { font-family: 'Oswald'; font-size: 1.1rem; color: var(--dark); font-weight: 700; display: flex; align-items: center;}
         .item-badge { font-size: 0.7rem; padding: 4px 8px; border-radius: 4px; font-weight: 500; text-transform: uppercase; background: #eee; color: #555; }
         
         /* Highlight & Elite Style */
@@ -129,6 +168,7 @@
         .item-elite .item-desc li::before { content: "★"; color: var(--gold); }
         .item-elite .p-box { background: #444; border-color: #555; }
         .item-elite .p-val { color: #fff; }
+        .item-elite .brand-tag { background: #444; border-color: #666; color: #eee; }
 
         .item-desc ul { margin: 0; padding-left: 0; list-style: none; font-size: 0.85rem; color: #666; }
         .item-desc li { position: relative; padding-left: 14px; margin-bottom: 4px; line-height: 1.4; }
@@ -152,7 +192,7 @@
         .p-size { display: block; font-size: 0.65rem; color: #aaa; font-weight: 700; margin-bottom: 2px; }
         .p-val { display: block; font-family: 'Oswald'; font-weight: 600; color: var(--dark); font-size: 0.95rem; }
 
-        /* --- Terms Section --- */
+        /* --- Terms & Special --- */
         .terms-container {
             background: #fff;
             padding: 20px;
@@ -165,6 +205,30 @@
         .term-head { font-family: 'Oswald'; color: var(--dark); font-size: 0.95rem; margin-bottom: 8px; font-weight: 600; }
         .term-list { padding-left: 15px; font-size: 0.8rem; color: #555; margin: 0; }
         .term-list li { margin-bottom: 4px; }
+
+        .item-special {
+            background-color: #fffdf5;
+            border: 2px dashed var(--gold);
+            border-radius: 10px;
+            margin: 15px 0 5px 0;
+            text-align: center;
+            transition: 0.3s;
+        }
+        .item-special:hover {
+            background-color: #fff;
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.2);
+            transform: translateY(-2px);
+        }
+        .special-btn {
+            background: var(--dark);
+            color: var(--gold);
+            border: none;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-top: 8px;
+            display: inline-block;
+        }
 
         /* --- Fixed Bottom Bar --- */
         .bottom-action-bar {
@@ -206,53 +270,6 @@
         }
         .size-row { display: flex; justify-content: space-between; font-size: 0.8rem; border-bottom: 1px solid #444; padding: 5px 0; }
         .size-row:last-child { border: none; }
-        /* --- เพิ่มเอฟเฟกต์ Hover ให้หัวข้อสว่าง --- */
-        
-        .accordion-button {
-            transition: all 0.3s ease; /* ปรับให้นุ่มนวลเวลาเมาส์เข้า-ออก */
-        }
-
-        /* 1. เมื่อชี้ที่หัวข้อที่ยังไม่เปิด (พื้นขาว) */
-        .accordion-button.collapsed:hover {
-            background-color: #fffcf5; /* เปลี่ยนพื้นเป็นสีครีมทองจางๆ */
-            color: var(--gold); /* ตัวหนังสือเปลี่ยนเป็นสีทอง */
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4); /* เพิ่มแสงฟุ้งสีทอง (Glow) */
-            transform: translateY(-2px); /* ลอยขึ้นนิดนึงให้ดูมีมิติ */
-            z-index: 10; /* ดันให้ลอยอยู่เหนืออันอื่น */
-        }
-
-        /* 2. เมื่อชี้ที่หัวข้อที่เปิดอยู่แล้ว (พื้นดำ) */
-        .accordion-button:not(.collapsed):hover {
-            background-color: #333; /* ปรับสีพื้นจากดำสนิท ให้สว่างขึ้นเป็นเทาเข้ม */
-            color: #ffe88a; /* ปรับสีตัวอักษรให้ทองสว่างวาบ */
-            text-shadow: 0 0 10px rgba(212, 175, 55, 0.8); /* ตัวหนังสือเรืองแสง */
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.5); /* ออร่ารอบกล่อง */
-        }
-
-        /* --- สไตล์สำหรับกล่อง "อื่นๆ โปรดสอบถาม" --- */
-        .item-special {
-            background-color: #fffdf5; /* สีพื้นเหลืองอ่อนจางๆ */
-            border: 2px dashed var(--gold); /* ขอบเส้นประสีทอง */
-            border-radius: 10px;
-            margin: 15px 0 5px 0; /* เว้นระยะห่างจากตัวบนหน่อย */
-            text-align: center; /* จัดกลางให้ดูแปลกตา */
-            transition: 0.3s;
-        }
-        .item-special:hover {
-            background-color: #fff;
-            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.2);
-            transform: translateY(-2px);
-        }
-        .special-btn {
-            background: var(--dark);
-            color: var(--gold);
-            border: none;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            margin-top: 8px;
-            display: inline-block;
-        }
 
     </style>
 </head>
@@ -288,6 +305,7 @@
                             </div>
                             <div class="item-desc">
                                 <ul>
+                                    <li>ผลิตภัณฑ์หลัก: <span class="brand-tag"><img src="images/logo-glossbro.png" alt="Glossbro">Glossbro</span></li>
                                     <li>ล้างสีโฟม pH Balance + <strong>ระบบ Touchless</strong></li>
                                     <li>เช็ดแห้งลมร้อน + ดูดฝุ่น + เคลือบยางดำ</li>
                                 </ul>
@@ -302,11 +320,12 @@
 
                         <div class="service-item item-highlight">
                             <div class="item-head">
-                                <span class="item-name">YO-RU SIGNATURE <i class="fas fa-star text-warning small"></i></span>
+                                <span class="item-name">SIGNATURE <i class="fas fa-star text-warning small ms-1"></i></span>
                                 <span class="item-badge bg-warning text-dark">BEST</span>
                             </div>
                             <div class="item-desc">
                                 <ul>
+                                    <li>ผลิตภัณฑ์หลัก: <span class="brand-tag"><img src="images/logo-luminus.png" alt="Luminus">Luminus</span> (Premium)</li>
                                     <li><strong>รวม Basic Wash + เพิ่ม:</strong></li>
                                     <li>ล้างล้อ Deep Clean + ซอกประตู</li>
                                     <li>เคลือบสี Spray Sealant + เคลือบภายใน</li>
@@ -326,7 +345,8 @@
                                 <ul>
                                     <li><strong>รวม Signature + เพิ่ม:</strong></li>
                                     <li>ลูบดินน้ำมัน + ระเบิดขี้ไคล</li>
-                                    <li>ลง Wax เกรดพรีเมียม + ล้างห้องเครื่อง</li>
+                                    <li>ลง Wax เกรดพรีเมียม (Luminus/CarPro)</li>
+                                    <li>ล้างห้องเครื่อง</li>
                                 </ul>
                             </div>
                             <div class="price-grid">
@@ -366,10 +386,21 @@
                 <div id="c2" class="accordion-collapse collapse" data-bs-parent="#menuAccordion">
                     <div class="service-list">
                         
+                        <div class="p-3 bg-light small text-muted border-bottom">
+                            <i class="fas fa-tools me-1 text-gold"></i> <strong>Our Standards:</strong>
+                            <ul class="mb-0 mt-1 ps-3">
+                                <li>Machine Polisher: <span class="text-dark fw-bold">Maxshine</span> (Dual Action)</li>
+                                <li>Polishing Compound: <span class="text-dark fw-bold">Gyeon, 3D, CarPro</span></li>
+                            </ul>
+                        </div>
+
                         <div class="service-item">
                             <div class="item-head"><span class="item-name">QUICK COAT</span><span class="item-badge">3-6 Mo.</span></div>
                             <div class="item-desc">
-                                <ul><li>ขัดลบรอยบางๆ + เคลือบ Ceramic Detailer</li></ul>
+                                <ul>
+                                    <li>น้ำยาขัด: <strong>3D / Gyeon</strong> (Light Polish)</li>
+                                    <li>ขัดลบรอยบางๆ + เคลือบ Ceramic Detailer</li>
+                                </ul>
                             </div>
                             <div class="price-grid">
                                 <div class="p-box"><span class="p-size">S</span><span class="p-val">2,500</span></div>
@@ -382,7 +413,10 @@
                         <div class="service-item">
                             <div class="item-head"><span class="item-name">CERAMIC BASIC</span><span class="item-badge">1-2 Yr.</span></div>
                             <div class="item-desc">
-                                <ul><li>ขัดเตรียมผิว 1-2 Step + เคลือบแก้ว 1 Layer</li></ul>
+                                <ul>
+                                    <li>ผลิตภัณฑ์หลัก: <span class="brand-tag">Luminus / CarPro</span></li>
+                                    <li>ขัดเตรียมผิว 1-2 Step + เคลือบแก้ว 1 Layer</li>
+                                </ul>
                             </div>
                             <div class="price-grid">
                                 <div class="p-box"><span class="p-size">S</span><span class="p-val">6k</span></div>
@@ -396,6 +430,7 @@
                             <div class="item-head"><span class="item-name">PREMIUM COAT</span><span class="item-badge">3-5 Yr.</span></div>
                             <div class="item-desc">
                                 <ul>
+                                    <li>ผลิตภัณฑ์หลัก: <span class="brand-tag"><img src="images/logo-carpro.png" alt="CarPro">CarPro / Gyeon</span></li>
                                     <li>ขัด Mirror Finish + เคลือบ 2 Layers</li>
                                     <li>เคลือบพลาสติก/กระจก</li>
                                 </ul>
@@ -414,7 +449,7 @@
                                 <ul>
                                     <li><strong>The Masterpiece Protection</strong></li>
                                     <li>ขัดฟื้นฟูขั้นสูงสุด (Jeweling Polish)</li>
-                                    <li>เคลือบหนาพิเศษ </li>
+                                    <li>เคลือบหนาพิเศษ (CarPro / Luminus Top Grade)</li>
                                     <li>ทนทานสูงสุด 5 ปี+ พร้อมดูแลหลังการขาย</li>
                                 </ul>
                             </div>
@@ -571,7 +606,7 @@
                 <div class="term-head">2. LIABILITY (ความรับผิดชอบ)</div>
                 <ul class="term-list">
                     <li>อุบัติเหตุระหว่างรับ-ส่ง/ให้บริการ ยึดตามประกันภัยรถลูกค้า</li>
-                    <li>ร้านไม่รับผิดชอบทรัพย์สินมีค่าที่สูญหาย โปรดนำออกก่อน</li>
+                    <li>ร้านไม่รับผิดชอบทรัพย์สินมีค่าที่สูญหาย โปรดนำออกจากรถก่อนส่งมอบ</li>
                     <li>ไม่รับผิดชอบความเสื่อมสภาพเดิม (สีร่อน, สนิม, ระบบไฟรวน)</li>
                 </ul>
             </div>
@@ -613,7 +648,3 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
-
-
-
