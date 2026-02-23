@@ -1,1056 +1,503 @@
 <!DOCTYPE html>
 <html lang="th">
-<head>
-    <base target="_top">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="referrer" content="no-referrer">
-    
-    <title>YO-RU Detailing | Private Car Care Chonburi</title>
-    <meta name="description" content="YO-RU Detailing ศูนย์ดูแลรถยนต์ครบวงจร ชลบุรี บริการล้างรถพรีเมียม ขัดสี เคลือบแก้วเซรามิก โดยทีมงานมืออาชีพ รับรถจำกัดต่อวันเพื่อคุณภาพสูงสุด">
-    <meta name="keywords" content="ล้างรถชลบุรี, เคลือบแก้วชลบุรี, ขัดสีรถชลบุรี, คาร์แคร์ชลบุรี, Detailing Chonburi, YO-RU Detailing, ล้างรถพรีเมียม, คลองตำหรุ, ล้างรถบิ๊กไบค์ชลบุรี">
-    <meta name="author" content="YO-RU Detailing">
+<head> 
 
-    <meta property="og:title" content="YO-RU Detailing | Private Car Care Chonburi">
-    <meta property="og:description" content="บริการดูแลรถยนต์ระดับพรีเมียม ขัดสี เคลือบแก้ว โดยทีมงานมืออาชีพ รับรถจำกัดต่อวันเพื่อคุณภาพสูงสุด">
-    <meta property="og:image" content="images/og-image.jpg"> <meta property="og:url" content="https://www.yourdomain.com">
-    
-    <link rel="icon" type="image/png" href="images/favicon.png">
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta property="og:title" content="YO-RU Detailing | Private Car Care · ชลบุรี">
+<meta property="og:description" content="YO-RU Detailing ศูนย์ดูแลรถยนต์ระดับพรีเมียม ชลบุรี บริการล้างรถ ขัดสี เคลือบแก้ว Ceramic Coating โดยทีมงานมืออาชีพ รับรถจำกัดเพื่อคุณภาพสูงสุด">
+<meta property="og:image" content="https://yourwebsite.com/images/og-image.jpg"> <meta property="og:url" content="https://yourwebsite.com/index.html">
+<meta property="og:type" content="website">
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "AutoDetailing",
-      "name": "YO-RU Detailing",
-      "description": "ศูนย์ดูแลรถยนต์ครบวงจร ชลบุรี บริการล้างรถพรีเมียม ขัดสี เคลือบแก้วเซรามิก",
-      "image": "images/logo.png",
-      "telephone": "087-217-8899",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "คลองตำหรุ",
-        "addressLocality": "เมืองชลบุรี",
-        "addressRegion": "ชลบุรี",
-        "postalCode": "20000",
-        "addressCountry": "TH"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 13.443207, 
-        "longitude": 101.002819 
-      },
-      "openingHours": "Mo-Su 09:00-21:00"
-    }
-        
-    </script>
-    <style>
-        #firefly-canvas {
-    position: fixed;  /* fixed = ติดหน้าจอ เลื่อน scroll ก็ยังอยู่ */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none; /* คลิกทะลุผ่านได้ ไม่รบกวน UI */
-    z-index: 0; /* อยู่ด้านหลังสุด */
-}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="YO-RU Detailing | Private Car Care · ชลบุรี">
+<meta name="twitter:description" content="ศูนย์ดูแลรถยนต์ระดับพรีเมียม ชลบุรี บริการล้างรถ ขัดสี เคลือบแก้ว">
+<meta name="twitter:image" content="https://yourwebsite.com/images/og-image.jpg">
 
-/* ให้ทุก section อยู่หน้า canvas */
-nav, header, section, footer, .valet-bar, .brand-slider, .floating-group {
-    position: relative;
-    z-index: 1;
-}
-        :root {
-            --bg-main: #050505;       
-            --bg-secondary: #0a0a0a;  
-            --accent: #D4AF37;        
-            --text-main: #ffffff;     
-            --text-muted: #a0a0a0;      
-            --border-color: #222222;  
-        }
 
-        body {
-            font-family: 'Kanit', sans-serif;
-            background-color: var(--bg-main);
-            color: var(--text-main);
-            line-height: 1.7;
-            font-weight: 300;
-            overflow-x: hidden;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YO-RU Detailing | Private Car Care · ชลบุรี</title>
+<meta name="description" content="YO-RU Detailing ศูนย์ดูแลรถยนต์ระดับพรีเมียม ชลบุรี บริการล้างรถ ขัดสี เคลือบแก้ว Ceramic Coating โดยทีมงานมืออาชีพ รับรถจำกัดเพื่อคุณภาพสูงสุด">
+<meta name="keywords" content="ล้างรถชลบุรี, เคลือบแก้วชลบุรี, ขัดสีรถชลบุรี, YO-RU Detailing, คลองตำหรุ, Ceramic Coating ชลบุรี">
+<link rel="icon" type="image/png" href="images/favicon.png">
 
-        h1, h2, h3, h4, h5 {
-            font-family: 'Oswald', sans-serif;
-            color: var(--text-main);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Serif+Thai:wght@300;400;600&family=Noto+Serif+JP:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-        .text-gold { color: var(--accent) !important; }
-        .text-muted { color: var(--text-muted) !important; }
-        .text-bright { color: #fff; font-weight: 600; }
-
-        /* Navbar */
-        .navbar {
-            background: rgba(0, 0, 0, 0.90);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            padding: 10px 0; /* ลด padding เพื่อความกระชับ */
-            transition: all 0.4s ease;
-        }
-        .nav-link {
-            color: #ccc !important;
-            font-family: 'Oswald', sans-serif;
-            font-size: 0.9rem; 
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            padding: 8px 15px !important; 
-        }
-        .nav-link:hover, .nav-link.active { color: var(--accent) !important; }
-
-        /* --- LOGO ADJUSTMENT --- */
-        .navbar-brand img {
-            max-height: 55px; /* ขนาดปกติสำหรับ Desktop */
-            width: auto;
-            transition: all 0.3s ease;
-        }
-
-        .start-price {
-    display: inline-block;
-    background: rgba(212, 175, 55, 0.1);
-    color: var(--accent);
-    padding: 6px 15px;
-    border: 1px solid rgba(212, 175, 55, 0.3);
-    font-size: 0.85rem;
-    margin-top: 15px;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
-}
-
-.start-price:hover {
-    background: var(--accent);
-    color: #000 !important;
-    border-color: var(--accent);
-    transform: translateY(-2px);
-}
-        /* Mobile Logo Fix */
-        @media (max-width: 991px) {
-            .navbar-brand img {
-                max-height: 40px; /* ลดขนาดลงสำหรับมือถือ */
-            }
-        }
-
-        /* Hero */
-        .hero-section {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            background: url('images/bg.webp') center/cover no-repeat;
-        }
-        .hero-overlay {
-            position: absolute; 
-            top: 0; left: 0; width: 100%; height: 100%;
-            /* ปรับ Gradient ให้ดูมีมิติขึ้น (Radial) */
-            background: radial-gradient(circle, rgba(0,0,0,0.3) 0%, rgba(5,5,5,1) 90%);
-            z-index: 1;
-        }
-        .hero-content { 
-            position: relative; 
-            z-index: 2; 
-            padding: 20px; 
-            width: 100%;
-        }
-
-        /* --- NEW LUXURY HERO STYLES --- */
-        .hero-glass-card {
-    background: rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 40px 15px; /* ลด padding ข้างลงเล็กน้อยบนมือถือ */
-    border-radius: 16px;
-    display: inline-block;
-    width: 95%; /* เพิ่มความกว้างให้เกือบเต็มจอ */
-    max-width: 900px;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
-}
-
-        .hero-title-main {
-            font-family: 'Oswald', sans-serif;
-            /* clamp(ขนาดเล็กสุด, ขนาดตามจอ, ขนาดใหญ่สุด) */
-            font-size: clamp(3.5rem, 12vw, 7rem); 
-            font-weight: 800;
-            line-height: 0.9;
-            margin-bottom: 20px;
-            /* Gradient Text สีเงินไปทอง */
-            background: linear-gradient(180deg, #ffffff 40%, #D4AF37 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.6));
-            text-transform: uppercase;
-        }
-
-        .hero-tagline-en {
-            font-family: 'Oswald', sans-serif;
-            font-size: clamp(1rem, 4vw, 1.4rem);
-            color: var(--accent);
-            letter-spacing: 6px;
-            text-transform: uppercase;
-            margin-bottom: 25px;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
-            border-top: 1px solid rgba(212, 175, 55, 0.3);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
-            display: inline-block;
-            padding: 5px 20px;
-        }
-
-        .hero-description-th {
-    font-size: 1.1rem;
-    color: rgba(255, 255, 255, 0.8);
-    font-weight: 300;
-    max-width: 100%; /* ให้ข้อความขยายได้เต็มที่ */
-    margin: 0 auto;
-    line-height: 1.6;
-    word-break: keep-all; /* ป้องกันการตัดคำกลางคำ */
-}
-        /* ลดขนาดชื่อร้านบนมือถือเพื่อไม่ให้ล้น */
-@media (max-width: 768px) {
-    .hero-title-main {
-        font-size: clamp(3rem, 15vw, 5rem); 
-        line-height: 1.1;
-    }
-}
-
-        .btn-gold {
-            background: transparent;
-            color: var(--accent);
-            border: 1px solid var(--accent);
-            padding: 12px 35px;
-            font-family: 'Oswald', sans-serif;
-            letter-spacing: 2px;
-            text-decoration: none;
-            transition: 0.4s;
-            display: inline-block;
-            margin-top: 30px;
-        }
-        .btn-gold:hover {
-            background: var(--accent);
-            color: #000;
-            box-shadow: 0 0 25px rgba(212, 175, 55, 0.5);
-        }
-
-        /* Mobile Horizontal Scroll */
-        @media (max-width: 991px) {
-            .mobile-scroll-row {
-                display: flex !important;
-                flex-wrap: nowrap !important;
-                overflow-x: auto;
-                gap: 15px;
-                padding-bottom: 25px;
-                scroll-snap-type: x mandatory;
-                -webkit-overflow-scrolling: touch;
-                margin-left: -10px; margin-right: -10px;
-                padding-left: 20px; padding-right: 20px;
-                justify-content: flex-start !important; 
-            }
-            .mobile-scroll-row::-webkit-scrollbar { display: none; }
-            .mobile-scroll-row > div {
-                flex: 0 0 85%;
-                max-width: 85%;
-                scroll-snap-align: center;
-            }
-        }
-
-        /* Feature Card (Why Us) */
-        .feature-card {
-            background: #0f0f0f;
-            padding: 30px 25px;
-            height: 100%;
-            border: 1px solid #222;
-            display: flex;
-            align-items: flex-start;
-            gap: 20px;
-            border-radius: 8px;
-        }
-        .feature-icon { 
-            font-size: 2rem;
-            color: var(--accent); 
-            min-width: 50px; 
-            text-align: center;
-            margin-top: 5px;
-        }
-
-        /* Process Step (Standard) */
-        .process-step {
-            position: relative;
-            padding: 30px 25px;
-            background: linear-gradient(145deg, #111, #080808);
-            border: 1px solid #222;
-            height: 100%;
-            border-radius: 8px;
-            display: flex;
-            align-items: flex-start;
-            gap: 20px;
-        }
-        .process-icon {
-            font-size: 1.8rem; 
-            color: var(--accent);
-            min-width: 40px;
-            text-align: center;
-            margin-top: 5px;
-        }
-        .step-number-bg {
-    position: absolute; 
-    top: -5px; 
-    right: 10px;
-    font-family: 'Oswald', sans-serif; 
-    font-size: 3.5rem; /* ขยายใหญ่ขึ้นอีกนิด */
-    color: transparent; /* ทำให้พื้นตัวเลขโปร่งใส */
-    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3); /* ใส่เส้นขอบสีขาวจางๆ */
-    pointer-events: none;
-}
-
-        /* Service Card */
-        .service-card {
-            border: 1px solid var(--accent); 
-            padding: 30px 25px;
-            height: 100%;
-            background-color: rgba(15, 15, 15, 0.6);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            border-radius: 0;
-            min-height: 220px;
-        }
-        .start-price {
-            display: inline-block;
-            background: rgba(212, 175, 55, 0.1);
-            color: var(--accent);
-            padding: 4px 12px;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            font-size: 0.8rem;
-            margin-top: 15px;
-            letter-spacing: 1px;
-        }
-
-        /* Terms Box */
-        .term-box {
-            border: 1px solid #2a2a2a;
-            background: #0a0a0a;
-            padding: 25px;
-            height: 100%;
-            border-left: 3px solid var(--accent);
-        }
-        .term-title {
-            color: var(--accent);
-            font-family: 'Oswald', sans-serif;
-            font-weight: 500;
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-            letter-spacing: 1px;
-            border-bottom: 1px solid #222;
-            padding-bottom: 10px;
-        }
-        .term-list li {
-            margin-bottom: 8px;
-            position: relative;
-            padding-left: 15px;
-            font-size: 0.9rem;
-            color: #aaa;
-        }
-        .term-list li::before {
-            content: "-";
-            color: var(--accent);
-            position: absolute;
-            left: 0;
-        }
-
-        /* Accordion Style */
-        .accordion-item {
-            background-color: #0f0f0f;
-            border: 1px solid #222;
-            margin-bottom: 10px;
-            border-radius: 8px !important;
-            overflow: hidden;
-        }
-        .accordion-button {
-            background-color: #0f0f0f;
-            color: #ffffff;
-            font-family: 'Kanit', sans-serif;
-            font-weight: 400;
-            box-shadow: none !important;
-        }
-        .accordion-button:not(.collapsed) {
-            background-color: #1a1a1a;
-            color: var(--accent);
-            box-shadow: inset 0 -1px 0 rgba(212, 175, 55, 0.2) !important;
-        }
-        .accordion-button::after { filter: brightness(0) invert(1); }
-        .accordion-button:not(.collapsed)::after {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='https://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23D4AF37'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
-        }
-        .accordion-body {
-            background-color: #080808;
-            color: #aaa;
-            border-top: 1px solid #222;
-            font-size: 0.95rem;
-        }
-        .accordion-body strong { color: var(--accent); }
-
-        /* Other Utils */
-        .section-padding { padding: 80px 0; }
-        .section-line { width: 50px; height: 2px; background: var(--accent); margin: 20px auto 40px auto; }
-        .valet-bar { background: var(--accent); color: #000; padding: 10px; text-align: center; font-weight: 600; font-size: 0.9rem; }
-        
-        /* Floating Button */
-        .floating-group { position: fixed; bottom: 30px; right: 30px; z-index: 999; display: flex; flex-direction: column; gap: 15px; }
-        .float-btn { width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; color: #fff; box-shadow: 0 5px 15px rgba(0,0,0,0.5); text-decoration: none; }
-
-        /* --- Brand Slider Auto Scroll --- */
-/* --- Brand Slider Enhanced --- */
-.brand-slider {
-    overflow: hidden;
-    padding: 40px 0; /* เพิ่มพื้นที่บน-ล่างให้ดูโปร่งและเด่นขึ้น */
-    white-space: nowrap;
-    position: relative;
-    background: linear-gradient(90deg, #000 0%, #050505 50%, #000 100%); /* เพิ่มมิติพื้นหลัง */
-}
-
-.brand-track {
-    display: flex;
-    width: max-content;
-    animation: scroll 25s linear infinite; /* ปรับให้เร็วขึ้นนิดหน่อยเพื่อให้ดูไม่นิ่งเกินไป */
-}
-
-.brand-item {
-    flex: 0 0 auto;
-    width: 220px; /* ปรับขนาดความกว้างเพิ่มขึ้นจาก 180px */
-    margin: 0 40px; /* เพิ่มระยะห่างระหว่างแบรนด์ */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.brand-item img {
-    max-height: 55px; /* เพิ่มความสูงโลโก้จาก 45px เป็น 55px */
-    filter: brightness(1.2); /* ปรับให้สว่างขึ้น */
-    opacity: 0.8;
-    transition: all 0.4s ease;
-}
-
-.brand-item img:hover {
-    filter: brightness(1.5) drop-shadow(0 0 10px rgba(212, 175, 55, 0.3)); /* เพิ่มแสงสีทองจางๆ เวลาเมาส์ชี้ */
-    opacity: 1;
-    transform: scale(1.1); /* ขยายขนาดขึ้นเล็กน้อยเวลา Hover */
-}
-
-@keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-}
-
-/* หยุดเลื่อนเมื่อเอาเมาส์วาง */
-.brand-slider:hover .brand-track {
-    animation-play-state: paused;
-}
-
-    </style>
+<!-- Stylesheet -->
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 <canvas id="firefly-canvas" aria-hidden="true"></canvas>
-    <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
-        <div class="container">
-            <a class="navbar-brand scroll-link" href="#home">
-                <img id="mainLogo" src="images/logo.png" alt="YO-RU"
-                     onerror="this.style.display='none'; document.getElementById('backupLogo').style.display='flex';">
-                <div id="backupLogo" style="display:none; flex-direction: column; line-height: 1;">
-                    <span style="font-family: 'Oswald', sans-serif; font-size: 1.8rem; font-weight: 700; color: #fff;">YO-RU</span>
-                    <span style="font-size: 0.6rem; letter-spacing: 3px; color: var(--accent);">PRIVATE DETAILING</span>
-                </div>
-            </a>
-            
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <i class="fas fa-bars text-white fs-4"></i>
-            </button>
 
-            <div class="collapse navbar-collapse justify-content-end mt-3 mt-lg-0" id="navbarNav">
-                <ul class="navbar-nav align-items-center">
-                    <li class="nav-item"><a class="nav-link scroll-link" href="#whyus">Why Us</a></li>
-                    <li class="nav-item"><a class="nav-link scroll-link" href="#process">Process</a></li>
-                    <li class="nav-item"><a class="nav-link scroll-link" href="#packages">Services</a></li>
-                    <li class="nav-item"><a class="nav-link scroll-link" href="#contact">Contact</a></li>
-                    <li class="nav-item"><a class="nav-link" href="price-list.html" target="_blank">Price List</a></li>
-                    
-                    <li class="nav-item ms-lg-3">
-                        <a href="tel:0872178899" class="btn btn-outline-light btn-sm rounded-pill px-4" style="border-color: #333;">
-                            <i class="fas fa-phone-alt me-2 text-gold"></i> 087-217-8899
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+<!-- ════════════════════════════════
+     ANNOUNCEMENT BAR
+════════════════════════════════ -->
 
-    <header id="home" class="hero-section">
-        <div class="hero-overlay"></div>
-        <div class="container hero-content">
-            <div class="hero-glass-card">
-                <p class="text-gold mb-2" style="letter-spacing: 8px; font-weight: 500; font-size: 0.8rem; text-transform: uppercase;">
-                    The Art of Detailing
-                </p>
-                
-                <h1 class="hero-title-main">YO-RU<br>DETAILING</h1>
-                
-                <p class="hero-tagline-en">CRAFTED WITH CARE, ONE CAR AT A TIME.</p>
-                
-                <div class="hero-description-th">
-    นิยามใหม่ของการดูแลรถยนต์แบบ <span class="text-gold" style="font-weight: 500;">Private Studio</span> 
-    ใส่ใจทุกรายละเอียด จำกัดจำนวนรถเพื่อคุณภาพสูงสุด
+
+<!-- ════════════════════════════════
+     NAVBAR
+════════════════════════════════ -->
+<nav class="nav">
+  <a href="#home" class="nav-logo">
+    <img src="images/logo.png" alt="YO-RU Detailing"
+         onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+    <span class="nav-logo-text" style="display:none;">YO<span>·</span>RU</span>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="price-list.html">Pricing</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+
+  <a href="https://lin.ee/usdNGIA" class="nav-cta" target="_blank">
+    <i class="fab fa-line" style="margin-right:6px;"></i> Line Booking
+  </a>
+  <button class="nav-toggle" onclick="toggleMenu()" aria-label="Menu">
+    <i class="fas fa-bars"></i>
+  </button>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about"    onclick="closeMenu()">About</a>
+  <a href="#services" onclick="closeMenu()">Services</a>
+  <a href="price-list.html">Pricing</a>
+  <a href="#contact"  onclick="closeMenu()">Contact</a>
+  <a href="https://lin.ee/usdNGIA" target="_blank" class="gold">
+    <i class="fab fa-line" style="margin-right:8px;"></i> Line Booking
+  </a>
+  <a href="tel:0872178899" class="gold">
+    <i class="fas fa-phone-alt" style="margin-right:8px;"></i> 087-217-8899
+  </a>
 </div>
-<div class="hero-description-th mt-2">
-    ล้างรถ ขัดสี เคลือบแก้ว โดยเจ้าของร้านที่ใส่ใจจริงๆ 
-    <span class="text-gold" style="font-weight: 500;">เริ่มต้น 350 บาท</span> · นัดล่วงหน้าง่าย ทักไลน์ได้เลย
-</div>
-                    
 
+<!-- ════════════════════════════════
+     HERO
+════════════════════════════════ -->
+<header id="home" class="hero">
+  <div class="hero-content">
+    <span class="hero-label">Private Car Care · Chonburi</span>
 
-                <a href="price-list.html" target="_blank" class="btn-gold">VIEW PRICING & SERVICES</a>
-            </div>
-        </div>
-    </header>
     
-    <div class="valet-bar">
-        <div class="container">
-            <i class="fas fa-car-side me-2"></i> EXCLUSIVE: ฟรีบริการรับ-ส่งรถ (Valet Service)
-        </div>
-    </div>
 
-    <section id="whyus" class="section-padding" style="background-color: rgba(8, 8, 8, 0.75);">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="section-title">WHY CHOOSE US?</h2>
-                <div class="section-line"></div>
-                <p class="text-muted">เราไม่ได้แค่ล้างรถ แต่ดูแลเหมือนรถเราเอง — นี่คือสิ่งที่ทำให้เราต่างออกไป
+    <h1 class="hero-name">YO<span class="dot">·</span>RU</h1>
 
-</p>
-            </div>
-            
-            <div class="row g-4 mobile-scroll-row">
-                <div class="col-lg-4">
-                    <div class="feature-card">
-                        <div class="feature-icon"><i class="fas fa-moon"></i></div>
-                        <div>
-                            <h4 class="mb-2" style="font-size: 1.1rem;">NIGHT SERVICE</h4>
-                            <p class="text-muted small mb-0">ตอบโจทย์คนทำงาน เลิกงานแล้วก็ดูแลรถได้ ร้านเปิดถึง 21.00 น. (และดึกกว่านั้นตามนัดหมาย) เพื่อให้คุณจัดสรรเวลาได้ง่ายที่สุด</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="feature-card">
-                        <div class="feature-icon"><i class="fas fa-user-shield"></i></div>
-                        <div>
-                            <h4 class="mb-2" style="font-size: 1.1rem;">PRIVATE STUDIO</h4>
-                            <p class="text-muted small mb-0">เราจำกัดจำนวนรถต่อวัน (By Appointment Only) เพื่อให้ทีมงานโฟกัสกับรถของคุณได้เต็มที่ทุกตารางนิ้ว เหมือนรถของเราเอง</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="feature-card">
-                        <div class="feature-icon"><i class="fas fa-flask"></i></div>
-                        <div>
-                            <h4 class="mb-2" style="font-size: 1.1rem;">SELECTED PRODUCTS</h4>
-                            <p class="text-muted small mb-0">คัดสรรเฉพาะเคมีภัณฑ์เกรดพรีเมียมระดับโลก (CarPro, Gyeon, 3D) และอุปกรณ์มาตรฐาน Detailing เพื่อผลลัพธ์ที่คุ้มค่าและปลอดภัยสูงสุด</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center text-muted small mt-2 d-lg-none"><i class="fas fa-arrows-alt-h me-2"></i>เลื่อนเพื่อดูเพิ่มเติม</div>
-        </div>
-    </section>
+    <span class="hero-jp">夜露 — 夜の精神で磨かれた美</span>
 
-    <section id="process" class="section-padding" style="background-color: rgba(2, 2, 2, 0.70);">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="section-title">THE YO-RU STANDARD</h2>
-                <div class="section-line"></div>
-                <p class="text-muted">มาตรฐานการดูแลที่ใส่ใจในทุกขั้นตอน (Our Detailing Journey)</p>
-            </div>
+    <div class="hero-slogan">Crafted With Care, One Car At A Time.</div>
 
-            <div class="row g-4 mobile-scroll-row">
-                <div class="col-lg-6">
-                    <div class="process-step">
-                        <div class="step-number-bg">01</div>
-                        <div class="process-icon"><i class="fas fa-search"></i></div>
-                        <div>
-                            <h5 class="mb-2 text-white">INSPECTION</h5>
-                            <p class="text-muted small mb-0">เริ่มต้นด้วยการตรวจสภาพผิวสีและภายในอย่างละเอียด ร่วมกับลูกค้า เพื่อประเมินปัญหาและเลือกโปรแกรมที่เหมาะสมที่สุดก่อนเริ่มงาน</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="process-step">
-                        <div class="step-number-bg">02</div>
-                        <div class="process-icon"><i class="fas fa-soap"></i></div>
-                        <div>
-                            <h5 class="mb-2 text-white">DECONTAMINATION</h5>
-                            <p class="text-muted small mb-0">ล้างทำความสะอาดลึกด้วยระบบ Touchless และขจัดคราบฝังแน่น (Iron/Tar) ด้วยเคมีเฉพาะทาง เตรียมผิวให้บริสุทธิ์ที่สุดก่อนการฟื้นฟู</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="process-step">
-                        <div class="step-number-bg">03</div>
-                        <div class="process-icon"><i class="fas fa-magic"></i></div>
-                        <div>
-                            <h5 class="mb-2 text-white">CORRECTION</h5>
-                            <p class="text-muted small mb-0">ขั้นตอนสำคัญในการขัดลบรอยขนแมวและฟื้นฟูความเงางาม (Gloss) ให้กลับมาเหมือนรถป้ายแดง ด้วยเครื่องมือและเทคนิคชั้นสูง</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="process-step">
-                        <div class="step-number-bg">04</div>
-                        <div class="process-icon"><i class="fas fa-shield-alt"></i></div>
-                        <div>
-                            <h5 class="mb-2 text-white">PROTECTION</h5>
-                            <p class="text-muted small mb-0">ปกป้องผิวสีด้วย Wax หรือ Coating ระดับพรีเมียม (Gyeon/CarPro) เพื่อล็อคความเงาให้อยู่กับรถคุณไปอีกยาวนาน</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center text-muted small mt-2 d-lg-none"><i class="fas fa-arrows-alt-h me-2"></i>เลื่อนเพื่อดูเพิ่มเติม</div>
-        </div>
-    </section>
+    <div class="hero-line"></div>
+    <span class="hero-scroll">Scroll</span>
+  </div>
+</header>
 
-    <div class="container text-center mb-2">
-    <p class="text-gold" style="font-family: 'Oswald', sans-serif; letter-spacing: 4px; font-weight: 500; font-size: 0.9rem; text-transform: uppercase;">
-        TRUSTED GLOBAL BRANDS WE USE
-    </p>
-    <div style="width: 30px; height: 1px; background: var(--accent); margin: 10px auto 30px;"></div>
-</div>
-    
-    <div class="brand-slider">
-        <div class="brand-track">
-            <div class="brand-item"><img src="images/logo-luminus.png" alt="Luminus"></div>
-            <div class="brand-item"><img src="images/logo-carpro.png" alt="CarPro"></div>
-            <div class="brand-item"><img src="images/logo-gyeon.png" alt="Gyeon"></div>
-            <div class="brand-item"><img src="images/logo-glossbro.png" alt="Glossbro"></div>
-            <div class="brand-item"><img src="images/logo-3d.png" alt="3D"></div>
-            <div class="brand-item"><img src="images/max-shine-logo.png" alt="MaxShine"></div>
-            
-            <div class="brand-item"><img src="images/logo-luminus.png" alt="Luminus"></div>
-            <div class="brand-item"><img src="images/logo-carpro.png" alt="CarPro"></div>
-            <div class="brand-item"><img src="images/logo-gyeon.png" alt="Gyeon"></div>
-            <div class="brand-item"><img src="images/logo-glossbro.png" alt="Glossbro"></div>
-            <div class="brand-item"><img src="images/logo-3d.png" alt="3D"></div>
-            <div class="brand-item"><img src="images/max-shine-logo.png" alt="MaxShine"></div>
-        </div>
-    </div>
+<div class="valet-bar">
+  <i class="fas fa-car" style="margin-right:8px;"></i>
+  บริการรับ-ส่งรถ · ฟรีในพื้นที่ใกล้เคียง · สอบถามทาง Line
+  &nbsp;|&nbsp;
+  จ–ศ 18:00–21:00 &nbsp;·&nbsp; ส–อา 09:00–21:00
 </div>
 
-    <section id="packages" class="section-padding">
-        <div class="container text-center">
-            <h2 class="section-title">OUR SERVICES</h2>
-            <div class="section-line"></div>
-            <p class="text-muted mb-5" style="max-width: 700px; margin-left: auto; margin-right: auto;">
-                บริการดูแลรถยนต์ครบวงจร ตั้งแต่การล้างทำความสะอาดพื้นฐาน (Premium Wash) การฟื้นฟูสภาพสี (Correction) 
-                ไปจนถึงการเคลือบแก้วเซรามิก (Ceramic Coating) ด้วยมาตรฐานสูงสุด
-            </p>
+<div class="divider"></div>
 
-            <div class="row g-4 mobile-scroll-row justify-content-center mb-5">
-    <div class="col-md-4">
-        <div class="service-card">
-            <div>
-                <h4 class="text-white mb-3">PREMIUM WASH</h4>
-                <p class="text-muted small">บริการล้างสี ดูดฝุ่น และ Detailing ภายนอก/ภายใน ด้วยระบบ Touchless และเคมีภัณฑ์เกรดพรีเมียม เพื่อลดการเกิดรอย</p>
-            </div>
-            <div><a href="price-list.html" class="start-price text-decoration-none">Start 350 THB <i class="fas fa-chevron-right ms-1" style="font-size: 0.6rem;"></i></a></div>
-        </div>
+<div class="divider"></div>
+
+<!-- ════════════════════════════════
+     WHY US
+════════════════════════════════ -->
+<section id="about" class="section">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">Philosophy</span>
+      <h2 class="section-title">ทำด้วยความตั้งใจ<br>เพียงวันละไม่กี่คัน</h2>
+      <div class="section-rule"></div>
+      <p class="lead-text">
+        YO-RU ไม่ใช่ร้านล้างรถทั่วไป — เราคัดรับงานอย่างจำกัดต่อวัน
+        เพื่อให้ทุกคันได้รับความใส่ใจอย่างเต็มที่
+        เหมือนช่างฝีมือที่ทำงานช้าๆ แต่ทุกรายละเอียดสมบูรณ์แบบ
+      </p>
     </div>
-    <div class="col-md-4">
-        <div class="service-card">
-            <div>
-                <h4 class="text-white mb-3">CERAMIC COATING</h4>
-                <p class="text-muted small">บริการขัดฟื้นฟูสภาพสีเต็มระบบ (Full Correction) และเคลือบเซรามิกแท้ เพื่อการปกป้องที่ยาวนาน 1-5 ปี</p>
-            </div>
-            <div><a href="price-list.html" class="start-price text-decoration-none">Start 2,500 THB <i class="fas fa-chevron-right ms-1" style="font-size: 0.6rem;"></i></a></div>
-        </div>
+
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <span class="why-num">01</span>
+        <span class="why-icon"><i class="fas fa-hand-sparkles"></i></span>
+        <div class="why-title">Handcraft Only</div>
+        <p class="why-desc">ตั้งใจ 100% ทุกคัน ด้วยผลิตภัณฑ์นำเข้าคุณภาพสูง เพื่อปกป้องสีรถของคุณอย่างแท้จริง</p>
+      </div>
+      <div class="why-card reveal">
+        <span class="why-num">02</span>
+        <span class="why-icon"><i class="fas fa-moon"></i></span>
+        <div class="why-title">Night Service</div>
+        <p class="why-desc">เปิดให้บริการช่วงกลางคืน จ–ศ 18:00–21:00 เพื่อลูกค้าที่ไม่สะดวกช่วงกลางวัน</p>
+      </div>
+      <div class="why-card reveal">
+        <span class="why-num">03</span>
+        <span class="why-icon"><i class="fas fa-clock"></i></span>
+        <div class="why-title">Limited Per Day</div>
+        <p class="why-desc">รับงานจำกัดไม่กี่คันต่อวัน เพื่อให้ช่างโฟกัสกับรถของคุณได้เต็มที่ โดยไม่รีบร้อนตัดคุณภาพ</p>
+      </div>
+      <div class="why-card reveal">
+        <span class="why-num">04</span>
+        <span class="why-icon"><i class="fas fa-car"></i></span>
+        <div class="why-title">Valet Service</div>
+        <p class="why-desc">บริการรับ-ส่งรถถึงที่ ฟรีในพื้นที่ใกล้เคียง สอบถามระยะทางได้ทาง Line</p>
+      </div>
     </div>
-    <div class="col-md-4">
-        <div class="service-card">
-            <div>
-                <h4 class="text-white mb-3">RESTORATION</h4>
-                <p class="text-muted small">บริการฟื้นฟูสภาพภายใน ซักเบาะ ซักพรม อบโอโซนฆ่าเชื้อ และขัดไฟหน้าเหลืองให้กลับมาใส</p>
-            </div>
-            <div><a href="price-list.html" class="start-price text-decoration-none">Start 1,500 THB <i class="fas fa-chevron-right ms-1" style="font-size: 0.6rem;"></i></a></div>
-        </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ════════════════════════════════
+     PROCESS
+════════════════════════════════ -->
+<section id="process" class="section process-section">
+  <div class="container">
+    <div class="reveal center">
+      <span class="section-label">How It Works</span>
+      <h2 class="section-title">ขั้นตอนการบริการ</h2>
+      <div class="section-rule"></div>
     </div>
-</div>
 
-            <a href="price-list.html" target="_blank" class="btn-gold">
-                <i class="fas fa-list-alt me-2"></i> VIEW FULL PRICE LIST
-            </a>
-            <p class="text-muted small mt-3">คลิกเพื่อดูรายการราคาแบบละเอียด</p>
-        </div>
-    </section>
-<section id="reviews" class="section-padding" style="background-color: rgba(8, 8, 8, 0.75);">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="section-title">CUSTOMER VOICES</h2>
-                <div class="section-line"></div>
-                <p class="text-muted">รีวิวจากลูกค้าจริงที่แวะมาใช้บริการที่ Studio ของเรา</p>
-            </div>
-
-            <div class="row g-4 mobile-scroll-row">
-                <div class="col-lg-4">
-                    <div class="feature-card flex-column align-items-center text-center">
-                        <div class="mb-3">
-                            <i class="fas fa-star text-gold"></i><i class="fas fa-star text-gold"></i><i class="fas fa-star text-gold"></i><i class="fas fa-star text-gold"></i><i class="fas fa-star text-gold"></i>
-                        </div>
-                        <p class="text-muted small mb-3" style="font-style: italic; min-height: 80px;">"เอา Civic มาทำ Full Correction ขัดลบรอยขนแมวออกเกลี้ยงเลย งานเนี้ยบมากครับ แสงส่องแล้วไม่มีรอยวงๆ เลย เงาฉ่ำเหมือนรถใหม่ป้ายแดงจริงๆ"</p>
-                        <hr style="width: 30px; border-color: var(--accent); margin: 10px auto;">
-                        <h5 style="font-size: 0.85rem; letter-spacing: 1px; color: #eee;">คุณต้น (Honda Civic FE)</h5>
-                    </div>
-                </div>
-
-                <div class="col-lg-4">
-                    <div class="feature-card flex-column align-items-center text-center">
-                        <div class="mb-3">
-                            <i class="fas fa-star text-gold"></i><i class="fas fa-star text-gold"></i><i class="fas fa-star text-gold"></i><i class="fas fa-star text-gold"></i><i class="fas fa-star text-gold"></i>
-                        </div>
-                        <p class="text-muted small mb-3" style="font-style: italic; min-height: 80px;">"สะดวกมากค่ะ มีบริการรับส่งรถถึงที่บ้าน พนักงานสุภาพ ขับรถดีมาก รายงานความคืบหน้าตลอดว่าถึงขั้นตอนไหนแล้ว ประทับใจการบริการที่สุดค่ะ"</p>
-                        <hr style="width: 30px; border-color: var(--accent); margin: 10px auto;">
-                        <h5 style="font-size: 0.85rem; letter-spacing: 1px; color: #eee;">คุณเมย์ (Toyota Corolla Cross)</h5>
-                    </div>
-                </div>
-
-                <div class="col-lg-4">
-                    <div class="feature-card flex-column align-items-center text-center">
-                        <div class="mb-3">
-                            <i class="fas fa-star text-gold"></i><i class="fas fa-star text-gold"></i><i class="fas fa-star text-gold"></i><i class="fas fa-star text-gold"></i><i class="fas fa-star-half-alt text-gold"></i>
-                        </div>
-                        <p class="text-muted small mb-3" style="font-style: italic; min-height: 80px;">"เพิ่งพาลูกรักมาซักเบาะ อบโอโซน กลิ่นอับในรถหายสนิทเลย งานละเอียดมาก ตามซอกเบาะที่ล้างยากๆ ที่นี่เก็บให้หมด คุ้มราคามากครับ"</p>
-                        <hr style="width: 30px; border-color: var(--accent); margin: 10px auto;">
-                        <h5 style="font-size: 0.85rem; letter-spacing: 1px; color: #eee;">คุณบิ๊ก (Mitsubishi Pajero Sport)</h5>
-                    </div>
-                </div>
-
-                <div class="col-lg-4">
-                    <div class="feature-card flex-column align-items-center text-center">
-                        <div class="mb-3">
-                            <i class="fas fa-star text-gold"></i><i class="fas fa-star text-gold"></i><i class="fas fa-star text-gold"></i><i class="fas fa-star text-gold"></i><i class="fas fa-star text-gold"></i>
-                        </div>
-                        <p class="text-muted small mb-3" style="font-style: italic; min-height: 80px;">"ล้าง Premium Wash ที่นี่ต่างจากที่อื่นจริงๆ ครับ ใช้ของดี ล้างสะอาดมาก ยิ่งตรงล้อกับซุ้มล้อคือทำเนียนกริบ ไม่ผิดหวังเลยที่ขับมาจากในเมือง"</p>
-                        <hr style="width: 30px; border-color: var(--accent); margin: 10px auto;">
-                        <h5 style="font-size: 0.85rem; letter-spacing: 1px; color: #eee;">คุณกอล์ฟ (Isuzu D-Max)</h5>
-                    </div>
-                </div>
-
-                <div class="col-lg-4">
-                    <div class="feature-card flex-column align-items-center text-center">
-                        <div class="mb-3">
-                            <i class="fas fa-star text-gold"></i><i class="fas fa-star text-gold"></i><i class="fas fa-star text-gold"></i><i class="fas fa-star text-gold"></i><i class="fas fa-star text-gold"></i>
-                        </div>
-                        <p class="text-muted small mb-3" style="font-style: italic; min-height: 80px;">"มาเคลือบแก้วที่นี่เพราะชอบที่เป็น Private Studio เจ้าของดูแลเอง งานออกมาสมบูรณ์แบบมากครับ น้ำไม่เกาะ รถเงาแวบ ขอบคุณที่ดูแลอย่างดีครับ"</p>
-                        <hr style="width: 30px; border-color: var(--accent); margin: 10px auto;">
-                        <h5 style="font-size: 0.85rem; letter-spacing: 1px; color: #eee;">คุณหนุ่ม (Mazda CX-30)</h5>
-                    </div>
-                </div>
-
-                <div class="col-lg-4">
-                    <div class="feature-card flex-column align-items-center text-center">
-                        <div class="mb-3">
-                            <i class="fas fa-star text-gold"></i><i class="fas fa-star text-gold"></i><i class="fas fa-star text-gold"></i><i class="fas fa-star text-gold"></i><i class="fas fa-star-half-alt text-gold"></i>
-                        </div>
-                        <p class="text-muted small mb-3" style="font-style: italic; min-height: 80px;">"ชอบที่ร้านเปิดดึกครับ เลิกงานแล้วขับมาฝากล้างไว้ได้เลย ไม่ต้องตื่นเช้ามาต่อคิวเสาร์-อาทิตย์ งานเนี้ยบ ไว้ใจได้ มั่นใจในระบบความปลอดภัยของร้านครับ"</p>
-                        <hr style="width: 30px; border-color: var(--accent); margin: 10px auto;">
-                        <h5 style="font-size: 0.85rem; letter-spacing: 1px; color: #eee;">คุณเจน (Honda City Hatchback)</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center text-muted small mt-2 d-lg-none">
-                <i class="fas fa-arrows-alt-h me-2"></i>เลื่อนดูรีวิวทั้งหมด (6 รายการ)
-            </div>
-        </div>
-    </section>
-  
-    <section class="section-padding" style="background: rgba(5, 5, 5, 0.72);">
-        <div class="container" style="max-width: 800px;">
-            <div class="text-center mb-5">
-                <h2 class="section-title" style="font-size: 1.5rem;">FAQ & TERMS</h2>
-                <div class="section-line"></div>
-                <p class="text-muted small">คำถามที่พบบ่อย และเงื่อนไขการให้บริการ</p>
-            </div>
-            
-            <div class="accordion" id="mainAccordion">
-                
-                <div class="mb-4">
-                    <h5 class="text-gold mb-3 ms-2" style="font-family: 'Oswald'; letter-spacing: 1px;">QUESTIONS</h5>
-                    
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
-                                Q: ต้องจองคิวล่วงหน้าหรือไม่?
-                            </button>
-                        </h2>
-                        <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#mainAccordion">
-                            <div class="accordion-body">
-                                <strong>จำเป็นต้องจองครับ</strong> เนื่องจากเราเป็น Private Studio รับรถจำกัดจำนวนต่อวันเพื่อคุณภาพสูงสุด ไม่ได้รับ Walk-in ครับ
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
-                                Q: ใช้เวลาทำนานเท่าไหร่?
-                            </button>
-                        </h2>
-                        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#mainAccordion">
-                            <div class="accordion-body">
-                                <ul>
-                                    <li><strong>ล้างพรีเมียม:</strong> 2 - 4 ชั่วโมง (ขึ้นอยู่กับความสกปรก)</li>
-                                    <li><strong>เคลือบแก้ว/ขัดสี:</strong> 1 - 3 วัน (ต้องจอดรถค้างคืนเพื่ออบเซรามิก)</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
-                                Q: บริการรับ-ส่งรถ คิดค่าใช้จ่ายไหม?
-                            </button>
-                        </h2>
-                        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#mainAccordion">
-                            <div class="accordion-body">
-                                <strong>ฟรี!</strong> ค่าบริการในเขตพื้นที่ใกล้เคียง (คลองตำหรุ / นิคมอมตะ / ตัวเมืองชลบุรีบางส่วน) สามารถส่งพิกัดมาเช็คระยะทางก่อนได้ครับ
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <h5 class="text-gold mb-3 ms-2" style="font-family: 'Oswald'; letter-spacing: 1px;">CONDITIONS</h5>
-
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#term1">
-                                <i class="fas fa-car-side me-2 text-muted"></i> เงื่อนไข: บริการรับ-ส่งรถ (Valet)
-                            </button>
-                        </h2>
-                        <div id="term1" class="accordion-collapse collapse" data-bs-parent="#mainAccordion">
-                            <div class="accordion-body">
-                                <ul>
-                                    <li>รับ-ส่งรถตามจุดนัดหมายและเวลาที่ระบุเท่านั้น</li>
-                                    <li>พนักงานขับขี่ปลอดภัย ปฏิบัติตามกฎจราจร และไม่มีการนำรถไปใช้งานส่วนตัว</li>
-                                    <li>หากเกินระยะทางที่กำหนด อาจมีค่าใช้จ่ายเพิ่มเติม (แจ้งล่วงหน้า)</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#term2">
-                                <i class="fas fa-shield-alt me-2 text-muted"></i> เงื่อนไข: ความรับผิดชอบ (Liability)
-                            </button>
-                        </h2>
-                        <div id="term2" class="accordion-collapse collapse" data-bs-parent="#mainAccordion">
-                            <div class="accordion-body">
-                                <ul>
-                                    <li>กรณีเกิดอุบัติเหตุระหว่างการรับ-ส่ง หรือขณะให้บริการ ยึดตามความคุ้มครองของ <strong>ประกันภัยรถยนต์ลูกค้า</strong> เป็นหลัก</li>
-                                    <li>ทางร้านขอสงวนสิทธิ์ไม่รับผิดชอบ <strong>ทรัพย์สินมีค่า</strong> ที่สูญหาย โปรดนำออกจากรถก่อนส่งมอบ</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#term3">
-                                <i class="fas fa-search me-2 text-muted"></i> เงื่อนไข: การตรวจสอบรถ (Inspection)
-                            </button>
-                        </h2>
-                        <div id="term3" class="accordion-collapse collapse" data-bs-parent="#mainAccordion">
-                            <div class="accordion-body">
-                                <ul>
-                                    <li>ทางร้านจะมีการตรวจสอบสภาพรถ (Check-in) ร่วมกับลูกค้า หรือถ่ายวิดีโอก่อนเริ่มงาน เพื่อบันทึกรอยและตำหนิเดิม</li>
-                                    <li>ไม่รับผิดชอบความเสียหายที่เกิดจากความเสื่อมสภาพเดิม เช่น สีหลุดร่อน สนิม หรือระบบไฟที่รวนอยู่ก่อนแล้ว</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer id="contact" style="background-color: #000; padding: 60px 0; border-top: 1px solid #111;">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-4 text-center text-lg-start mb-4 mb-lg-0">
-                <img src="images/logo.png" alt="YO-RU Detailing" style="max-height: 70px; width: auto; margin-bottom: 20px;">
-                
-                <div class="text-muted small">
-                    <p class="mb-2"><i class="fas fa-phone text-gold me-2"></i> 087-217-8899</p>
-                    <p class="mb-2"><i class="fas fa-map-marker-alt text-gold me-2"></i> คลองตำหรุ, ชลบุรี</p>
-                    
-                    <div class="mb-4">
-                        <p class="mb-1"><i class="fas fa-clock text-gold me-2"></i> จันทร์ - ศุกร์: 18.00 - 21.00 น.</p>
-                        <p class="mb-0" style="padding-left: 28px;">เสาร์ - อาทิตย์: 09.00 - 21.00 น.</p>
-                    </div>
-                    
-                    <a href="https://lin.ee/usdNGIA" class="btn btn-outline-light btn-sm rounded-pill px-4">Line Booking</a>
-                </div>
-            </div>
-
-            <div class="col-lg-8">
-                <div style="background: #222; height: 250px; border-radius: 12px; overflow: hidden; border: 1px solid #333;">
-                    <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15531.428741366115!2d101.002819!3d13.443207!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDI2JzM1LjUiTiAxMDHCsDAwJzEwLjEiRQ!5e0!3m2!1sth!2sth!4v1700000000000!5m2!1sth!2sth" 
-            width="100%" height="100%" style="border:0;" 
-            allowfullscreen="" loading="lazy">
-                        </iframe>
-                </div>
-            </div>
-        </div>
-
-        <div class="text-center text-muted small mt-5 pt-4" style="border-top: 1px solid #111;">
-            © 2026 YO-RU Detailing. All rights reserved.
-        </div>
+    <div class="process-steps">
+      <div class="step reveal">
+        <div class="step-dot"></div>
+        <div class="step-num">Step 01</div>
+        <div class="step-title">นัดหมาย</div>
+        <p class="step-desc">ทักไลน์หรือโทรแจ้งวัน เวลา และบริการที่ต้องการ ตรวจสอบคิวและยืนยันนัด</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-dot"></div>
+        <div class="step-num">Step 02</div>
+        <div class="step-title">รับรถ</div>
+        <p class="step-desc">ทีมงานรับรถถึงที่ พร้อม Check-in ถ่ายรูปสภาพรถก่อนเริ่มงานทุกครั้ง</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-dot"></div>
+        <div class="step-num">Step 03</div>
+        <div class="step-title">ดูแล</div>
+        <p class="step-desc">ดำเนินงานอย่างพิถีพิถัน ตั้งใจ 100% ด้วยผลิตภัณฑ์คุณภาพพรีเมียม</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-dot"></div>
+        <div class="step-num">Step 04</div>
+        <div class="step-title">ส่งรถ</div>
+        <p class="step-desc">ส่งรถคืนพร้อมรายงาน ตรวจสอบความพอใจก่อนชำระเงิน</p>
+      </div>
     </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ════════════════════════════════
+     SERVICES
+════════════════════════════════ -->
+<section id="services" class="section">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">Services</span>
+      <h2 class="section-title">บริการของเรา</h2>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="services-grid">
+      <a href="price-list.html?tab=wash" class="service-card gold-card reveal">
+        <div class="service-tag">Car Wash · 1–1.5 ชม.</div>
+        <div class="service-name">Basic<br>Wash</div>
+        <p class="service-desc">ล้างภายนอกอัดฉีด Touchless · ยางดำเงา · ดูดฝุ่นเบื้องต้น · เช็ดภายใน · เคลือบมีสาร Wax เบื้องต้น · ประเมินสภาพรถ</p>
+        <div class="service-price">เริ่มต้น 350 ฿ <small>/ S · ขึ้นอยู่กับขนาดรถ</small></div>
+      </a>
+
+      <a href="price-list.html?tab=wash" class="service-card gold-card reveal">
+        <div class="service-badge">HOT</div>
+        <div class="service-tag">Car Wash · 3–4 ชม.</div>
+        <div class="service-name">YO-RU<br>Signature</div>
+        <p class="service-desc">Basic Wash + ล้างล้อ Deep Clean + ซอกประตู · เคลือบสี Spray Sealant · เคลือบปกป้อง UV ภายใน
+          <br><br><em style="font-size:0.75rem;color:var(--muted);">*Soft Coating ไม่ใช่เคลือบแก้วแข็ง</em></p>
+        <div class="service-price">เริ่มต้น 690 ฿ <small>/ S · ขึ้นอยู่กับขนาดรถ</small></div>
+      </a>
+
+      <a href="price-list.html?tab=wash" class="service-card gold-card reveal">
+        <div class="service-tag">Car Wash · 4–6 ชม.</div>
+        <div class="service-name">Premium<br>Detailing</div>
+        <p class="service-desc">Signature + Iron Remover · ลูบดินน้ำมัน · ระเบิดขี้ไคล · ล้างห้องเครื่อง · Wax เกรดพรีเมียม
+          <br><br><em style="font-size:0.75rem;color:var(--muted);">*Premium Soft Coating</em></p>
+        <div class="service-price">เริ่มต้น 1,990 ฿ <small>/ S · ขึ้นอยู่กับขนาดรถ</small></div>
+      </a>
+
+      <a href="price-list.html?tab=wash" class="service-card gold-card reveal">
+        <div class="service-tag">Car Wash · 6–10 ชม. / 1 วัน</div>
+        <div class="service-name">Elite<br>Restoration</div>
+        <p class="service-desc">Big Cleaning เต็มระบบ · ซักพรม / ซักเบาะ · อบโอโซนฆ่าเชื้อ · ทำความสะอาดทุกซอกมุม
+          <br><br><em style="font-size:0.75rem;color:var(--muted);">*Premium Soft Coating</em></p>
+        <div class="service-price">เริ่มต้น 4,990 ฿ <small>/ S · ขึ้นอยู่กับขนาดรถ</small></div>
+      </a>
+
+      <a href="price-list.html?tab=polish" class="service-card gold-card reveal">
+        <div class="service-tag">Paint Correction</div>
+        <div class="service-name">Paint<br>Polishing</div>
+        <p class="service-desc">ขัดสีลบรอยขนแมว รอยสวิล รอยวงกลม ด้วยเครื่องขัด DA และสารขัดระดับพรีเมียม ตั้งแต่ One-Step ถึง Three-Step</p>
+        <div class="service-price">เริ่มต้น 1,500 ฿ <small>/ S · ขึ้นอยู่กับขนาดและสภาพ</small></div>
+      </a>
+
+      <a href="price-list.html?tab=coat" class="service-card gold-card reveal">
+        <div class="service-tag">Long-Term Protection</div>
+        <div class="service-name">Ceramic<br>Coating</div>
+        <p class="service-desc">เคลือบแก้วเซรามิกระดับพรีเมียม ปกป้องสีรถจากรังสี UV คราบน้ำมัน รอยขีดข่วนเล็กน้อย ทนทาน 1–5+ ปี ด้วยแบรนด์ Luminus · Carpro · Gyeon</p>
+        <div class="service-price">เริ่มต้น 2,500 ฿ <small>/ S · ขึ้นอยู่กับ Tier ที่เลือก</small></div>
+      </a>
+    </div>
+
+<div class="divider"></div>
+
+
+
+<!-- ════════════════════════════════
+     TERMS
+════════════════════════════════ -->
+<section class="section-sm">
+  <div class="container">
+    <div class="reveal center">
+      <span class="section-label">Terms & Conditions</span>
+      <h2 class="section-title" style="font-size:clamp(1.6rem,4vw,2.4rem);">เงื่อนไขการใช้บริการ</h2>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="terms-grid">
+      <div class="term-card reveal">
+        <div class="term-icon"><i class="fas fa-car-side"></i></div>
+        <div class="term-title">Valet Service</div>
+        <ul class="term-list">
+          <li>ฟรีค่ารับ-ส่งในพื้นที่ใกล้เคียง สอบถามระยะทางทาง Line</li>
+          <li>รับ-ส่งตามจุดนัดหมายและเวลาที่ระบุเท่านั้น</li>
+          <li>พนักงานขับขี่ปลอดภัย ปฏิบัติตามกฎจราจร</li>
+          <li>เกินระยะทางที่กำหนดอาจมีค่าใช้จ่ายเพิ่ม (แจ้งก่อน)</li>
+        </ul>
+      </div>
+      <div class="term-card reveal">
+        <div class="term-icon"><i class="fas fa-shield-alt"></i></div>
+        <div class="term-title">Liability</div>
+        <ul class="term-list">
+          <li>อุบัติเหตุระหว่างรับ-ส่ง ยึดตามประกันภัยรถลูกค้าเป็นหลัก</li>
+          <li>ไม่รับผิดชอบทรัพย์สินมีค่าที่สูญหาย โปรดนำออกก่อนส่งมอบ</li>
+          <li>ไม่รับผิดชอบความเสื่อมสภาพเดิม เช่น สีร่อน สนิม ระบบไฟ</li>
+        </ul>
+      </div>
+      <div class="term-card reveal">
+        <div class="term-icon"><i class="fas fa-search"></i></div>
+        <div class="term-title">Inspection</div>
+        <ul class="term-list">
+          <li>ถ่ายวิดีโอ/รูปสภาพรถก่อนเริ่มงานทุกครั้ง</li>
+          <li>หากพบความผิดปกติระหว่างทำ จะแจ้งลูกค้าทันที</li>
+          <li>กรุณาตรวจสอบความเรียบร้อยก่อนรับรถกลับ</li>
+        </ul>
+      </div>
+      <div class="term-card reveal">
+        <div class="term-icon"><i class="fas fa-credit-card"></i></div>
+        <div class="term-title">Payment</div>
+        <ul class="term-list">
+          <li>รับชำระเงินสด และโอนผ่าน QR Code</li>
+          <li>กรณีแบตหมด/สตาร์ทไม่ติด ยินดีช่วยประสานงาน แต่ไม่รวมค่าใช้จ่าย</li>
+          <li>การใช้บริการถือว่ายอมรับเงื่อนไขทั้งหมดข้างต้น</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ════════════════════════════════
+     CTA
+════════════════════════════════ -->
+<section class="cta-section reveal">
+  <div class="container">
+    <span class="cta-jp">夜露のように、丁寧に。</span>
+    <h2 class="cta-title">
+      พร้อมให้รถคุณ<br>
+      <em>กลับมาเปล่งประกาย</em>
+    </h2>
+    <div class="cta-btns">
+      <a href="https://lin.ee/usdNGIA" target="_blank" class="btn-gold">
+        <i class="fab fa-line"></i> Line Booking
+      </a>
+      <a href="tel:0872178899" class="btn-outline">
+        <i class="fas fa-phone-alt"></i> 087-217-8899
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════
+     FOOTER / CONTACT
+════════════════════════════════ -->
+<footer id="contact" class="footer">
+  <div class="container">
+    <div class="footer-grid">
+
+      <div>
+       <img src="images/logo.png" alt="YO-RU Detailing" class="footer-logo"
+     onerror="...">
+        <p class="nav-logo-text" style="display:none; margin-bottom:16px;">YO<span style="color:var(--gold);">·</span>RU</p>
+        <p class="footer-tagline">
+          夜露 Detailing<br>
+          Crafted with care,<br>one car at a time.
+        </p>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Navigation</div>
+        <ul class="footer-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="price-list.html">Pricing</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <div class="contact-row">
+          <a href="tel:0872178899"><i class="fas fa-phone"></i> 087-217-8899</a>
+        </div>
+        <div class="contact-row">
+          <a href="https://lin.ee/usdNGIA" target="_blank"><i class="fab fa-line"></i> Line: ทักได้เลย</a>
+        </div>
+        <div class="contact-row">
+          <a href="#"><i class="fas fa-map-marker-alt"></i> คลองตำหรุ, เมืองชลบุรี</a>
+        </div>
+        <div class="contact-row">
+          <a href="#"><i class="fas fa-clock"></i>
+            จ–ศ 18:00–21:00<br>
+            <span style="padding-left:26px;">ส–อา 09:00–21:00</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15531.428741366115!2d101.002819!3d13.443207!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDI2JzM1LjUiTiAxMDHCsDAwJzEwLjEiRQ!5e0!3m2!1sth!2sth!4v1700000000000!5m2!1sth!2sth"
+        allowfullscreen="" loading="lazy" title="YO-RU Detailing Location">
+      </iframe>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 YO-RU Detailing. All rights reserved.</p>
+      <p class="footer-copy"><em>夜露のように、丁寧に。</em></p>
+    </div>
+  </div>
 </footer>
 
-    <div class="floating-group">
-        <a href="https://lin.ee/usdNGIA" target="_blank" class="float-btn" style="background-color: #06C755;"><i class="fab fa-line"></i></a>
-        <a href="tel:0872178899" class="float-btn" style="background-color: var(--accent); color: #000;"><i class="fas fa-phone-alt"></i></a>
-    </div>
+<!-- ════════════════════════════════
+     FLOATING BUTTONS
+════════════════════════════════ -->
+<div class="float-group">
+  <a href="https://lin.ee/usdNGIA" class="float-btn float-line" target="_blank" aria-label="Line">
+    <i class="fab fa-line"></i>
+  </a>
+  <a href="tel:0872178899" class="float-btn float-tel" aria-label="Call">
+    <i class="fas fa-phone-alt"></i>
+  </a>
+</div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-(function() {
-    const canvas = document.getElementById('firefly-canvas');
-    const ctx = canvas.getContext('2d');
-
-    function resize() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-    }
-    resize();
-    window.addEventListener('resize', resize);
-
-    const FIREFLY_COUNT = 35;
-    const fireflies = [];
-    const COLORS = [
-        { r: 212, g: 175, b: 55  },
-        { r: 255, g: 220, b: 120 },
-        { r: 255, g: 240, b: 180 },
-        { r: 230, g: 195, b: 80  },
-    ];
-
-    function randomBetween(min, max) {
-        return min + Math.random() * (max - min);
-    }
-
-    function createFirefly() {
-        const color = COLORS[Math.floor(Math.random() * COLORS.length)];
-        return {
-            x: randomBetween(0, canvas.width),
-            y: randomBetween(canvas.height * 0.3, canvas.height),
-            radius: randomBetween(1.5, 4.0),
-            speedY: randomBetween(0.2, 0.7),
-            speedX: randomBetween(-0.25, 0.25),
-            maxOpacity: randomBetween(0.3, 0.75),
-            phase: Math.random() * Math.PI * 2,
-            phaseSpeed: randomBetween(0.005, 0.018),
-            life: 0,
-            lifeSpeed: randomBetween(0.003, 0.008),
-            color: color,
-            glowRadius: randomBetween(8, 20),
-        };
-    }
-
-    for (let i = 0; i < FIREFLY_COUNT; i++) {
-        const ff = createFirefly();
-        ff.life = Math.random();
-        ff.y = randomBetween(0, canvas.height);
-        fireflies.push(ff);
-    }
-
-    function animate() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-        for (let i = 0; i < fireflies.length; i++) {
-            const ff = fireflies[i];
-
-            ff.y -= ff.speedY;
-            ff.x += ff.speedX + Math.sin(ff.phase) * 0.3;
-            ff.phase += ff.phaseSpeed;
-            ff.life += ff.lifeSpeed;
-
-            let alpha;
-            if (ff.life < 0.2) {
-                alpha = (ff.life / 0.2) * ff.maxOpacity;
-            } else if (ff.life < 0.75) {
-                alpha = ff.maxOpacity * (0.85 + 0.15 * Math.sin(ff.phase * 3));
-            } else {
-                alpha = ((1 - ff.life) / 0.25) * ff.maxOpacity;
-            }
-            alpha = Math.max(0, Math.min(alpha, 1));
-
-            const { r, g, b } = ff.color;
-
-            const outerGlow = ctx.createRadialGradient(ff.x, ff.y, 0, ff.x, ff.y, ff.glowRadius * 2.5);
-            outerGlow.addColorStop(0, `rgba(${r},${g},${b},${alpha * 0.18})`);
-            outerGlow.addColorStop(1, `rgba(${r},${g},${b},0)`);
-            ctx.beginPath();
-            ctx.arc(ff.x, ff.y, ff.glowRadius * 2.5, 0, Math.PI * 2);
-            ctx.fillStyle = outerGlow;
-            ctx.fill();
-
-            const innerGlow = ctx.createRadialGradient(ff.x, ff.y, 0, ff.x, ff.y, ff.glowRadius);
-            innerGlow.addColorStop(0, `rgba(${r},${g},${b},${alpha * 0.8})`);
-            innerGlow.addColorStop(0.4, `rgba(${r},${g},${b},${alpha * 0.35})`);
-            innerGlow.addColorStop(1, `rgba(${r},${g},${b},0)`);
-            ctx.beginPath();
-            ctx.arc(ff.x, ff.y, ff.glowRadius, 0, Math.PI * 2);
-            ctx.fillStyle = innerGlow;
-            ctx.fill();
-
-            ctx.beginPath();
-            ctx.arc(ff.x, ff.y, ff.radius, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(255, 248, 220, ${alpha})`;
-            ctx.fill();
-
-            if (ff.life >= 1 || ff.y < -50 || ff.x < -100 || ff.x > canvas.width + 100) {
-                fireflies[i] = createFirefly();
-                fireflies[i].life = 0;
-            }
-        }
-
-        requestAnimationFrame(animate);
-    }
-
-    animate();
+<!-- ════════════════════════════════
+     SCRIPTS
+════════════════════════════════ -->
+<script>
+/* ── Fireflies ── */
+(function () {
+  const canvas = document.getElementById('firefly-canvas');
+  const ctx = canvas.getContext('2d');
+  function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+  resize();
+  window.addEventListener('resize', resize);
+  const N = 28;
+  const flies = [];
+  function mk() {
+    return {
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      r: 1.4 + Math.random() * 2.2,
+      vy: 0.18 + Math.random() * 0.45,
+      vx: (Math.random() - 0.5) * 0.25,
+      maxA: 0.2 + Math.random() * 0.45,
+      phase: Math.random() * Math.PI * 2,
+      ps: 0.005 + Math.random() * 0.012,
+      life: Math.random(),
+      ls: 0.003 + Math.random() * 0.006,
+      glow: 8 + Math.random() * 14,
+    };
+  }
+  for (let i = 0; i < N; i++) flies.push(mk());
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    flies.forEach((f, i) => {
+      f.y -= f.vy;
+      f.x += f.vx + Math.sin(f.phase) * 0.18;
+      f.phase += f.ps;
+      f.life += f.ls;
+      let a = f.life < 0.2  ? (f.life / 0.2) * f.maxA
+             : f.life < 0.75 ? f.maxA
+             : ((1 - f.life) / 0.25) * f.maxA;
+      a = Math.max(0, Math.min(a, 1));
+      const g = ctx.createRadialGradient(f.x, f.y, 0, f.x, f.y, f.glow);
+      g.addColorStop(0, `rgba(201,168,76,${a * 0.75})`);
+      g.addColorStop(1, `rgba(201,168,76,0)`);
+      ctx.beginPath(); ctx.arc(f.x, f.y, f.glow, 0, Math.PI * 2);
+      ctx.fillStyle = g; ctx.fill();
+      ctx.beginPath(); ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(255,240,180,${a})`; ctx.fill();
+      if (f.life >= 1 || f.y < -40) flies[i] = mk();
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
 })();
+
+/* ── Mobile Menu ── */
+function toggleMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+function closeMenu() {
+  document.getElementById('mobileMenu').classList.remove('open');
+}
+
+/* ── Scroll Reveal ── */
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 80);
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(r => obs.observe(r));
+
+/* ── Price Tabs ── */
+function showTab(e, name) {
+  document.querySelectorAll('.price-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.price-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  e.target.classList.add('active');
+}
+
+/* ── Smooth Scroll ── */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const el = document.querySelector(a.getAttribute('href'));
+    if (el) { e.preventDefault(); el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  });
+});
 </script>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
